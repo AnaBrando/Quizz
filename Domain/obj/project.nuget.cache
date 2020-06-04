@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "OqKpqDtSDc2Q8Hw9cKjgxLAHK7JodehMhWfNMiwBMv2meA/Nh12rAF1aVSJ6Kqnv68crAHmVX4LdGL8SFR+i+A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}

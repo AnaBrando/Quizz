@@ -15,6 +15,6 @@ namespace Domain
         public virtual Quizz Quizz { get; set; }
         public virtual Resposta Resposta { get; set; }
         public int Resposta_id { get; set; }
-
+        public string Descricao { get; set; }
     }
 }

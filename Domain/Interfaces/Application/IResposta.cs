@@ -8,7 +8,7 @@ namespace Domain.Interfaces.Application
     public interface IResposta
     {
 
-        int ObterPerguntaId(PerguntaDTO perguntaDTO);
+        string ObterRespostaCerta(int id);
 
      
     }
