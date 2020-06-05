@@ -1,14 +1,10 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using CrossCutting;
 using CrossCutting.Contexto;
 using CrossCutting.User;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -30,9 +26,16 @@ namespace Quizz
         public void ConfigureServices(IServiceCollection services)
         {
             Injector.RegistrarServicos(services);
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
-          
+            services.AddDbContext<UserDbContext>(options =>
+           options.UseSqlServer(
+               Configuration.GetConnectionString("DefaultConnection")));
+
+                services.AddDefaultIdentity<Usuario>()
+                .AddEntityFrameworkStores<UserDbContext>();
+
+
         }
     
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,7 +57,7 @@ namespace Quizz
             app.UseRouting();
 
             app.UseAuthorization();
-
+            app.UseAuthentication();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

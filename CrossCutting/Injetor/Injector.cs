@@ -28,15 +28,10 @@ namespace CrossCutting
             services.AddScoped<IPerguntaService, PerguntaService>();
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            //services.AddIdentity<Usuario, IdentityRole>(options =>
-            //{
-            //    options.Password.RequireDigit = true;
-            //    options.Password.RequiredLength = 7;
-            //    options.Password.RequireUppercase = true;
-            //    options.User.RequireUniqueEmail = true;
-            //})
-            //.AddEntityFrameworkStores<UserDbContext>();
 
+
+         //   services.AddIdentity<Usuario, IdentityRole>()
+         //.AddEntityFrameworkStores<UserDbContext>();
         }
     }
 }
