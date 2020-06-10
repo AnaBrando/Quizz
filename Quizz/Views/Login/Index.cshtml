@@ -11,7 +11,7 @@
             <div id="login-column" class="col-md-6">
                 <div id="login-box" class="col-md-12">
 
-                    <form id="login-form" class="form" action="" method="post">
+                    <form id="login-form" class="form" asp-controller="Login" asp-action="LoginPost">
                         <div class="text-center mb-4">
                             <img class="mb-4" src="\img\aluno.png" alt="" width="72" height="72">
                             <h1 class="h3 mb-3 font-weight-normal">Quizz</h1>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group">
                             <label for="password" class="text-info">Password:</label><br>
-                            <input type="text" name="password" id="password" class="form-control">
+                            <input type="password" name="password" id="password" class="form-control">
                         </div>
                         <div class="form-group d-inline-flex">
                             <div class="row">

@@ -33,6 +33,7 @@ namespace Quizz
                Configuration.GetConnectionString("DefaultConnection")));
 
                 services.AddDefaultIdentity<Usuario>()
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<UserDbContext>();
 
 
