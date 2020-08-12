@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x7BoZKpQi2fAAjGWPoNogD2wr57dk4UZSKnIphdILC6Pv3PdRDlxMm//WCJLzou1+saJ9I0VJ5sq+c/l+cGhjQ==",
+  "dgSpecHash": "gXIUnARCTD168ty81zBYF99bx3U4BG0/t+rJs5dv6QRY/5mMRY2ZvUcyAJrRqJ/vhO9V3akjM9WTXovAQq+1ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj",
+  "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
@@ -95,8 +95,7 @@
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

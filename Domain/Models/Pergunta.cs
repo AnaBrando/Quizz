@@ -12,6 +12,7 @@ namespace Domain
         public string OpcaoD { get; set; }
         public string OpcaoCerta { get; set; }
         public int Quizz_id { get; set; }
+        public virtual Nivel Nivel { get; set; }
         public virtual Quizz Quizz { get; set; }
         public virtual Resposta Resposta { get; set; }
         public int Resposta_id { get; set; }

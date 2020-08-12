@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "q8BDHddNafXtkC3RQpH7qEYN2kuiZgZdLJ1AyZdhgWGe/gQ+ouTyV8clvwiOTj/KQE6rTPQ3i8tTz05OXNynfQ==",
+  "dgSpecHash": "/Lgv7dx/7Bz+z11Drp1OzC3JlSYJJ1uGbHBbpkSIHSjnVkZJQ2JHhBOrs0uAPECwxKXN9mxk4QeSDZ/jk38JMA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj",
+  "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
@@ -125,8 +125,7 @@
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.readerwriter\\4.3.0\\system.xml.readerwriter.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xdocument\\4.3.0\\system.xml.xdocument.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmldocument\\4.3.0\\system.xml.xmldocument.4.3.0.nupkg.sha512",
-    "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512",
-    "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+    "C:\\Users\\anabr\\.nuget\\packages\\system.xml.xmlserializer\\4.3.0\\system.xml.xmlserializer.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }

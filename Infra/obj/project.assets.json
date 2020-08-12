@@ -5613,11 +5613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj",
+      "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj",
       "projectName": "Infra",
-      "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj",
+      "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj",
       "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\obj\\",
+      "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5633,8 +5633,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj"
+            "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj"
             }
           }
         }
@@ -5677,18 +5677,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[3.1.2, 3.1.2]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

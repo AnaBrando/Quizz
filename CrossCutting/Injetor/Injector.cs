@@ -1,14 +1,9 @@
-﻿using CrossCutting.Contexto;
-using CrossCutting.User;
-using Domain.Interfaces.Application;
+﻿using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
-using Infra.Context;
 using Infra.Repository;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
-using Service;
-using Service.Perguntas;
+using Service.QuizzService;
 
 namespace CrossCutting
 {
@@ -21,11 +16,10 @@ namespace CrossCutting
             services.AddScoped<IQuizzRepository, QuizzRepository>();
          
             services.AddScoped<IPerguntaRepository, PerguntaRepository>();
-            services.AddScoped<ICategoriaRepository, CategoriaRepository>();
 
 
-            services.AddScoped<IResposta,RespostaService>();
-            services.AddScoped<IPerguntaService, PerguntaService>();
+            services.AddScoped<IQuizzService,QuizzService>();
+          
 
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

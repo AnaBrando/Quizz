@@ -71,40 +71,53 @@ namespace Quizz.Controllers
         [HttpPost, ActionName("LoginPost")]
         public async Task<IActionResult> LoginPost([FromForm] UsuarioDTO loginModel)
         {
-            var user = await _signInManager.UserManager.FindByNameAsync(loginModel.UserName);
-          
-            if (user != null)
+            if (!string.IsNullOrEmpty(loginModel.UserName))
             {
-                var roles = await _signInManager.UserManager.GetRolesAsync(user);
-                if (ModelState.IsValid)
+                var user = await _signInManager.UserManager.FindByNameAsync(loginModel.UserName);
+
+                if (user != null)
                 {
-                    var EhProfessor = roles.Where(x => x.Equals("Professora")).Any();
-                    if (EhProfessor)
+                    var roles = await _signInManager.UserManager.GetRolesAsync(user);
+                    if (ModelState.IsValid)
                     {
-                        var result = await _signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, false);
-
-                        if (result.Succeeded)
-                            return RedirectToAction("Gerenciamento", "Professor", new { id = user.Id });
-                    }
-
-
-                    else
-                    {
-                        var EhAluno = roles.Where(x => x.Equals("Aluno")).Any();
-                        if (EhAluno)
+                        var EhProfessor = roles.Where(x => x.Equals("Professor")).Any();
+                        if (EhProfessor)
                         {
                             var result = await _signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, false);
 
                             if (result.Succeeded)
-                                return RedirectToAction("Aluno", "Quizz", new { id = user.Id });
+                                return RedirectToAction("Gerenciamento", "Professor", new { id = user.Id });
+                        }
+
+
+                        else
+                        {
+                            var EhAluno = roles.Where(x => x.Equals("Aluno")).Any();
+                            if (EhAluno)
+                            {
+                                var result = await _signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, false);
+
+                                if (result.Succeeded)
+                                    return RedirectToAction("Aluno", "Quizz", new { id = user.Id });
+                            }
                         }
                     }
+
                 }
+                ModelState.AddModelError("", "Usuário não é professor , tente no usuário jogador.");
+                return RedirectToAction("Index", "Login");
 
             }
-            ModelState.AddModelError("", "Usuário não é professor , tente no usuário jogador.");
+            ModelState.AddModelError("Invalid!", "Usuário Inválido");
             return RedirectToAction("Index", "Login");
+        }
+        public async Task<IActionResult> Logout()
+        {
+            await _signInManager.SignOutAsync();
 
+            return RedirectToAction("Index");
         }
     }
+
 }
+

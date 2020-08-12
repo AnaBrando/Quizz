@@ -64,9 +64,6 @@ namespace CrossCutting.Migrations
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<byte[]>("PhotoFile")
-                        .HasColumnType("varbinary(max)");
-
                     b.Property<decimal?>("Pontuacao")
                         .HasColumnType("decimal(18,2)");
 

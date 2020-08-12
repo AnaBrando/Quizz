@@ -8,7 +8,7 @@ namespace Quizz.Controllers
 {
     public class ProfessorController : Controller
     {
-        public IActionResult Gerenciamento()
+        public IActionResult Index()
         {
             return View();
         }

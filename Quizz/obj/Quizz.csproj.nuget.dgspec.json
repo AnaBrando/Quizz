@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\Quizz\\Quizz.csproj": {}
+    "C:\\Users\\anabr\\Documents\\Quizz\\Quizz\\Quizz.csproj": {}
   },
   "projects": {
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj": {
+    "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj",
         "projectName": "CrossCutting",
-        "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj",
+        "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj",
         "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\obj\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,14 +27,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj"
               },
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj"
               },
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\Service.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\Service.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj"
               }
             }
           }
@@ -95,29 +95,23 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj": {
+    "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -153,29 +147,23 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj": {
+    "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj",
         "projectName": "Infra",
-        "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\Infra.csproj",
+        "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\Infra.csproj",
         "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Infra\\obj\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\Infra\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -191,8 +179,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj"
               }
             }
           }
@@ -235,29 +223,23 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\Quizz\\Quizz.csproj": {
+    "C:\\Users\\anabr\\Documents\\Quizz\\Quizz\\Quizz.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\Quizz\\Quizz.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\Quizz\\Quizz.csproj",
         "projectName": "Quizz",
-        "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Quizz\\Quizz.csproj",
+        "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Quizz\\Quizz.csproj",
         "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Quizz\\obj\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\Quizz\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -273,8 +255,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\CrossCutting\\CrossCutting.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj"
               }
             }
           }
@@ -308,6 +290,10 @@
               "target": "Package",
               "version": "[3.1.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.6, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -320,7 +306,7 @@
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.3, )"
+              "version": "[3.1.4, )"
             }
           },
           "imports": [
@@ -333,12 +319,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -347,18 +327,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\Service.csproj": {
+    "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\Service.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\Service.csproj",
+        "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj",
         "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Service\\obj\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\Quizz\\Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -374,8 +354,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\anabr\\source\\repos\\Quizz\\Domain\\Domain.csproj"
+              "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj"
               }
             }
           }
@@ -398,18 +378,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.2, 3.1.2]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

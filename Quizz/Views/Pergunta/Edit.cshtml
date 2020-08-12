@@ -1,0 +1,66 @@
+﻿@model Domain.Pergunta
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Pergunta</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Pergunta_id" />
+            <div class="form-group">
+                <label asp-for="OpcaoA" class="control-label"></label>
+                <input asp-for="OpcaoA" class="form-control" />
+                <span asp-validation-for="OpcaoA" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoB" class="control-label"></label>
+                <input asp-for="OpcaoB" class="form-control" />
+                <span asp-validation-for="OpcaoB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoC" class="control-label"></label>
+                <input asp-for="OpcaoC" class="form-control" />
+                <span asp-validation-for="OpcaoC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoD" class="control-label"></label>
+                <input asp-for="OpcaoD" class="form-control" />
+                <span asp-validation-for="OpcaoD" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoCerta" class="control-label"></label>
+                <input asp-for="OpcaoCerta" class="form-control" />
+                <span asp-validation-for="OpcaoCerta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quizz_id" class="control-label"></label>
+                <input asp-for="Quizz_id" class="form-control" />
+                <span asp-validation-for="Quizz_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resposta_id" class="control-label"></label>
+                <input asp-for="Resposta_id" class="form-control" />
+                <span asp-validation-for="Resposta_id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

@@ -1,0 +1,66 @@
+﻿@model Domain.Pergunta
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Pergunta</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpcaoA)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpcaoA)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpcaoB)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpcaoB)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpcaoC)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpcaoC)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpcaoD)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpcaoD)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.OpcaoCerta)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.OpcaoCerta)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quizz_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quizz_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Resposta_id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Resposta_id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descricao)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descricao)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Pergunta_id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
