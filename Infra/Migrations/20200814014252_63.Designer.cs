@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20200812163845_56")]
-    partial class _56
+    [Migration("20200814014252_63")]
+    partial class _63
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,15 +45,15 @@ namespace Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Pontuacao_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Pontuacao_ID1")
+                    b.Property<int?>("Pontuacao_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Nivel_id");
 
-                    b.HasIndex("Pontuacao_ID1");
+                    b.HasIndex("Pontuacao_ID");
 
                     b.ToTable("Nivel");
                 });
@@ -101,13 +101,10 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Professor_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Professor_ID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Professor_ID1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Turma_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Quiz_id");
@@ -203,7 +200,7 @@ namespace Infra.Migrations
                 {
                     b.HasOne("Domain.Models.Pontuacao", "Pontuacao")
                         .WithMany()
-                        .HasForeignKey("Pontuacao_ID1");
+                        .HasForeignKey("Pontuacao_ID");
                 });
 
             modelBuilder.Entity("Domain.Models.Quizz", b =>
@@ -229,7 +226,7 @@ namespace Infra.Migrations
             modelBuilder.Entity("Domain.Pergunta", b =>
                 {
                     b.HasOne("Domain.Models.Nivel", "Nivel")
-                        .WithMany("Perguntas")
+                        .WithMany()
                         .HasForeignKey("Nivel_id");
 
                     b.HasOne("Domain.Models.Quizz", "Quizz")

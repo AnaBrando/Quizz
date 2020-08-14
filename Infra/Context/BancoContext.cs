@@ -1,6 +1,7 @@
 ﻿using Domain;
 using Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Infra.Context
 {
@@ -52,6 +53,11 @@ namespace Infra.Context
             modelBuilder.Entity<Pergunta>().HasOne(t => t.Resposta).WithOne(t => t.Pergunta).HasForeignKey<Resposta>(b => b.Pergunta_id);
            
             modelBuilder.Entity<Professor>().HasKey(p => p.Professor_ID);
+        }
+
+        internal int Where()
+        {
+            throw new NotImplementedException();
         }
     }
 }

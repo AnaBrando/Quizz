@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20200812145532_1")]
+    [Migration("20200814020033_1")]
     partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,14 +31,9 @@ namespace Infra.Migrations
                     b.Property<int?>("Resposta_id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Turma_ID")
-                        .HasColumnType("int");
-
                     b.HasKey("Estudante_ID");
 
                     b.HasIndex("Resposta_id");
-
-                    b.HasIndex("Turma_ID");
 
                     b.ToTable("Estudante");
                 });
@@ -49,6 +44,9 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pontuacao_ID")
                         .HasColumnType("int");
@@ -106,23 +104,15 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Professor_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Professor_ID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Professor_ID1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Turma_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Turma_ID1")
                         .HasColumnType("int");
 
                     b.HasKey("Quiz_id");
 
                     b.HasIndex("Professor_ID1");
-
-                    b.HasIndex("Turma_ID1");
 
                     b.ToTable("Quizz");
                 });
@@ -154,23 +144,6 @@ namespace Infra.Migrations
                         .IsUnique();
 
                     b.ToTable("Resposta");
-                });
-
-            modelBuilder.Entity("Domain.Models.Turma", b =>
-                {
-                    b.Property<int>("Turma_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("QuizzQuiz_id")
-                        .HasColumnType("int");
-
-                    b.HasKey("Turma_ID");
-
-                    b.HasIndex("QuizzQuiz_id");
-
-                    b.ToTable("Turma");
                 });
 
             modelBuilder.Entity("Domain.Pergunta", b =>
@@ -224,10 +197,6 @@ namespace Infra.Migrations
                     b.HasOne("Domain.Models.Resposta", null)
                         .WithMany("Estudante_Reposta")
                         .HasForeignKey("Resposta_id");
-
-                    b.HasOne("Domain.Models.Turma", "Turma")
-                        .WithMany()
-                        .HasForeignKey("Turma_ID");
                 });
 
             modelBuilder.Entity("Domain.Models.Nivel", b =>
@@ -242,10 +211,6 @@ namespace Infra.Migrations
                     b.HasOne("Domain.Models.Professor", "Professor")
                         .WithMany()
                         .HasForeignKey("Professor_ID1");
-
-                    b.HasOne("Domain.Models.Turma", null)
-                        .WithMany("Quizzs")
-                        .HasForeignKey("Turma_ID1");
                 });
 
             modelBuilder.Entity("Domain.Models.Resposta", b =>
@@ -261,21 +226,14 @@ namespace Infra.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Models.Turma", b =>
-                {
-                    b.HasOne("Domain.Models.Quizz", null)
-                        .WithMany("Turmas")
-                        .HasForeignKey("QuizzQuiz_id");
-                });
-
             modelBuilder.Entity("Domain.Pergunta", b =>
                 {
                     b.HasOne("Domain.Models.Nivel", "Nivel")
-                        .WithMany("Perguntas")
+                        .WithMany()
                         .HasForeignKey("Nivel_id");
 
                     b.HasOne("Domain.Models.Quizz", "Quizz")
-                        .WithMany()
+                        .WithMany("Perguntas")
                         .HasForeignKey("QuizzQuiz_id");
                 });
 #pragma warning restore 612, 618

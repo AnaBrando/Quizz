@@ -34,8 +34,8 @@ namespace Quizz.Controllers
         {
             var professorId =  await _userManager.FindByNameAsync(User.Identity.Name);
             quizzDTO.Professor_ID = professorId.Id;
-            _service.Add(quizzDTO);
-            return RedirectToAction("Create", "Pergunta");
+            var e = _service.Add(quizzDTO);
+            return RedirectToAction("Create", "Pergunta",new {id=e});
         }
     }
 }

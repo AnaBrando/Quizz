@@ -15,18 +15,26 @@ namespace Service.QuizzService
             this.repo = quizzRepository;
         }
 
-        public void Add(QuizzDTO user)
+        public int Add(QuizzDTO user)
         {
             var quizz = new Quizz();
             quizz.DataInclusão = DateTime.Now;
             quizz.Descricao = user.Descricao;
             quizz.Professor_ID = user.Professor_ID;
-            repo.Add(quizz);
+            var x = repo.Add(quizz);
+            return x.Result;
+        }
+
+        public void Save()
+        {
+            repo.Save();
         }
 
         public void Update(QuizzDTO user)
         {
             throw new NotImplementedException();
         }
+
+       
     }
 }

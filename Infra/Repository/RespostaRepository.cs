@@ -3,7 +3,7 @@ using Domain.Models;
 
 namespace Infra.Repository
 {
-    public class RespostaRepository : RepositoryBase<Resposta> ,IRespostaRepository
+    public class RespostaRepository : RepositoryBase<Resposta>, IRespostaRepository
     {
     }
 }

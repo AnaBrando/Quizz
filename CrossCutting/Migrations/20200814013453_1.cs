@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CrossCutting.Migrations
 {
-    public partial class _0064 : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,8 +40,6 @@ namespace CrossCutting.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Discriminator = table.Column<string>(nullable: false),
-                    PhotoFile = table.Column<byte[]>(nullable: true),
                     ImageName = table.Column<string>(nullable: true),
                     ProfessorId = table.Column<string>(nullable: true),
                     RoleName = table.Column<string>(nullable: true),

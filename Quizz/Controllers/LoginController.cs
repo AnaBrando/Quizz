@@ -86,7 +86,7 @@ namespace Quizz.Controllers
                             var result = await _signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, false);
 
                             if (result.Succeeded)
-                                return RedirectToAction("Gerenciamento", "Professor", new { id = user.Id });
+                                return RedirectToAction("Index", "Professor", new { id = user.Id });
                         }
 
 

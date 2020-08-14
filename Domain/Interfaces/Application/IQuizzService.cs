@@ -8,8 +8,9 @@ namespace Domain.Interfaces.Application
 {
     public interface IQuizzService
     {
-        void Add(QuizzDTO user);
+        int Add(QuizzDTO user);
         void Update(QuizzDTO user);
 
+        void Save();
     }
 }

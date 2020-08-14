@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20200812162752_45")]
-    partial class _45
+    [Migration("20200814013528_2")]
+    partial class _2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -44,6 +44,9 @@ namespace Infra.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Pontuacao_ID")
                         .HasColumnType("int");
@@ -101,13 +104,10 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Professor_ID")
-                        .HasColumnType("int");
+                    b.Property<string>("Professor_ID")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("Professor_ID1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Turma_ID")
                         .HasColumnType("int");
 
                     b.HasKey("Quiz_id");
@@ -229,7 +229,7 @@ namespace Infra.Migrations
             modelBuilder.Entity("Domain.Pergunta", b =>
                 {
                     b.HasOne("Domain.Models.Nivel", "Nivel")
-                        .WithMany("Perguntas")
+                        .WithMany()
                         .HasForeignKey("Nivel_id");
 
                     b.HasOne("Domain.Models.Quizz", "Quizz")

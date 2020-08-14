@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrossCutting.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20200812145625_2")]
-    partial class _2
+    [Migration("20200814013453_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -65,9 +65,6 @@ namespace CrossCutting.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<byte[]>("PhotoFile")
-                        .HasColumnType("varbinary(max)");
 
                     b.Property<decimal?>("Pontuacao")
                         .HasColumnType("decimal(18,2)");

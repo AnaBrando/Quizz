@@ -43,6 +43,9 @@ namespace Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("Pontuacao_ID")
                         .HasColumnType("int");
 
@@ -224,7 +227,7 @@ namespace Infra.Migrations
             modelBuilder.Entity("Domain.Pergunta", b =>
                 {
                     b.HasOne("Domain.Models.Nivel", "Nivel")
-                        .WithMany("Perguntas")
+                        .WithMany()
                         .HasForeignKey("Nivel_id");
 
                     b.HasOne("Domain.Models.Quizz", "Quizz")
