@@ -3,6 +3,10 @@ using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Threading.Tasks;
 
 namespace Service.QuizzService
 {
@@ -15,14 +19,31 @@ namespace Service.QuizzService
             this.repo = quizzRepository;
         }
 
-        public int Add(QuizzDTO user)
+
+        public void Add(QuizzDTO user)
         {
             var quizz = new Quizz();
-            quizz.DataInclusão = DateTime.Now;
+            quizz.DataInclusao = DateTime.Now;
             quizz.Descricao = user.Descricao;
-            quizz.Professor_ID = user.Professor_ID;
+            quizz.ProfessorSessao = user.Professor_ID;
             var x = repo.Add(quizz);
-            return x.Result;
+           
+        }
+
+        public Task<int> AddQuizz(QuizzDTO user)
+        {
+            var quizz = new Quizz();
+            quizz.DataInclusao = DateTime.Now;
+            quizz.Descricao = user.Descricao;
+            quizz.ProfessorSessao = user.Professor_ID;
+            var x = repo.AddQuizz(quizz);
+            return x;
+        }
+
+        public List<Quizz> QuizzByProfessorID(string id)
+        {
+            var quiss = repo.GetAll().Result.Where(x => x.ProfessorSessao == id);
+            return quiss.ToList();
         }
 
         public void Save()

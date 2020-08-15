@@ -1,7 +1,6 @@
-﻿using Domain;
-using Domain.Models;
+﻿using Domain.Models;
+using Infra.Mapping;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace Infra.Context
 {
@@ -28,36 +27,17 @@ namespace Infra.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfiguration(new EstudanteConfiguration());
+            modelBuilder.ApplyConfiguration(new NivelConfiguration());
+            modelBuilder.ApplyConfiguration(new PerguntaConfiguration());
+            modelBuilder.ApplyConfiguration(new ProfessorConfiguration());
+            modelBuilder.ApplyConfiguration(new QuizzConfiguration());
+            modelBuilder.ApplyConfiguration(new RespostaConfiguration());
 
 
-            modelBuilder.Entity<Resposta>().HasKey(p => p.Resposta_id);
-            modelBuilder.Entity<Resposta>().HasMany(x => x.Estudante_Reposta);
-            modelBuilder.Entity<Resposta>().HasOne(t => t.Pergunta).WithOne(t => t.Resposta).HasForeignKey<Pergunta>(b => b.Pergunta_id);
-
-            modelBuilder.Entity<Nivel>().HasOne(p => p.Pontuacao);
-            modelBuilder.Entity<Nivel>().HasKey(p => p.Nivel_id);
-
-         
-            modelBuilder.Entity<Quizz>().HasKey(p => p.Quiz_id);
-            modelBuilder.Entity<Quizz>().HasMany(p => p.Perguntas);
-
-
-            modelBuilder.Entity<Estudante>().HasKey(p=>p.Estudante_ID);
-            modelBuilder.Entity<Estudante>().HasMany(p => p.Resposta_Estudante);
-
-            modelBuilder.Entity<Pontuacao>().HasKey(p => p.Pontuacao_ID);
-
-            modelBuilder.Entity<Pergunta>().HasKey(p => p.Pergunta_id);
-            modelBuilder.Entity<Pergunta>().HasOne(p => p.Nivel);
-            modelBuilder.Entity<Pergunta>().HasOne(t => t.Resposta).WithOne(t => t.Pergunta).HasForeignKey<Resposta>(b => b.Pergunta_id);
-           
-            modelBuilder.Entity<Professor>().HasKey(p => p.Professor_ID);
-        }
-
-        internal int Where()
-        {
-            throw new NotImplementedException();
         }
     }
+
+
 }
+

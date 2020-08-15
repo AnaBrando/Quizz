@@ -3,10 +3,8 @@
 @{
     ViewData["Title"] = "Create";
 }
-
-<h1>Create</h1>
-
-<h4>Pergunta</h4>
+ 
+<h4>Pergunta 1 </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -55,8 +53,8 @@
                 <span asp-validation-for="Resposta_id" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label class="control-label">Nivel de Dificuldade</label>
-                <select asp-for="Nivel_ID">
+                <label class="control-label"  >Nivel de Dificuldade</label>
+                <select asp-for="Nivel_ID" class="form-control">
                     @foreach (var item in Model.niveis)
                     {
                         <option value="@item.Nivel_id">@item.Descricao</option>

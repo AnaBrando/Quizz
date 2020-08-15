@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Service.NivelService;
 using Service.PerguntaService;
 using Service.PontuacaoService;
+using Service.ProfessorService;
 using Service.QuizzService;
 
 namespace CrossCutting
@@ -20,11 +21,12 @@ namespace CrossCutting
             services.AddScoped<IQuizzRepository, QuizzRepository>();
             services.AddScoped<IPontuacaoRepository, PontuacaoRepository>();
             services.AddScoped<IPerguntaRepository, PerguntaRepository>();
-
+            services.AddScoped<IProfessorRepository, ProfessorRepository>();
 
             services.AddScoped<IQuizzService,QuizzService>();
             services.AddScoped<IPerguntaService, PerguntaService>();
             services.AddScoped<IPerguntaService, PerguntaService>();
+            services.AddScoped<IProfessorService, ProfessorService>();
 
             services.AddScoped<INivelService, NivelService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

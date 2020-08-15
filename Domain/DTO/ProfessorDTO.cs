@@ -6,6 +6,15 @@ namespace Domain.DTO
 {
     public class ProfessorDTO
     {
-        public int Professor_ID { get; set; }
+        public ProfessorDTO()
+        {
+            Quizz = new HashSet<QuizzDTO>();
+        }
+
+        public int ProfessorId { get; set; }
+        public string ProfessorSessao { get; set; }
+
+        public virtual ICollection<QuizzDTO> Quizz { get; set; }
     }
 }
+

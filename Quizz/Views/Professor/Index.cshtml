@@ -1,8 +1,32 @@
-﻿
+﻿@model List<Domain.Models.Quizz>
 @{
     ViewData["Title"] = "Gerenciamento";
 }
 
-<span><a asp-action="Index" asp-controller="Quizz">Criar Quizz</a></span>
+<h3><a asp-action="Create" asp-controller="Quizz">Criar Quizz</a></h3>
 
-
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+            Bem vindo Professor!
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.QuizzId">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.QuizzId">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.QuizzId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,7 +2,7 @@
 
 namespace CrossCutting.Migrations
 {
-    public partial class _6 : Migration
+    public partial class _563 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

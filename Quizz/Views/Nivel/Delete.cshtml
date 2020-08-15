@@ -12,15 +12,15 @@
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Pontuacao.Pontuacao_ID)
+            @Html.DisplayNameFor(model => model.Pontuacao.PontuacaoId)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Pontuacao.Pontuacao_ID)
+            @Html.DisplayFor(model => model.Pontuacao.PontuacaoId)
         </dd>
     </dl>
     
     <form asp-action="Delete">
-        <input type="hidden" asp-for="Nivel_id" />
+        <input type="hidden" asp-for="NivelId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-action="Index">Back to List</a>
     </form>

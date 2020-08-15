@@ -5,5 +5,6 @@ namespace Domain.Interfaces.Repository
 {
     public interface IQuizzRepository : IRepositoryBase<Quizz>
     {
+
     }
 }

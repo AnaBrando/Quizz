@@ -17,7 +17,7 @@ namespace Service.PontuacaoService
         public void Add(PontuacaoDTO pontuacao)
         {
             var ponto = new Pontuacao();
-            ponto.Valor = pontuacao.Valor;
+            ponto.Valor = (float)pontuacao.Valor;
             _repo.Add(ponto);
         }
 

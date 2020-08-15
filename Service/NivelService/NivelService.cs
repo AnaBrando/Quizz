@@ -20,8 +20,8 @@ namespace Service.NivelService
         {
             var nivel = new Nivel();
             nivel.Descricao = pergunta.Descricao;
-            nivel.Pontuacao.Pontuacao_ID = pergunta.Pontuacao_ID;
-            nivel.Pontuacao.Pontuacao_ID = pergunta.Pontuacao_ID;
+            nivel.Pontuacao.PontuacaoId = pergunta.Pontuacao_ID;
+            nivel.Pontuacao.PontuacaoId = pergunta.Pontuacao_ID;
             _repo.Add(nivel);
         }
 
@@ -34,9 +34,9 @@ namespace Service.NivelService
                 foreach (var item in x)
                 {
                     var nivelDto = new NivelDTO();
-                    nivelDto.Nivel_id = item.Nivel_id;
+                    nivelDto.Nivel_id = item.NivelId;
                     nivelDto.Descricao = item.Descricao;
-                    nivelDto.Pontuacao_ID = item.Pontuacao_ID;
+                    nivelDto.Pontuacao_ID = item.PontuacaoId;
                     pergunta.niveis.Add(nivelDto);
                 }
             }

@@ -2,6 +2,7 @@
 using Domain.DTO;
 using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,6 +21,7 @@ namespace Service.PerguntaService
         }
         public void Add(PerguntaDTO pergunta)
         {
+            
             var obj = new Pergunta();
             obj.Descricao = pergunta.Descricao;
             obj.OpcaoA = pergunta.OpcaoA;
@@ -27,8 +29,16 @@ namespace Service.PerguntaService
             obj.OpcaoC = pergunta.OpcaoC;
             obj.OpcaoD = pergunta.OpcaoD;
             obj.OpcaoCerta = pergunta.Resposta_id;
-            //obj.Nivel = pergunta.NivelDTO;
-            //perguntaRepository.Add(pergunta);
+            obj.NivelId = pergunta.Nivel_ID;
+            try
+            {
+                perguntaRepository.Add(obj);
+            }
+            catch(Exception ex)
+            {
+                ex.Message.ToString();
+            }
+           
         }
 
         public void Save()

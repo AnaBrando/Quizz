@@ -21,24 +21,22 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.Models.Estudante", b =>
                 {
-                    b.Property<int>("Estudante_ID")
+                    b.Property<int>("EstudanteId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("Resposta_id")
-                        .HasColumnType("int");
+                    b.Property<string>("EstudanteSessao")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Estudante_ID");
-
-                    b.HasIndex("Resposta_id");
+                    b.HasKey("EstudanteId");
 
                     b.ToTable("Estudante");
                 });
 
             modelBuilder.Entity("Domain.Models.Nivel", b =>
                 {
-                    b.Property<int>("Nivel_id")
+                    b.Property<int>("NivelId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -46,107 +44,19 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Pontuacao_ID")
+                    b.Property<int>("PontuacaoId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Pontuacao_ID1")
-                        .HasColumnType("int");
+                    b.HasKey("NivelId");
 
-                    b.HasKey("Nivel_id");
-
-                    b.HasIndex("Pontuacao_ID1");
+                    b.HasIndex("PontuacaoId");
 
                     b.ToTable("Nivel");
                 });
 
-            modelBuilder.Entity("Domain.Models.Pontuacao", b =>
+            modelBuilder.Entity("Domain.Models.Pergunta", b =>
                 {
-                    b.Property<int>("Pontuacao_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<decimal>("Valor")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.HasKey("Pontuacao_ID");
-
-                    b.ToTable("Pontuacao");
-                });
-
-            modelBuilder.Entity("Domain.Models.Professor", b =>
-                {
-                    b.Property<int>("Professor_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("Professor_ID");
-
-                    b.ToTable("Professor");
-                });
-
-            modelBuilder.Entity("Domain.Models.Quizz", b =>
-                {
-                    b.Property<int>("Quiz_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime>("DataInclusão")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Professor_ID")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("Professor_ID1")
-                        .HasColumnType("int");
-
-                    b.HasKey("Quiz_id");
-
-                    b.HasIndex("Professor_ID1");
-
-                    b.ToTable("Quizz");
-                });
-
-            modelBuilder.Entity("Domain.Models.Resposta", b =>
-                {
-                    b.Property<int>("Resposta_id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Estudante_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Estudante_ID1")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Pergunta_id")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RespostaCerta")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Resposta_id");
-
-                    b.HasIndex("Estudante_ID1");
-
-                    b.HasIndex("Pergunta_id")
-                        .IsUnique();
-
-                    b.ToTable("Resposta");
-                });
-
-            modelBuilder.Entity("Domain.Pergunta", b =>
-                {
-                    b.Property<int>("Pergunta_id")
+                    b.Property<int>("PerguntaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -154,7 +64,7 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Nivel_id")
+                    b.Property<int?>("NivelId")
                         .HasColumnType("int");
 
                     b.Property<string>("OpcaoA")
@@ -172,67 +82,148 @@ namespace Infra.Migrations
                     b.Property<string>("OpcaoD")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("QuizzQuiz_id")
+                    b.Property<int?>("QuizzId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quizz_id")
+                    b.Property<int?>("RespostaId")
                         .HasColumnType("int");
 
-                    b.Property<int>("Resposta_id")
-                        .HasColumnType("int");
+                    b.HasKey("PerguntaId");
 
-                    b.HasKey("Pergunta_id");
+                    b.HasIndex("NivelId");
 
-                    b.HasIndex("Nivel_id");
+                    b.HasIndex("QuizzId");
 
-                    b.HasIndex("QuizzQuiz_id");
+                    b.HasIndex("RespostaId");
 
                     b.ToTable("Pergunta");
                 });
 
-            modelBuilder.Entity("Domain.Models.Estudante", b =>
+            modelBuilder.Entity("Domain.Models.Pontuacao", b =>
                 {
-                    b.HasOne("Domain.Models.Resposta", null)
-                        .WithMany("Estudante_Reposta")
-                        .HasForeignKey("Resposta_id");
+                    b.Property<int>("PontuacaoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<double>("Valor")
+                        .HasColumnType("float");
+
+                    b.HasKey("PontuacaoId");
+
+                    b.ToTable("Pontuacao");
+                });
+
+            modelBuilder.Entity("Domain.Models.Professor", b =>
+                {
+                    b.Property<int>("ProfessorId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ProfessorSessao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("ProfessorId");
+
+                    b.ToTable("Professor");
+                });
+
+            modelBuilder.Entity("Domain.Models.Quizz", b =>
+                {
+                    b.Property<int>("QuizzId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DataInclusao")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProfessorId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfessorSessao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("QuizzId");
+
+                    b.HasIndex("ProfessorId");
+
+                    b.ToTable("Quizz");
+                });
+
+            modelBuilder.Entity("Domain.Models.Resposta", b =>
+                {
+                    b.Property<int>("RespostaId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("EstudanteId")
+                        .HasColumnType("int");
+
+                    b.HasKey("RespostaId");
+
+                    b.HasIndex("EstudanteId");
+
+                    b.ToTable("Resposta");
                 });
 
             modelBuilder.Entity("Domain.Models.Nivel", b =>
                 {
                     b.HasOne("Domain.Models.Pontuacao", "Pontuacao")
-                        .WithMany()
-                        .HasForeignKey("Pontuacao_ID1");
+                        .WithMany("Nivel")
+                        .HasForeignKey("PontuacaoId")
+                        .HasConstraintName("FK_Nivel_Pontuacao")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Models.Pergunta", b =>
+                {
+                    b.HasOne("Domain.Models.Nivel", "Nivel")
+                        .WithMany("Pergunta")
+                        .HasForeignKey("NivelId")
+                        .HasConstraintName("FK_Pergunta_Nivel")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Domain.Models.Quizz", "Quizz")
+                        .WithMany("Pergunta")
+                        .HasForeignKey("QuizzId")
+                        .HasConstraintName("FK_Pergunta_Quizz")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Domain.Models.Resposta", "Resposta")
+                        .WithMany("Pergunta")
+                        .HasForeignKey("RespostaId")
+                        .HasConstraintName("FK_Pergunta_Resposta")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Domain.Models.Quizz", b =>
                 {
                     b.HasOne("Domain.Models.Professor", "Professor")
-                        .WithMany()
-                        .HasForeignKey("Professor_ID1");
-                });
-
-            modelBuilder.Entity("Domain.Models.Resposta", b =>
-                {
-                    b.HasOne("Domain.Models.Estudante", null)
-                        .WithMany("Resposta_Estudante")
-                        .HasForeignKey("Estudante_ID1");
-
-                    b.HasOne("Domain.Pergunta", "Pergunta")
-                        .WithOne("Resposta")
-                        .HasForeignKey("Domain.Models.Resposta", "Pergunta_id")
+                        .WithMany("Quizz")
+                        .HasForeignKey("ProfessorId")
+                        .HasConstraintName("FK_Quizz_Professor")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Domain.Pergunta", b =>
+            modelBuilder.Entity("Domain.Models.Resposta", b =>
                 {
-                    b.HasOne("Domain.Models.Nivel", "Nivel")
-                        .WithMany()
-                        .HasForeignKey("Nivel_id");
-
-                    b.HasOne("Domain.Models.Quizz", "Quizz")
-                        .WithMany("Perguntas")
-                        .HasForeignKey("QuizzQuiz_id");
+                    b.HasOne("Domain.Models.Estudante", "Estudante")
+                        .WithMany("Resposta")
+                        .HasForeignKey("EstudanteId")
+                        .HasConstraintName("FK_Resposta_Estudante")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

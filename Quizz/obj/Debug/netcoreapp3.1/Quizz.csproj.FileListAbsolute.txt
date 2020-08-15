@@ -867,10 +867,6 @@ C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Nivel\D
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Nivel\Edit.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Nivel\Index.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pergunta\Create.cshtml.g.cs
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pergunta\Delete.cshtml.g.cs
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pergunta\Details.cshtml.g.cs
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pergunta\Edit.cshtml.g.cs
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pergunta\Index.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pontuacao\Create.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pontuacao\Delete.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Pontuacao\Details.cshtml.g.cs

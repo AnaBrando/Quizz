@@ -3,6 +3,8 @@ using System.Threading.Tasks;
 using CrossCutting.Contexto;
 using CrossCutting.DTO;
 using CrossCutting.User;
+using Domain.DTO;
+using Domain.Interfaces.Application;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,16 +15,23 @@ namespace Quizz.Controllers
         private readonly SignInManager<Usuario> _signInManager;
         private readonly UserManager<Usuario> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-
-        public LoginController(SignInManager<Usuario> signInManager, UserManager<Usuario> userManager, RoleManager<IdentityRole> roleManager)
+        private readonly IProfessorService _professorService;
+        public LoginController(SignInManager<Usuario> signInManager,
+            UserManager<Usuario> userManager, 
+            RoleManager<IdentityRole> roleManager,
+            IProfessorService service
+           )
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
+            _professorService = service;
+
+
         }
         public IActionResult Index()
         {
-            return View();
+           return View();
         }
         public IActionResult Registro()
         {
@@ -40,7 +49,7 @@ namespace Quizz.Controllers
                     Email = registerModel.Email,
                     RoleName = registerModel.RoleName
                 };
-
+               
                 var result = await _userManager.CreateAsync(user, registerModel.Password);
                 if (result.Succeeded)
                 {
@@ -58,6 +67,11 @@ namespace Quizz.Controllers
                     var resultSignIn = await _signInManager.PasswordSignInAsync(registerModel.UserName, registerModel.Password, false, false);
                     if (resultSignIn.Succeeded)
                     {
+                        var professorId = await _userManager.FindByNameAsync(registerModel.UserName);
+                        var dto = new ProfessorDTO();
+                        dto.ProfessorSessao = professorId.Id;
+                        _professorService.Add(dto);
+                        
                         return RedirectToAction("Index", "Home");
                     }
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Infra.Repository
 {
-    public class EstudanteRepository : RepositoryBase<Estudante> , IEstudanteRepository
+    public class EstudanteRepository : RepositoryBase<Estudante>, IEstudanteRepository
     {
     }
 }

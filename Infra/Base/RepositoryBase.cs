@@ -2,6 +2,7 @@
 using Domain.Models;
 using Infra.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -34,17 +35,40 @@ namespace Infra
             await _db.SaveChangesAsync();
         }
 
-        public async Task<int> Add(TEntity e)
+        public async Task Add(TEntity e)
         {
-            await _db.AddAsync(e);
-             _db.SaveChanges();
-            var q = _db.Quizz.Where(p => p.Equals(e));
-            var i = q.Select(x => x.Quiz_id).FirstOrDefault();
-            return i;
+            try
+            {
+                await _db.AddAsync(e);
+                _db.SaveChanges();
+            }
+            catch(Exception ex)
+            {
+                 var x = ex.InnerException.ToString();
+            }
+            
+            
+        }
+        public async Task<int> AddQuizz(TEntity e)
+        {
+            try
+            {
+                await _db.AddAsync(e);
+                _db.SaveChanges();
+                var q = _db.Quizz.Where(p => p.Equals(e));
+                var i = q.Select(x => x.QuizzId).FirstOrDefault();
+                return i;
+            }
+            catch(Exception ex)
+            {
+                ex.Message.ToString();
+            }
+            return 0;
         }
         public async Task<ICollection<TEntity>> GetAll() =>
              await _db.Set<TEntity>().ToListAsync();
 
+        
         public int Save()
         {
             return _db.SaveChanges();

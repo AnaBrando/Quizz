@@ -7,7 +7,8 @@ namespace Domain.Interfaces.NovaPasta
     {
         Task<ICollection<TEntity>> GetAll();
         Task<TEntity> GetById(int id);
-        Task<int> Add(TEntity e);
+        Task Add(TEntity e);
+        Task<int> AddQuizz(TEntity e);
         Task Update(TEntity e);
         Task Delete(TEntity e);
         int Save(); 
