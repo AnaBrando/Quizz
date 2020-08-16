@@ -67,18 +67,25 @@ namespace Quizz.Controllers
                     var resultSignIn = await _signInManager.PasswordSignInAsync(registerModel.UserName, registerModel.Password, false, false);
                     if (resultSignIn.Succeeded)
                     {
-                        var professorId = await _userManager.FindByNameAsync(registerModel.UserName);
-                        var dto = new ProfessorDTO();
-                        dto.ProfessorSessao = professorId.Id;
-                        _professorService.Add(dto);
-                        
-                        return RedirectToAction("Index", "Home");
+                        var usuario = await _userManager.FindByNameAsync(registerModel.UserName);
+                        if (usuario.RoleName.Equals("Aluno"))
+                        {
+
+                        }
+                        if (usuario.RoleName.Equals("Professor"))
+                        {
+                            var dto = new ProfessorDTO();
+                            dto.ProfessorSessao = usuario.Id;
+                            _professorService.Add(dto);
+                            return RedirectToAction("Index", "Home");
+                        }
+                      
                     }
 
                 }
 
             }
-            return RedirectToAction("Login", "Index");
+            return RedirectToAction("Index", "Login");
 
         }
 

@@ -24,7 +24,8 @@
                 <td>
                     <a asp-action="Edit" asp-route-id="@item.QuizzId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.QuizzId">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.QuizzId">Delete</a>
+                    <a asp-action="Delete" asp-route-id="@item.QuizzId">Delete</a> |
+                    <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId">Perguntas : @item.Pergunta.Count </a>
                 </td>
             </tr>
         }
