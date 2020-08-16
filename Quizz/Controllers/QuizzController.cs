@@ -1,15 +1,12 @@
 ﻿using CrossCutting.User;
 using Domain.DTO;
 using Domain.Interfaces.Application;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace Quizz.Controllers
 {
-
     public class QuizzController : Controller
     {
         public readonly IQuizzService _service;
@@ -23,7 +20,13 @@ namespace Quizz.Controllers
 
         public IActionResult Index()
         {
-            return View();
+        
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
+                return RedirectToAction("Index", "Professor", new { id = userId });
+            }
+            return RedirectToAction("Index","Login");
         }
         public IActionResult Create()
         {
@@ -33,7 +36,7 @@ namespace Quizz.Controllers
         public async Task<IActionResult> CriarQuizz(QuizzDTO quizzDTO)
         {
             var professorId =  await _userManager.FindByNameAsync(User.Identity.Name);
-            quizzDTO.Professor_ID = professorId.Id;
+            quizzDTO.ProfessorSessao = professorId.Id;
             var e = _service.AddQuizz(quizzDTO).Result;
 
             return RedirectToAction("Create", "Pergunta",new {id=e});

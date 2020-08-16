@@ -28,8 +28,9 @@ namespace Service.PerguntaService
             obj.OpcaoB = pergunta.OpcaoB;
             obj.OpcaoC = pergunta.OpcaoC;
             obj.OpcaoD = pergunta.OpcaoD;
-            obj.OpcaoCerta = pergunta.Resposta_id;
-            obj.NivelId = pergunta.Nivel_ID;
+            obj.OpcaoCerta = pergunta.RespostaId;
+            obj.NivelId = pergunta.NivelId;
+            obj.QuizzId = pergunta.QuizzId;
             try
             {
                 perguntaRepository.Add(obj);
@@ -54,7 +55,7 @@ namespace Service.PerguntaService
         async Task<PerguntaDTO> IPerguntaService.QuizzIT(int id)
         {
             var perguntaDTO = new PerguntaDTO();
-            perguntaDTO.Quizz_id =id;
+            perguntaDTO.QuizzId =id;
             return perguntaDTO;
         }
     }

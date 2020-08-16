@@ -11,8 +11,13 @@ namespace Domain.Interfaces.Application
     {
         Task<int> AddQuizz(QuizzDTO user);
         void Update(QuizzDTO user);
-
+        QuizzDTO GeyById(int id);
         List<Quizz> QuizzByProfessorID(string id);
         void Save();
+
+        bool Delete(int id);
+        bool EditPost(QuizzDTO dto);
+
+     
     }
 }

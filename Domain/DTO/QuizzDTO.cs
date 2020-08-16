@@ -1,18 +1,23 @@
 ﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Domain.DTO
 {
     public class QuizzDTO
     {
-        public int Quiz_id { get; set; }
+        public QuizzDTO()
+        {
+            Pergunta = new HashSet<PerguntaDTO>();
+        }
+
+        public int QuizzId { get; set; }
+        public int ProfessorId { get; set; }
+        public DateTime DataInclusao { get; set; }
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
-        public DateTime DataInclusão { get; set; }
-        public string Professor_ID { get; set; }
-        public virtual ProfessorDTO ProfessorDTO { get; set; }
-        public virtual ICollection<PerguntaDTO> PerguntasDTO { get; set; }
+        public virtual ICollection<PerguntaDTO> Pergunta { get; set; }
+        public string ProfessorSessao { get; set; }
+        public virtual ProfessorDTO Professor { get; set; }
     }
 }

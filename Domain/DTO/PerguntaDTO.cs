@@ -19,11 +19,11 @@ namespace Domain.DTO
         public string OpcaoC { get; set; }
         public string OpcaoD { get; set; }
         public virtual RespostaDTO RespostaDTO { get; set; }
-        public int Quizz_id { get; set; }
+        public int QuizzId { get; set; }
         public virtual NivelDTO NivelDTO { get; set; }
 
-        public int Nivel_ID { get; set; }
-        public string Resposta_id { get; set; }
+        public int NivelId { get; set; }
+        public string RespostaId { get; set; }
         public virtual QuizzDTO QuizzDTO { get; set; }
     }
 }

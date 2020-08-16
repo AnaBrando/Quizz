@@ -25,7 +25,7 @@ namespace Service.QuizzService
             var quizz = new Quizz();
             quizz.DataInclusao = DateTime.Now;
             quizz.Descricao = user.Descricao;
-            quizz.ProfessorSessao = user.Professor_ID;
+            quizz.ProfessorSessao = user.ProfessorSessao;
             var x = repo.Add(quizz);
            
         }
@@ -35,9 +35,56 @@ namespace Service.QuizzService
             var quizz = new Quizz();
             quizz.DataInclusao = DateTime.Now;
             quizz.Descricao = user.Descricao;
-            quizz.ProfessorSessao = user.Professor_ID;
+            quizz.ProfessorSessao = user.ProfessorSessao;
             var x = repo.AddQuizz(quizz);
             return x;
+        }
+
+        public bool Delete(int id)
+        {
+            var quizz = repo.GetById(id).Result;
+            if(quizz != null)
+            {
+                repo.Delete(quizz);
+                return true;
+            }
+            return false;
+        }
+
+      
+
+        public bool EditPost(QuizzDTO dto)
+        {
+            if(dto != null)
+            {
+                var data = DateTime.Now;
+                var quizz = repo.GetById(dto.QuizzId).Result;
+                if (quizz != null)
+                {
+                    quizz.Descricao = dto.Descricao;
+                    quizz.Ativo = dto.Ativo;
+                    quizz.DataInclusao = data;
+                    repo.Update(quizz);
+                    return true;
+                }
+
+            }
+            return false;
+        }
+
+        public QuizzDTO GeyById(int id)
+        {
+            var result = repo.GetById(id).Result;
+            var dto = new QuizzDTO();
+
+            dto.Ativo = result.Ativo;
+            dto.DataInclusao = result.DataInclusao;
+            dto.Descricao = result.Descricao;
+            dto.ProfessorId = result.ProfessorId;
+            dto.ProfessorSessao = result.ProfessorSessao;
+            dto.QuizzId = result.QuizzId;
+
+            return dto;
         }
 
         public List<Quizz> QuizzByProfessorID(string id)
