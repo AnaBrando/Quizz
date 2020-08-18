@@ -1,4 +1,6 @@
 ﻿@model List<Domain.Models.Quizz>
+
+
 @{
     ViewData["Title"] = "Gerenciamento";
 }
@@ -9,7 +11,7 @@
     <thead>
         <tr>
             <th>
-            Bem vindo Professor!
+                Bem vindo Professor!
             </th>
             <th></th>
         </tr>
@@ -19,7 +21,7 @@
         {
             var qtdPergunta = @item.Pergunta.Count;
 
-            if(qtdPergunta.Equals(0) || qtdPergunta.Equals(1))
+            if (qtdPergunta.Equals(0) || qtdPergunta.Equals(1))
             {
                 qtdPergunta = 1;
             }
@@ -39,8 +41,9 @@
                     <a asp-action="Edit" asp-route-id="@item.QuizzId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.QuizzId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.QuizzId">Delete</a> |
-                    <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId">Perguntas : @qtdPergunta </a> |
-                    @Html.ValidationSummary()
+                    <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId" onclick="Validation()">Criar Pergunta</a> |
+                    Perguntas :<span id="PgtQtd">@qtdPergunta</span>
+                    <span id="limite" style="color:red;font-size:1.3em;"></span>
 
                 </td>
             </tr>

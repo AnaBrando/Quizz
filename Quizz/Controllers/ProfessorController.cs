@@ -23,11 +23,10 @@ namespace Quizz.Controllers
         }
         public IActionResult Index(string id)
         {
-          
             if (id != null && !string.IsNullOrEmpty(id))
             {
                 var x = _service.QuizzByProfessorID(id);
-                if(x != null)
+                if(x != null && x.Count > 0)
                 {
                     foreach (var item in x)
                     {
@@ -43,7 +42,8 @@ namespace Quizz.Controllers
                 }
                 return View(x);
             }
-            return RedirectToAction("Index", "Login");
+            ModelState.AddModelError(string.Empty, "Limite de Perguntas Alcançado");
+            return RedirectToAction("Voltar", "Professor");
         }
         public IActionResult Voltar()
         {

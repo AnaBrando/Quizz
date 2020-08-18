@@ -41,7 +41,7 @@ namespace Quizz.Controllers
 
             }
             
-            return RedirectToAction("Index", "Professor", new { id = "LimitePergunta" });
+            return RedirectToAction("Voltar", "Professor");
         }
 
         public IActionResult PerguntaPost(PerguntaDTO perguntaDTO)
