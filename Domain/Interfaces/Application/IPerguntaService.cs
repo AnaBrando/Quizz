@@ -1,4 +1,5 @@
 ﻿using Domain.DTO;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,6 +12,6 @@ namespace Domain.Interfaces.Application
         void Add(PerguntaDTO pergunta);
         void Update(PerguntaDTO pergunta);
         void Save();
-        Task<PerguntaDTO> QuizzIT(int id);
+        Task<Pergunta> QuizzIT(int id);
     }
 }

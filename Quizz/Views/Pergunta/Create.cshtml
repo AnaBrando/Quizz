@@ -4,7 +4,7 @@
     ViewData["Title"] = "Create";
 }
  
-<h4>Pergunta 1 </h4>
+<h4>Pergunta @Model.Quizz.Pergunta.Count()</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -44,20 +44,20 @@
             </div>
             <div class="form-group">
                 <label class="control-label">Resposta</label>
-                <select asp-for="QuizzId" class="form-control">
+                <select asp-for="OpcaoCerta" class="form-control">
                     <option>A</option>
                     <option>B</option>
                     <option>C</option>
                     <option>D</option>
                 </select>
-                <span asp-validation-for="RespostaId" class="text-danger"></span>
+                <span asp-validation-for="OpcaoCerta" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label class="control-label"  >Nivel de Dificuldade</label>
                 <select asp-for="NivelId" class="form-control">
                     @foreach (var item in Model.niveis)
                     {
-                        <option value="@item.Nivel_id">@item.Descricao</option>
+                        <option value="@item.NivelId">@item.Descricao</option>
                     }
                 </select>
             </div>

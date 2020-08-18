@@ -31,7 +31,7 @@ namespace CrossCutting
             services.AddScoped<INivelService, NivelService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-            services.AddTransient<BancoContext>();
+            services.AddScoped<BancoContext>();
 
          //   services.AddIdentity<Usuario, IdentityRole>()
          //.AddEntityFrameworkStores<UserDbContext>();

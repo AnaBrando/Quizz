@@ -20,27 +20,16 @@ namespace Service.NivelService
         {
             var nivel = new Nivel();
             nivel.Descricao = pergunta.Descricao;
-            nivel.Pontuacao.PontuacaoId = pergunta.Pontuacao_ID;
-            nivel.Pontuacao.PontuacaoId = pergunta.Pontuacao_ID;
+            nivel.Pontuacao.PontuacaoId = pergunta.PontuacaoId;
+            nivel.Pontuacao.PontuacaoId = pergunta.PontuacaoId;
             _repo.Add(nivel);
         }
 
-        public PerguntaDTO buscarNiveis()
+        public ICollection<Nivel> buscarNiveis()
         {
-            var x = _repo.GetAll().Result;
-            var pergunta = new PerguntaDTO();
-            if (x != null)
-            {
-                foreach (var item in x)
-                {
-                    var nivelDto = new NivelDTO();
-                    nivelDto.Nivel_id = item.NivelId;
-                    nivelDto.Descricao = item.Descricao;
-                    nivelDto.Pontuacao_ID = item.PontuacaoId;
-                    pergunta.niveis.Add(nivelDto);
-                }
-            }
-            return pergunta;
+            var result = _repo.GetAll().Result;
+      
+            return result;
         }
 
         public void Save()

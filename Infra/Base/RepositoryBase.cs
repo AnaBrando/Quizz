@@ -25,8 +25,16 @@ namespace Infra
 
         public async Task Update(TEntity e)
         {
-            _db.Set<TEntity>().Update(e);
-            await _db.SaveChangesAsync();
+            try
+            {
+                _db.Set<TEntity>().Update(e);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                ex.InnerException.ToString();
+            }
+           
         }
 
         public async Task Delete(TEntity e)

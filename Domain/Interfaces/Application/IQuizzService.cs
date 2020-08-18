@@ -1,6 +1,7 @@
 ﻿using Domain.DTO;
 using Domain.Models;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,13 +12,12 @@ namespace Domain.Interfaces.Application
     {
         Task<int> AddQuizz(QuizzDTO user);
         void Update(QuizzDTO user);
-        QuizzDTO GeyById(int id);
+        Quizz GeyById(int id);
         List<Quizz> QuizzByProfessorID(string id);
         void Save();
 
         bool Delete(int id);
         bool EditPost(QuizzDTO dto);
-
-     
+        ICollection<Pergunta> buscarPerguntas(int id);
     }
 }

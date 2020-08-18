@@ -14,6 +14,7 @@ namespace Quizz.Controllers
     {
         private readonly UserManager<Usuario> _userManager;
         private readonly IQuizzService _service;
+   
 
         public ProfessorController(IQuizzService service, UserManager<Usuario> user)
         {
@@ -25,6 +26,20 @@ namespace Quizz.Controllers
             if (id != null && !string.IsNullOrEmpty(id))
             {
                 var x = _service.QuizzByProfessorID(id);
+                if(x != null)
+                {
+                    foreach (var item in x)
+                    {
+                        var perguntas = _service.buscarPerguntas(item.QuizzId);
+                        if(perguntas != null)
+                        {
+                            foreach (var pgt in perguntas)
+                            {
+                                item.Pergunta.Add(pgt);
+                            }
+                        }
+                    }
+                }
                 return View(x);
             }
             return RedirectToAction("Index", "Login");

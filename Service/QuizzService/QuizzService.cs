@@ -13,10 +13,11 @@ namespace Service.QuizzService
     public class QuizzService : IQuizzService
     {
         public readonly IQuizzRepository repo;
-        
-        public QuizzService(IQuizzRepository quizzRepository)
+        public readonly IPerguntaRepository repoPergunta;
+        public QuizzService(IQuizzRepository quizzRepository, IPerguntaRepository _repo)
         {
             this.repo = quizzRepository;
+            repoPergunta = _repo;
         }
 
 
@@ -38,6 +39,13 @@ namespace Service.QuizzService
             quizz.ProfessorSessao = user.ProfessorSessao;
             var x = repo.AddQuizz(quizz);
             return x;
+        }
+
+        public ICollection<Pergunta> buscarPerguntas(int id)
+        {
+            var perguntas = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id).ToList();
+
+            return perguntas;
         }
 
         public bool Delete(int id)
@@ -72,25 +80,21 @@ namespace Service.QuizzService
             return false;
         }
 
-        public QuizzDTO GeyById(int id)
+        public Quizz GeyById(int id)
         {
             var result = repo.GetById(id).Result;
-            var dto = new QuizzDTO();
+            
+         
 
-            dto.Ativo = result.Ativo;
-            dto.DataInclusao = result.DataInclusao;
-            dto.Descricao = result.Descricao;
-            dto.ProfessorId = result.ProfessorId;
-            dto.ProfessorSessao = result.ProfessorSessao;
-            dto.QuizzId = result.QuizzId;
-
-            return dto;
+            return result;
         }
 
         public List<Quizz> QuizzByProfessorID(string id)
         {
             var quiss = repo.GetAll().Result.Where(x => x.ProfessorSessao == id);
-            return quiss.ToList();
+            
+            var x = quiss.ToList();
+            return x;
         }
 
         public void Save()

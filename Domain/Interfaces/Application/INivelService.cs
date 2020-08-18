@@ -1,4 +1,7 @@
 ﻿using Domain.DTO;
+using Domain.Models;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace Domain.Interfaces.Application
 {
@@ -7,6 +10,6 @@ namespace Domain.Interfaces.Application
         void Add(NivelDTO pergunta);
         void Update(NivelDTO pergunta);
         void Save();
-        PerguntaDTO buscarNiveis();
+        ICollection<Nivel> buscarNiveis();
     }
 }

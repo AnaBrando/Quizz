@@ -4,11 +4,16 @@ namespace Domain.DTO
 {
     public class NivelDTO
     {
-        public int Nivel_id { get; set; }
-        public string Descricao { get; set; }
+        public NivelDTO()
+        {
+            Pergunta = new HashSet<PerguntaDTO>();
+        }
 
-        public virtual PontuacaoDTO PontuacaoDTO { get; set; }
-        public int Pontuacao_ID { get; set; }
+        public int NivelId { get; set; }
+        public string Descricao { get; set; }
+        public int PontuacaoId { get; set; }
+        public virtual PontuacaoDTO Pontuacao { get; set; }
+        public virtual ICollection<PerguntaDTO> Pergunta { get; set; }
 
     }
 }
