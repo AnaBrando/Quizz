@@ -40,8 +40,8 @@ namespace Quizz.Controllers
                 return View(pergunta);
 
             }
-            ModelState.AddModelError("Invalid!", "Usuário Inválido");
-            return RedirectToAction("Voltar", "Professor");
+            
+            return RedirectToAction("Index", "Professor", new { id = "LimitePergunta" });
         }
 
         public IActionResult PerguntaPost(PerguntaDTO perguntaDTO)

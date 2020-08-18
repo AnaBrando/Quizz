@@ -3,8 +3,21 @@
 @{
     ViewData["Title"] = "Create";
 }
- 
-<h4>Pergunta @Model.Quizz.Pergunta.Count()</h4>
+
+@{
+    var perguntaQtd = @Model.Quizz.Pergunta.Count();
+    if(perguntaQtd == 0 )
+    {
+        perguntaQtd = 1;
+    }
+   
+    else
+    {
+        perguntaQtd = perguntaQtd + 1;
+    }
+
+} 
+<h4>Pergunta @perguntaQtd </h4>
 <hr />
 <div class="row">
     <div class="col-md-4">

@@ -23,6 +23,7 @@ namespace Quizz.Controllers
         }
         public IActionResult Index(string id)
         {
+          
             if (id != null && !string.IsNullOrEmpty(id))
             {
                 var x = _service.QuizzByProfessorID(id);

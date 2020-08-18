@@ -17,6 +17,20 @@
     <tbody>
         @foreach (var item in Model)
         {
+            var qtdPergunta = @item.Pergunta.Count;
+
+            if(qtdPergunta.Equals(0) || qtdPergunta.Equals(1))
+            {
+                qtdPergunta = 1;
+            }
+            else if (qtdPergunta.Equals(10))
+            {
+                qtdPergunta = 10;
+            }
+            else
+            {
+                qtdPergunta = qtdPergunta - 1;
+            }
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Descricao)
@@ -25,7 +39,9 @@
                     <a asp-action="Edit" asp-route-id="@item.QuizzId">Edit</a> |
                     <a asp-action="Details" asp-route-id="@item.QuizzId">Details</a> |
                     <a asp-action="Delete" asp-route-id="@item.QuizzId">Delete</a> |
-                    <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId">Perguntas : @item.Pergunta.Count </a>
+                    <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId">Perguntas : @qtdPergunta </a> |
+                    @Html.ValidationSummary()
+
                 </td>
             </tr>
         }
