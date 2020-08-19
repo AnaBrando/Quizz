@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EfMXSIFWyLn+JEALoGb219T9fTXd/tMbgGCikshXNp94dP1WXtmLiddETXhiNhWhu7NINYW4Tq1vpFjDdLhVOg==",
+  "dgSpecHash": "YstyZ9HGOrV5Sdj4qY5CWVOjs6xbb1/InjxHZM05eqdfnsMVuHPqLLlJokA79b2wkFwApOR1Ujl7lL5753CRag==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\Service\\Service.csproj",
+  "projectFilePath": "/home/docker/Teste/Service/Service.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,4 +1,4 @@
-    using CrossCutting;
+using CrossCutting;
 using CrossCutting.Contexto;
 using CrossCutting.User;
 using Microsoft.AspNetCore.Builder;
@@ -54,7 +54,7 @@ namespace Quizz
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-            app.UseDefaultFiles();
+            
             app.UseRouting();
 
             app.UseAuthorization();

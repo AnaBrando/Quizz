@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BrvFHdI8LQhR5f+qxl5EHjQp1YjKTH0PMTUZAuQe45Jkf/aV0w/9hPlx0WW5xgiJwXSb3sw5JrphSOXw+785nA==",
+  "dgSpecHash": "KLSmuhzAmZVUzRVYKA6UDRpYzS8PpjwbOnpgcsMKbThY4Ds0CwVD1JQRCd9VBTjJmb0uHhvSjwVtJEzfdln1eg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj",
+  "projectFilePath": "/home/docker/Teste/Domain/Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
