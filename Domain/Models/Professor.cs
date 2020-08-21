@@ -6,14 +6,9 @@ namespace Domain.Models
 {
     public class Professor
     {
-        public Professor()
-        {
-            Quizz = new HashSet<Quizz>();
-        }
 
         public int ProfessorId { get; set; }
         public string ProfessorSessao { get; set; }
 
-        public virtual ICollection<Quizz> Quizz { get; set; }
     }
 }

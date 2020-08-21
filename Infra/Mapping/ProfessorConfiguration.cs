@@ -11,7 +11,6 @@ namespace Infra.Mapping
     {
         public void Configure(EntityTypeBuilder<Professor> entity)
         {
-          
         }
     }
 }

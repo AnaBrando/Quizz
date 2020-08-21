@@ -8824,11 +8824,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/docker/Teste/Quizz/Quizz.csproj",
+      "projectUniqueName": "/home/docker/Music/Quizz/Quizz/Quizz/Quizz.csproj",
       "projectName": "Quizz",
-      "projectPath": "/home/docker/Teste/Quizz/Quizz.csproj",
+      "projectPath": "/home/docker/Music/Quizz/Quizz/Quizz/Quizz.csproj",
       "packagesPath": "/home/docker/.nuget/packages/",
-      "outputPath": "/home/docker/Teste/Quizz/obj/",
+      "outputPath": "/home/docker/Music/Quizz/Quizz/Quizz/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/docker/.nuget/NuGet/NuGet.Config"
@@ -8842,8 +8842,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/docker/Teste/CrossCutting/CrossCutting.csproj": {
-              "projectPath": "/home/docker/Teste/CrossCutting/CrossCutting.csproj"
+            "/home/docker/Music/Quizz/Quizz/CrossCutting/CrossCutting.csproj": {
+              "projectPath": "/home/docker/Music/Quizz/Quizz/CrossCutting/CrossCutting.csproj"
             }
           }
         }

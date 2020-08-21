@@ -145,15 +145,10 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ProfessorId")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProfessorSessao")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("QuizzId");
-
-                    b.HasIndex("ProfessorId");
 
                     b.ToTable("Quizz");
                 });
@@ -204,16 +199,6 @@ namespace Infra.Migrations
                         .HasForeignKey("RespostaId")
                         .HasConstraintName("FK_Pergunta_Resposta")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("Domain.Models.Quizz", b =>
-                {
-                    b.HasOne("Domain.Models.Professor", "Professor")
-                        .WithMany("Quizz")
-                        .HasForeignKey("ProfessorId")
-                        .HasConstraintName("FK_Quizz_Professor")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Models.Resposta", b =>

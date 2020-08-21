@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "933fXXfVoikg0JwlEpvNVAD9ZvgVW+Yky985p9YOP4vRmgZ/SutAEfPI2HZAORNiGYaRM2IaplUwY+qDz2iydw==",
+  "dgSpecHash": "CwgHS9DqufKYSpD0Mu87yq9SbgWqZaQTegNFmsQab7ykLYMFDsFQJKv6vnlsawXaDp604liJV07RBrV0OSsm9g==",
   "success": true,
-  "projectFilePath": "/home/docker/Teste/Quizz/Quizz.csproj",
+  "projectFilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Quizz.csproj",
   "expectedPackageFiles": [
     "/home/docker/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/home/docker/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

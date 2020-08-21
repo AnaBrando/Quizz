@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/EUTqvZswM+7La/V32FQtr5jb10250DLB6sLt1LvbBYpmrDNtjeCAW+nSBMUECFiB6QH9vcj9NCtFOa7lADlZw==",
+  "dgSpecHash": "ZEtw/rWEN+SbIdZSXExoGhfRTKhO+I+FH+LohBJF5kuPdL52iAjlNS9D+qv9KfIoHNeu6EaMHN96VgrIM/iQKA==",
   "success": true,
-  "projectFilePath": "/home/docker/Teste/CrossCutting/CrossCutting.csproj",
+  "projectFilePath": "/home/docker/Music/Quizz/Quizz/CrossCutting/CrossCutting.csproj",
   "expectedPackageFiles": [
     "/home/docker/.nuget/packages/microsoft.aspnetcore.authentication/2.2.0/microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "/home/docker/.nuget/packages/microsoft.aspnetcore.authentication.abstractions/2.2.0/microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrossCutting.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20200815222106_563")]
-    partial class _563
+    [Migration("20200821020109_1")]
+    partial class _1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

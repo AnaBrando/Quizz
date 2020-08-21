@@ -34,3 +34,15 @@ C:/Users/anabr/Documents/Quizz/Service/obj/Debug/netcoreapp3.1/Service.pdb
 /home/docker/Teste/Service/obj/Debug/netcoreapp3.1/Service.csproj.CopyComplete
 /home/docker/Teste/Service/obj/Debug/netcoreapp3.1/Service.dll
 /home/docker/Teste/Service/obj/Debug/netcoreapp3.1/Service.pdb
+/home/docker/Music/Quizz/Quizz/Service/bin/Debug/netcoreapp3.1/Service.deps.json
+/home/docker/Music/Quizz/Quizz/Service/bin/Debug/netcoreapp3.1/Service.dll
+/home/docker/Music/Quizz/Quizz/Service/bin/Debug/netcoreapp3.1/Service.pdb
+/home/docker/Music/Quizz/Quizz/Service/bin/Debug/netcoreapp3.1/Domain.dll
+/home/docker/Music/Quizz/Quizz/Service/bin/Debug/netcoreapp3.1/Domain.pdb
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.csprojAssemblyReference.cache
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.AssemblyInfoInputs.cache
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.AssemblyInfo.cs
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.csproj.CoreCompileInputs.cache
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.csproj.CopyComplete
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.dll
+/home/docker/Music/Quizz/Quizz/Service/obj/Debug/netcoreapp3.1/Service.pdb

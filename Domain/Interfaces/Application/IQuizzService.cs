@@ -16,6 +16,7 @@ namespace Domain.Interfaces.Application
         List<Quizz> QuizzByProfessorID(string id);
         void Save();
 
+        ICollection <Quizz> GetAll();
         bool Delete(int id);
         bool EditPost(QuizzDTO dto);
         ICollection<Pergunta> buscarPerguntas(int id);

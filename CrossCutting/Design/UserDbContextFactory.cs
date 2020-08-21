@@ -13,7 +13,7 @@ namespace Infra.Design
         {
             var optionsBuilder = new DbContextOptionsBuilder<UserDbContext>();
             
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=NetworkLearning;Trusted_Connection=True;MultipleActiveResultSets=true");
+            optionsBuilder.UseSqlServer("Server=tcp:127.0.0.1,1433;Database=Quizz;UID=SA;PWD=Diobrando0510*");
 
             return new UserDbContext(optionsBuilder.Options);
         }

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class _123 : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -47,6 +47,22 @@ namespace Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Quizz",
+                columns: table => new
+                {
+                    QuizzId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DataInclusao = table.Column<DateTime>(nullable: false),
+                    Descricao = table.Column<string>(nullable: true),
+                    Ativo = table.Column<bool>(nullable: false),
+                    ProfessorSessao = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Quizz", x => x.QuizzId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Resposta",
                 columns: table => new
                 {
@@ -82,29 +98,6 @@ namespace Infra.Migrations
                         column: x => x.PontuacaoId,
                         principalTable: "Pontuacao",
                         principalColumn: "PontuacaoId",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Quizz",
-                columns: table => new
-                {
-                    QuizzId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProfessorId = table.Column<int>(nullable: false),
-                    DataInclusao = table.Column<DateTime>(nullable: false),
-                    Descricao = table.Column<string>(nullable: true),
-                    Ativo = table.Column<bool>(nullable: false),
-                    ProfessorSessao = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Quizz", x => x.QuizzId);
-                    table.ForeignKey(
-                        name: "FK_Quizz_Professor",
-                        column: x => x.ProfessorId,
-                        principalTable: "Professor",
-                        principalColumn: "ProfessorId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -168,11 +161,6 @@ namespace Infra.Migrations
                 column: "RespostaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Quizz_ProfessorId",
-                table: "Quizz",
-                column: "ProfessorId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Resposta_EstudanteId",
                 table: "Resposta",
                 column: "EstudanteId");
@@ -182,6 +170,9 @@ namespace Infra.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Pergunta");
+
+            migrationBuilder.DropTable(
+                name: "Professor");
 
             migrationBuilder.DropTable(
                 name: "Nivel");
@@ -194,9 +185,6 @@ namespace Infra.Migrations
 
             migrationBuilder.DropTable(
                 name: "Pontuacao");
-
-            migrationBuilder.DropTable(
-                name: "Professor");
 
             migrationBuilder.DropTable(
                 name: "Estudante");

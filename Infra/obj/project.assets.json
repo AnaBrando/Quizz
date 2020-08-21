@@ -5613,11 +5613,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/docker/Teste/Infra/Infra.csproj",
+      "projectUniqueName": "/home/docker/Music/Quizz/Quizz/Infra/Infra.csproj",
       "projectName": "Infra",
-      "projectPath": "/home/docker/Teste/Infra/Infra.csproj",
+      "projectPath": "/home/docker/Music/Quizz/Quizz/Infra/Infra.csproj",
       "packagesPath": "/home/docker/.nuget/packages/",
-      "outputPath": "/home/docker/Teste/Infra/obj/",
+      "outputPath": "/home/docker/Music/Quizz/Quizz/Infra/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/docker/.nuget/NuGet/NuGet.Config"
@@ -5631,8 +5631,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "/home/docker/Teste/Domain/Domain.csproj": {
-              "projectPath": "/home/docker/Teste/Domain/Domain.csproj"
+            "/home/docker/Music/Quizz/Quizz/Domain/Domain.csproj": {
+              "projectPath": "/home/docker/Music/Quizz/Quizz/Domain/Domain.csproj"
             }
           }
         }

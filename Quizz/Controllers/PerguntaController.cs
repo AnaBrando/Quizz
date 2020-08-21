@@ -23,6 +23,7 @@ namespace Quizz.Controllers
 
         public IActionResult Create(int id)
         {
+            
             var niveis = _nivelService.buscarNiveis();
             var quizz = _quizzService.GeyById(id);
             var perguntas = _quizzService.buscarPerguntas(id);

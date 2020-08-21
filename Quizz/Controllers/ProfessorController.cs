@@ -23,7 +23,13 @@ namespace Quizz.Controllers
         }
         public IActionResult Index(string id)
         {
-            if (id != null && !string.IsNullOrEmpty(id))
+            var sessao =  _userManager.FindByIdAsync(id).Result.RoleName;
+            
+            if(sessao.Equals("Aluno")){
+                       return RedirectToAction("Index", "Aluno", new { id = id });
+            }
+            else if(sessao.Equals("Professor")){
+                if (id != null && !string.IsNullOrEmpty(id))
             {
                 var x = _service.QuizzByProfessorID(id);
                 if(x != null && x.Count > 0)
@@ -41,6 +47,7 @@ namespace Quizz.Controllers
                     }
                 }
                 return View(x);
+            }
             }
             ModelState.AddModelError(string.Empty, "Limite de Perguntas Alcançado");
             return RedirectToAction("Voltar", "Professor");
