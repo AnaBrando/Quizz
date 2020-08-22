@@ -54,6 +54,13 @@ namespace Quizz.Controllers
             }
             return RedirectToAction("Create","Pergunta",new { id= Id });
         }
-
+        public IActionResult Edit(int id)
+        {
+            if(id > 0){
+                var perguntas = _perguntaService.PerguntasByQuizzId(id);
+                return View(perguntas);
+            }
+            return RedirectToAction("","");
+        }
     }
 }

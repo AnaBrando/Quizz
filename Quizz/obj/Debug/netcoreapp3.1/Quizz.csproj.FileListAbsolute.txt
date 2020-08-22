@@ -1948,3 +1948,5 @@ C:/Users/anabr/Documents/Quizz/Quizz/obj/Debug/netcoreapp3.1/Razor/Views/Profess
 /home/docker/Music/Quizz/Quizz/Quizz/obj/Debug/netcoreapp3.1/Quizz.pdb
 /home/docker/Music/Quizz/Quizz/Quizz/obj/Debug/netcoreapp3.1/Quizz.genruntimeconfig.cache
 /home/docker/Music/Quizz/Quizz/Quizz/obj/Debug/netcoreapp3.1/Razor/Views/Aluno/Index.cshtml.g.cs
+/home/docker/Music/Quizz/Quizz/Quizz/obj/Debug/netcoreapp3.1/Razor/Views/Aluno/IniciarQuizz.cshtml.g.cs
+/home/docker/Music/Quizz/Quizz/Quizz/obj/Debug/netcoreapp3.1/Razor/Views/Pergunta/Edit.cshtml.g.cs
