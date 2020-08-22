@@ -1,0 +1,39 @@
+@model List<Domain.Models.Pergunta>
+
+<table class="table">
+    <thead>
+
+        <tr>
+            <th>
+              Pergunta
+            </th>
+            <th>
+               Questao     
+            </th>
+            <th>Excluir</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+
+        <tr>
+            <td>
+                @{
+                    for (int i = 1; i <= Model.Count; i++)
+                    {
+                         <a asp-action="Edit" asp-controller="Pergunta" asp-route-id="@item.PerguntaId">@i</a>
+                    }
+                }
+              
+            </td>
+            <td>
+              @item.Descricao
+            </td>
+            <td>
+                <a asp-controller="Pergunta" asp-action="Delete" asp-route-id="@item.PerguntaId"><img src="../../wwwroot/img/trash.png" width="50"></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

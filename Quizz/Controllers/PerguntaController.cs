@@ -54,7 +54,7 @@ namespace Quizz.Controllers
             }
             return RedirectToAction("Create","Pergunta",new { id= Id });
         }
-        public IActionResult Edit(int id)
+        public IActionResult IndexEdit(int id)
         {
             if(id > 0){
                 var perguntas = _perguntaService.PerguntasByQuizzId(id);
@@ -62,5 +62,19 @@ namespace Quizz.Controllers
             }
             return RedirectToAction("","");
         }
+         public IActionResult Edit(int id){
+             var pergunta = _perguntaService.getById(id);
+             return View(pergunta);
+         }
+          public IActionResult Update(PerguntaDTO dto){
+             if(dto.PerguntaId == 0){
+                 dto.PerguntaId = 1;
+             }
+             _perguntaService.Update(dto);
+             return RedirectToAction("IndexEdit","Pergunta",new {id = dto.QuizzId});
+         }
+         public void Delete(int id){
+            _perguntaService.Delete(id);
+         }
     }
 }

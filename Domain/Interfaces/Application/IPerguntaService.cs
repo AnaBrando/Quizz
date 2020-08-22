@@ -12,6 +12,9 @@ namespace Domain.Interfaces.Application
         void Add(PerguntaDTO pergunta);
         void Update(PerguntaDTO pergunta);
         void Save();
+        
+        void Delete(int id);
+        PerguntaDTO getById(int id);
         Task<Pergunta> QuizzIT(int id);
 
         List<Pergunta> PerguntasByQuizzId(int id);

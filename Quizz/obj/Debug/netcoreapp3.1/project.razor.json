@@ -14407,6 +14407,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pergunta/IndexEdit.cshtml",
+      "TargetPath": "Views\\Pergunta\\IndexEdit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
