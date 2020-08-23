@@ -9,7 +9,7 @@ namespace Domain.DTO
     {
         public PerguntaDTO()
         {
-            this.niveis = new HashSet<Nivel>();
+            this.niveis = new List<Nivel>();
         }
         public int PerguntaId { get; set; }
         public int? NivelId { get; set; }
@@ -24,7 +24,7 @@ namespace Domain.DTO
         public virtual NivelDTO Nivel { get; set; }
         public virtual Quizz Quizz { get; set; }
         public virtual RespostaDTO Resposta { get; set; }
-        public ICollection<Nivel> niveis { get; set; }
+        public List<Nivel> niveis { get; set; }
        
     }
 }

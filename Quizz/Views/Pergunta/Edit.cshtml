@@ -1,0 +1,74 @@
+@model Domain.DTO.PerguntaDTO
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Update">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Descricao" class="control-label"></label>
+                <input asp-for="Descricao" class="form-control" />
+                <span asp-validation-for="Descricao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuizzId" class="control-label"></label>
+                <input asp-for="QuizzId" class="form-control" />
+                <span asp-validation-for="QuizzId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoA" class="control-label"></label>
+                <input asp-for="OpcaoA" class="form-control" />
+                <span asp-validation-for="OpcaoA" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="PerguntaId" class="control-label"></label>
+                <input asp-for="PerguntaId" class="form-control" />
+                <span asp-validation-for="PerguntaId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoB" class="control-label"></label>
+                <input asp-for="OpcaoB" class="form-control" />
+                <span asp-validation-for="OpcaoB" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoC" class="control-label"></label>
+                <input asp-for="OpcaoC" class="form-control" />
+                <span asp-validation-for="OpcaoC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="OpcaoD" class="control-label"></label>
+                <input asp-for="OpcaoD" class="form-control" />
+                <span asp-validation-for="OpcaoD" class="text-danger"></span>
+            </div>
+            <div class="form-group" hidden>
+                <label asp-for="QuizzId" class="control-label"></label>
+                <select asp-for="QuizzId" class="form-control">
+                    <option>@Model.QuizzId</option>
+                </select>
+                <span asp-validation-for="QuizzId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Resposta</label>
+                <select asp-for="OpcaoCerta" class="form-control">
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                </select>
+                <span asp-validation-for="OpcaoCerta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label"  >Nivel de Dificuldade</label>
+                <select asp-for="NivelId" class="form-control">
+                    @foreach (var item in Model.niveis)
+                    {
+                        <option value="@item.NivelId">@item.Descricao</option>
+                    }
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Editar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>

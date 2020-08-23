@@ -80,6 +80,12 @@ namespace Service.QuizzService
             return false;
         }
 
+        public ICollection<Quizz> GetAll()
+        {
+            var result = repo.GetAll().Result.Where(x=>x.Ativo).ToList();
+            return result;
+        }
+
         public Quizz GeyById(int id)
         {
             var result = repo.GetById(id).Result;

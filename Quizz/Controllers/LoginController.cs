@@ -119,14 +119,14 @@ namespace Quizz.Controllers
                                 var result = await _signInManager.PasswordSignInAsync(user.UserName, loginModel.Password, false, false);
 
                                 if (result.Succeeded)
-                                    return RedirectToAction("Aluno", "Quizz", new { id = user.Id });
+                                    return RedirectToAction("Index", "Aluno", new { id = user.Id });
                             }
                         }
                     }
 
                 }
                 ModelState.AddModelError("", "Usuário não é professor , tente no usuário jogador.");
-                return RedirectToAction("Index", "Login");
+                return View();
 
             }
             ModelState.AddModelError("Invalid!", "Usuário Inválido");

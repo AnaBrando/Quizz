@@ -23,7 +23,7 @@ namespace Infra.Context
         public DbSet<Estudante> Estudante { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-         => options.UseSqlServer(@"Data Source=(localdb)\mssqllocaldb;Initial Catalog=NetworkLearning;Integrated Security=True");
+         => options.UseSqlServer(@"Data Source = (LocalDB)\mssqllocaldb; Initial Catalog = NetworkLearning; Integrated Security = true;");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,7 +34,7 @@ namespace Infra.Context
             modelBuilder.ApplyConfiguration(new QuizzConfiguration());
             modelBuilder.ApplyConfiguration(new RespostaConfiguration());
 
-
+            ;
         }
     }
 

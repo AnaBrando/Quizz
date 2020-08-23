@@ -11,14 +11,12 @@ namespace Domain.Models
             Pergunta = new HashSet<Pergunta>();
         }
 
-        public int QuizzId { get; set; }
-        public int ProfessorId { get; set; }
-        public DateTime DataInclusao { get; set; }
+        public int QuizzId { get; set; }        public DateTime DataInclusao { get; set; }
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
         public virtual ICollection<Pergunta> Pergunta { get; set; }
         public string ProfessorSessao { get; set; }
 
-        public virtual Professor Professor { get; set; }
+ 
     }
 }

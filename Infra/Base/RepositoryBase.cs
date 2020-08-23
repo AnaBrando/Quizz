@@ -69,7 +69,7 @@ namespace Infra
             }
             catch(Exception ex)
             {
-                ex.Message.ToString();
+              var mens=  ex.InnerException.Message.ToString();
             }
             return 0;
         }

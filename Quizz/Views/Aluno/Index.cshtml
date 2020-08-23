@@ -1,0 +1,51 @@
+﻿@model List<Domain.Models.Quizz>
+
+
+@{
+    ViewData["Title"] = "Painel do Aluno";
+}
+
+<h4>  Bem vindo Estudante!
+    <br>Vamos estudar?</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              Tema
+            </th>
+            <th>
+                Perguntas
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var qtdPergunta = @item.Pergunta.Count;
+
+            if (qtdPergunta.Equals(0) || qtdPergunta.Equals(1))
+            {
+                qtdPergunta = 1;
+            }
+            else if (qtdPergunta.Equals(10))
+            {
+                qtdPergunta = 10;
+            }
+            else
+            {
+                qtdPergunta = qtdPergunta - 1;
+            }
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descricao)
+                </td>
+                <td>
+             
+                    <a asp-controller="Aluno" asp-action="IniciarQuizz" asp-route-id="@item.QuizzId">Iniciar Quizz</a> |
+                    Perguntas :<span id="PgtQtd">@qtdPergunta</span>
+                  
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
