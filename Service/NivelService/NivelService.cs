@@ -1,4 +1,5 @@
-﻿using Domain.DTO;
+﻿using AutoMapper;
+using Domain.DTO;
 using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
@@ -18,11 +19,12 @@ namespace Service.NivelService
         }
         public void Add(NivelDTO pergunta)
         {
-            var nivel = new Nivel();
-            nivel.Descricao = pergunta.Descricao;
-            nivel.Pontuacao.PontuacaoId = pergunta.PontuacaoId;
-            nivel.Pontuacao.PontuacaoId = pergunta.PontuacaoId;
-            _repo.Add(nivel);
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<Nivel, NivelDTO>();
+            });
+            IMapper iMapper = config.CreateMapper();
+            var destination = iMapper.Map<NivelDTO, Nivel>(pergunta);
+            _repo.Add(destination);
         }
 
         public ICollection<Nivel> buscarNiveis()

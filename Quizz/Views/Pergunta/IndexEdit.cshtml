@@ -1,39 +1,44 @@
 @model List<Domain.Models.Pergunta>
 
+<a asp-action="Voltar" asp-controller="Professor"><img src="~/img/back.png" width="50" /></a>
+
 <table class="table">
     <thead>
 
         <tr>
             <th>
-              Pergunta
+                Pergunta
             </th>
             <th>
-               Questao     
+                Questao
             </th>
-            <th>Excluir</th>
-            
+            <th></th>
+
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+        @foreach (var item in Model)
+        {
 
         <tr>
             <td>
                 @{
                     for (int i = 1; i <= Model.Count; i++)
                     {
-                         <a asp-action="Edit" asp-controller="Pergunta" asp-route-id="@item.PerguntaId">@i</a>
+                        <a asp-action="Edit" asp-controller="Pergunta" asp-route-id="@item.PerguntaId">@i</a>
                     }
                 }
-              
+
             </td>
             <td>
-              @item.Descricao
+                @item.Descricao
             </td>
             <td>
-                <a asp-controller="Pergunta" asp-action="Delete" asp-route-id="@item.PerguntaId"><img src="../../wwwroot/img/trash.png" width="50"></a>
+                <a asp-controller="Pergunta" asp-action="Delete" asp-route-id="@item.PerguntaId"><img src="\img\trash.png" width="30"></a>
+                <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId"><img src="\img\+.png" width="30"></a>
             </td>
+            
         </tr>
-}
+        }
     </tbody>
 </table>

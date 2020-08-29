@@ -1,3 +1,70 @@
-@model List<Domain.Models.Pergunta>
+﻿@model Domain.Models.Pergunta
 
+@{
+    ViewData["Title"] = "IniciarQuizz";
+}
+    <form asp-action="Responder" asp-route-id="@Model.QuizzId">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="text-center text-justify">@Model.Descricao</h1>
+                <br />
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-8">
+                <h4>b)@Model.OpcaoA</h4>
+            </div>
+            <div class="col-4 float-left">
+                <label asp-for="OpcaoA">
+                    <input asp-for="OpcaoA" type="radio" value="A" name="resposta"/>
+                </label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-8">
+                <h4>b)@Model.OpcaoB</h4>
+            </div>
+            <div class="col-4 float-left">
+                <label asp-for="OpcaoB">
+                    <input asp-for="OpcaoB" type="radio" value="B" name="resposta" />
+                </label>
+
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-8">
+                <h4>b)@Model.OpcaoC</h4>
+            </div>
+            <div class="col-4 float-left">
+                <label asp-for="OpcaoC">
+                    <input asp-for="OpcaoC" type="radio"  value="C" name="resposta"/>
+                </label>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-8">
+                <h4>b)@Model.OpcaoD</h4>
+            </div>
+            <div class="col-4 float-left">
+                <label asp-for="OpcaoD">
+                    <input asp-for="OpcaoD" type="radio" value="D" name="resposta"/> 
+                </label>
+            </div>
+        </div>
+       
+       
+ 
+        <br /><br /><br /><br />
+        <div class="col-md-12 text-center">
+            <button type="submit" value="Responder" />
+        </div>
+    </form>
     
+
+
+
+

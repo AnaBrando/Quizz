@@ -33,8 +33,9 @@ namespace CrossCutting
 
             services.AddScoped<BancoContext>();
 
-         //   services.AddIdentity<Usuario, IdentityRole>()
-         //.AddEntityFrameworkStores<UserDbContext>();
+            
+            //   services.AddIdentity<Usuario, IdentityRole>()
+            //.AddEntityFrameworkStores<UserDbContext>();
         }
     }
 }

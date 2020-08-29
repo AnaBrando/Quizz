@@ -1,4 +1,5 @@
-﻿using Domain;
+﻿using AutoMapper;
+using Domain;
 using Domain.DTO;
 using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
@@ -14,7 +15,7 @@ namespace Service.PerguntaService
     public class PerguntaService : IPerguntaService
     {
 
-         public readonly INivelRepository nivelRepository;
+        public readonly INivelRepository nivelRepository;
         public readonly IPerguntaRepository perguntaRepository;
         public readonly IQuizzRepository _quizzRepository;
         public readonly IQuizzService _quizzService;
@@ -32,23 +33,18 @@ namespace Service.PerguntaService
         {
             if(pergunta != null)
             {
+
+                var config = new MapperConfiguration(cfg => {
+                    cfg.CreateMap<PerguntaDTO, Pergunta>();
+                });
+                IMapper iMapper = config.CreateMapper();
+                var destination = iMapper.Map<PerguntaDTO,Pergunta>(pergunta);
                 var quizz = _quizzService.GeyById(pergunta.QuizzId);
                 if (quizz != null)
                 {
-                    var obj = new Pergunta();
-                    obj.Descricao = pergunta.Descricao;
-                    obj.OpcaoA = pergunta.OpcaoA;
-                    obj.OpcaoB = pergunta.OpcaoB;
-                    obj.OpcaoC = pergunta.OpcaoC;
-                    obj.OpcaoD = pergunta.OpcaoD;
-                    obj.OpcaoCerta = pergunta.OpcaoCerta;
-                    obj.NivelId = pergunta.NivelId;
-                    obj.QuizzId = pergunta.QuizzId;
-                    perguntaRepository.Add(obj);
-                    quizz.Pergunta.Add(obj);
+                    perguntaRepository.Add(destination);
+                    quizz.Pergunta.Add(destination);
                     _quizzRepository.Update(quizz);
-
-
                 }
             }
         }
@@ -68,6 +64,7 @@ namespace Service.PerguntaService
             dto.OpcaoB = pergunta.OpcaoB;
             dto.OpcaoC = pergunta.OpcaoC;
             dto.OpcaoD = pergunta.OpcaoD;
+            dto.QuizzId = pergunta.QuizzId;
             dto.PerguntaId = pergunta.PerguntaId;
             dto.OpcaoCerta = pergunta.OpcaoCerta;
             dto.NivelId = pergunta.NivelId;

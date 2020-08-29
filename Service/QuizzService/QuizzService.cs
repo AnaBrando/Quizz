@@ -1,4 +1,5 @@
-﻿using Domain.DTO;
+﻿using AutoMapper;
+using Domain.DTO;
 using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
@@ -20,24 +21,14 @@ namespace Service.QuizzService
             repoPergunta = _repo;
         }
 
-
-        public void Add(QuizzDTO user)
-        {
-            var quizz = new Quizz();
-            quizz.DataInclusao = DateTime.Now;
-            quizz.Descricao = user.Descricao;
-            quizz.ProfessorSessao = user.ProfessorSessao;
-            var x = repo.Add(quizz);
-           
-        }
-
         public Task<int> AddQuizz(QuizzDTO user)
         {
-            var quizz = new Quizz();
-            quizz.DataInclusao = DateTime.Now;
-            quizz.Descricao = user.Descricao;
-            quizz.ProfessorSessao = user.ProfessorSessao;
-            var x = repo.AddQuizz(quizz);
+            var config = new MapperConfiguration(cfg => {
+                cfg.CreateMap<QuizzDTO, Quizz>();
+            });
+            IMapper iMapper = config.CreateMapper();
+            var destination = iMapper.Map<QuizzDTO, Quizz>(user);
+            var x = repo.AddQuizz(destination);
             return x;
         }
 
@@ -46,6 +37,12 @@ namespace Service.QuizzService
             var perguntas = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id).ToList();
 
             return perguntas;
+        }
+
+        public Pergunta buscarPerguntaParaIniciarQuizz(int id)
+        {
+            var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id && x.RespostaId == null).FirstOrDefault();
+            return pergunta;
         }
 
         public bool Delete(int id)

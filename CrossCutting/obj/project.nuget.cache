@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "/Lgv7dx/7Bz+z11Drp1OzC3JlSYJJ1uGbHBbpkSIHSjnVkZJQ2JHhBOrs0uAPECwxKXN9mxk4QeSDZ/jk38JMA==",
+  "dgSpecHash": "azGoPOPovCOFm3VtUUFr6JJ2rXuN8mU6jwmsNU50wzmU/QL4aTtemRptAV4R682ckxsf5vAZYx0fKtii4S3QqQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\anabr\\.nuget\\packages\\automapper\\10.0.0\\automapper.10.0.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
@@ -89,7 +90,7 @@
     "C:\\Users\\anabr\\.nuget\\packages\\system.net.primitives\\4.3.0\\system.net.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.private.datacontractserialization\\4.3.0\\system.private.datacontractserialization.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
-    "C:\\Users\\anabr\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
+    "C:\\Users\\anabr\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",

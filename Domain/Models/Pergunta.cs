@@ -9,7 +9,7 @@ namespace Domain.Models
         public int PerguntaId { get; set; }
         public int? NivelId { get; set; }
         public int? RespostaId { get; set; }
-        public int? QuizzId { get; set; }
+        public int QuizzId { get; set; }
         public string OpcaoA { get; set; }
         public string OpcaoB { get; set; }
         public string OpcaoC { get; set; }
