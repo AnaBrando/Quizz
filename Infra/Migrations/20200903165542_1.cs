@@ -109,7 +109,7 @@ namespace Infra.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     NivelId = table.Column<int>(nullable: true),
                     RespostaId = table.Column<int>(nullable: true),
-                    QuizzId = table.Column<int>(nullable: true),
+                    QuizzId = table.Column<int>(nullable: false),
                     OpcaoA = table.Column<string>(nullable: true),
                     OpcaoB = table.Column<string>(nullable: true),
                     OpcaoC = table.Column<string>(nullable: true),

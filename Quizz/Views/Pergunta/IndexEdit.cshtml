@@ -10,7 +10,7 @@
                 Pergunta
             </th>
             <th>
-                Questao
+                Pergunta
             </th>
             <th></th>
 
@@ -23,12 +23,8 @@
         <tr>
             <td>
                 @{
-                    for (int i = 1; i <= Model.Count; i++)
-                    {
-                        <a asp-action="Edit" asp-controller="Pergunta" asp-route-id="@item.PerguntaId">@i</a>
-                    }
+                    <a asp-action="Edit" asp-controller="Pergunta" asp-route-id="@item.PerguntaId">Editar</a>
                 }
-
             </td>
             <td>
                 @item.Descricao

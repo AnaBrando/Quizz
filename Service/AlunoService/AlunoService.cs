@@ -1,22 +1,60 @@
 ﻿using Domain.Interfaces.Application;
+using Domain.Interfaces.Repository;
+using Domain.Models;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
 
 namespace Service.AlunoService
 {
     public class AlunoService : IAlunoService
     {
-        public bool Acertou(string resposta)
+        private readonly IPerguntaRepository _repo;
+
+        public AlunoService(IPerguntaRepository repo)
         {
-            throw new System.NotImplementedException();
+            _repo = repo;
         }
 
-        public void Pontuar(int perguntaId)
+
+        public bool Acertou(int perguntaId,string resposta)
         {
-            throw new System.NotImplementedException();
+            var pergunta = GetPerguntas().Where(x=>x.PerguntaId == perguntaId).FirstOrDefault();
+            if(pergunta.OpcaoCerta == resposta)
+            {
+                return true;
+            }
+            return false;
         }
 
-        public void Responder(int perguntaId, string resposta)
+        public List<Pergunta> GetPerguntas()
         {
-            throw new System.NotImplementedException();
+            /*banco de dados*/
+       
+            //var perguntas = _repo.GetAll().Result;
+            //return perguntas;
+
+            /*Teste Unitários*/
+            var perguntas = MockListaPergunta();
+
+            return perguntas;
+
+
+        }
+        //Teste unitário não acessa banco de dados
+        public List<Pergunta> MockListaPergunta()
+        {
+            var json = File.ReadAllText(@"C:\Users\anabr\Documents\Quizz\Infra\MockUnitTests\Perguntas.json", Encoding.GetEncoding("iso-8859-1"));
+
+            var perguntas = JsonConvert.DeserializeObject<List<Pergunta>>(json);
+
+            return perguntas;
+        }
+        public bool Pontuou(int respostaId)
+        {
+            return true;
         }
     }
 }

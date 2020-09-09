@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossCutting", "CrossCutting\CrossCutting.csproj", "{EFD89FC1-0807-4951-82B2-D43C6DC447FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service", "Service\Service.csproj", "{7C742777-B349-4B7A-BFD4-F1D928636182}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service", "Service\Service.csproj", "{7C742777-B349-4B7A-BFD4-F1D928636182}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestesUnitarios", "TestesUnitarios\TestesUnitarios.csproj", "{45DB3F2A-58CA-4FF4-B959-11AE36AEA1F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{7C742777-B349-4B7A-BFD4-F1D928636182}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C742777-B349-4B7A-BFD4-F1D928636182}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C742777-B349-4B7A-BFD4-F1D928636182}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45DB3F2A-58CA-4FF4-B959-11AE36AEA1F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45DB3F2A-58CA-4FF4-B959-11AE36AEA1F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45DB3F2A-58CA-4FF4-B959-11AE36AEA1F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45DB3F2A-58CA-4FF4-B959-11AE36AEA1F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

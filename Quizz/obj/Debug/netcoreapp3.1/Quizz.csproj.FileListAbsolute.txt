@@ -1717,6 +1717,7 @@ C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\refs\System.Xml.XPa
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\refs\WindowsBase.dll
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Quizz.Views.dll
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Quizz.Views.pdb
+C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -1867,6 +1868,9 @@ C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\Service.pdb
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.csprojAssemblyReference.cache
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.AssemblyInfoInputs.cache
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.AssemblyInfo.cs
+C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.csproj.CoreCompileInputs.cache
+C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.RazorAssemblyInfo.cache
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.RazorAssemblyInfo.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.TagHelpers.input.cache
@@ -1912,6 +1916,7 @@ C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Areas\Identit
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewImports.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Aluno\Index.cshtml.g.cs
+C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Aluno\IniciarQuizz.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
@@ -1950,8 +1955,3 @@ C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\staticwebassets\Qui
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.dll
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.pdb
 C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.genruntimeconfig.cache
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Razor\Views\Aluno\IniciarQuizz.cshtml.g.cs
-C:\Users\anabr\Documents\Quizz\Quizz\bin\Debug\netcoreapp3.1\AutoMapper.dll
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.csproj.CoreCompileInputs.cache
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\anabr\Documents\Quizz\Quizz\obj\Debug\netcoreapp3.1\Quizz.MvcApplicationPartsAssemblyInfo.cache

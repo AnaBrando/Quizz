@@ -10,8 +10,4 @@
     <None Remove="NovaPasta\**" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
 </Project>

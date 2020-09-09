@@ -15,6 +15,8 @@ namespace Infra.Mapping
                 .WithMany(p => p.Resposta)
                 .HasForeignKey(d => d.EstudanteId)
                 .HasConstraintName("FK_Resposta_Estudante");
+
+
         }
     }
 }

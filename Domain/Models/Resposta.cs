@@ -14,8 +14,12 @@ namespace Domain.Models
 
         public int RespostaId { get; set; }
         public int EstudanteId { get; set; }
-
+        public string Descricao { get; set; }
         public virtual Estudante Estudante { get; set; }
+
+      
+
+        public int GabaritoId { get; set; }
         public virtual ICollection<Pergunta> Pergunta { get; set; }
     }
 }

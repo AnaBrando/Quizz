@@ -1,11 +1,16 @@
-﻿namespace Domain.Interfaces.Application
+﻿using Domain.Models;
+using System.Collections.Generic;
+
+namespace Domain.Interfaces.Application
 {
     public interface IAlunoService
     {
-        void Responder(int perguntaId,string resposta);
+      
 
-        bool Acertou(string resposta);
+        bool Acertou(int perguntaId,string resposta);
 
-        void Pontuar(int perguntaId);
+        bool Pontuou(int perguntaId);
+
+        List<Pergunta> GetPerguntas();
     }
 }

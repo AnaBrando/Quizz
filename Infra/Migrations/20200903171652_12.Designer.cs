@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20200823172848_teste")]
-    partial class teste
+    [Migration("20200903171652_12")]
+    partial class _12
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,7 +84,7 @@ namespace Infra.Migrations
                     b.Property<string>("OpcaoD")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("QuizzId")
+                    b.Property<int>("QuizzId")
                         .HasColumnType("int");
 
                     b.Property<int?>("RespostaId")
@@ -162,6 +162,9 @@ namespace Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Descricao")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("EstudanteId")
                         .HasColumnType("int");
 
@@ -194,7 +197,8 @@ namespace Infra.Migrations
                         .WithMany("Pergunta")
                         .HasForeignKey("QuizzId")
                         .HasConstraintName("FK_Pergunta_Quizz")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Domain.Models.Resposta", "Resposta")
                         .WithMany("Pergunta")

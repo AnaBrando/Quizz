@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "azGoPOPovCOFm3VtUUFr6JJ2rXuN8mU6jwmsNU50wzmU/QL4aTtemRptAV4R682ckxsf5vAZYx0fKtii4S3QqQ==",
+  "dgSpecHash": "Dsz3FnEpt9j1sug0AjPqzAUiu6bg7qSxJUPJpyHp7hE22p8vBZHw+mtEoZsWXA+A7oJw8cBGwRgu9PtLmt/BGQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\CrossCutting\\CrossCutting.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.netcore.targets\\2.0.0\\microsoft.netcore.targets.2.0.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\anabr\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\runtime.native.system\\4.3.0\\runtime.native.system.4.3.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\anabr\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

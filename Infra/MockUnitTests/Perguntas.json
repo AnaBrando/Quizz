@@ -1,0 +1,14 @@
+[
+  {
+    "perguntaId": 1,
+    "nivelId": 2,
+    "respostaId": null,
+    "quizzId": 1,
+    "opcaoA": "A",
+    "opcaoB": "B",
+    "opcaoC": "C",
+    "opcaoD": "D",
+    "descricao": "Qual classe de IP pertece o endereço 192.168.15.1 ?",
+    "opcaoCerta": "C"
+  }
+]

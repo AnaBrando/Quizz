@@ -7,6 +7,8 @@ namespace Quizz.Controllers
     public class AlunoController : Controller
     {
         public readonly IQuizzService _serviceQuizz;
+        public readonly IAlunoService _alunoService;
+
         public AlunoController(IQuizzService service)
         {
             _serviceQuizz = service;
@@ -21,7 +23,7 @@ namespace Quizz.Controllers
         {
            
         }
-   
+        
         public IActionResult Index(string id)
         {
            var quizz = _serviceQuizz.GetAll();
