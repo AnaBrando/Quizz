@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces.Application;
+﻿using CrossCutting.User;
+using Domain.Interfaces.Application;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
 
@@ -8,10 +10,19 @@ namespace Quizz.Controllers
     {
         public readonly IQuizzService _serviceQuizz;
         public readonly IAlunoService _alunoService;
+        public readonly IRespostaService _respostaService;
+        public readonly IPerguntaService _perguntaService;
+        private readonly UserManager<Usuario> _userManager;
 
-        public AlunoController(IQuizzService service)
+        public AlunoController(IQuizzService service, IAlunoService alunoService, 
+            IRespostaService respostaService, IPerguntaService perguntaService,
+            UserManager<Usuario> userManager)
         {
             _serviceQuizz = service;
+            _alunoService = alunoService;
+            _respostaService = respostaService;
+            _perguntaService = perguntaService;
+            _userManager = userManager;
         }
         
         public IActionResult IniciarQuizz(int id){
@@ -21,7 +32,16 @@ namespace Quizz.Controllers
 
         public void Responder(int id,string resposta)
         {
-           
+            var estudante = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var pergunta = _perguntaService.getById(id);
+            var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
+            if (acertou)
+            {
+                _respostaService.GerarReposta(estudante.Id);
+                var pontuacao = _alunoService.Pontuou(pergunta.PerguntaId);
+                estudante.Pontuacao = estudante.Pontuacao + (decimal)pontuacao;
+
+            }
         }
         
         public IActionResult Index(string id)
@@ -36,7 +56,6 @@ namespace Quizz.Controllers
                 
            }
            }
-           
            return View(quizz);
         }
        

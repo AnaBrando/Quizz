@@ -4,11 +4,13 @@ using Infra.Context;
 using Infra.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using Service.AlunoService;
 using Service.NivelService;
 using Service.PerguntaService;
 using Service.PontuacaoService;
 using Service.ProfessorService;
 using Service.QuizzService;
+using Service.RespostaService;
 
 namespace CrossCutting
 {
@@ -24,10 +26,10 @@ namespace CrossCutting
             services.AddScoped<IProfessorRepository, ProfessorRepository>();
 
             services.AddScoped<IQuizzService,QuizzService>();
-            services.AddScoped<IPerguntaService, PerguntaService>();
+            services.AddScoped<IRespostaService, RespostaService>();
             services.AddScoped<IPerguntaService, PerguntaService>();
             services.AddScoped<IProfessorService, ProfessorService>();
-
+            services.AddScoped<IAlunoService, AlunoService>();
             services.AddScoped<INivelService, NivelService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 

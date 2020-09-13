@@ -9,6 +9,15 @@
     "opcaoC": "C",
     "opcaoD": "D",
     "descricao": "Qual classe de IP pertece o endereço 192.168.15.1 ?",
-    "opcaoCerta": "C"
+    "opcaoCerta": "C",
+    "Nivel": {
+      "NivelId": "3",
+      "Descricao": "Difícil",
+      "PontuacaoId": "3"
+    },
+    "Pontuacao": {
+      "PontuacaoId": "3",
+      "Valor": "100"
+    }
   }
 ]

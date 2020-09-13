@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "IniciarQuizz";
 }
-    <form asp-action="Responder" asp-route-id="@Model.QuizzId">
+    <form asp-action="Responder" asp-route-id="@Model.PerguntaId">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center text-justify">@Model.Descricao</h1>
@@ -13,7 +13,7 @@
         <br />
         <div class="row">
             <div class="col-8">
-                <h4>b)@Model.OpcaoA</h4>
+                <h4>A)@Model.OpcaoA</h4>
             </div>
             <div class="col-4 float-left">
                 <label asp-for="OpcaoA">
@@ -24,7 +24,7 @@
         <br />
         <div class="row">
             <div class="col-8">
-                <h4>b)@Model.OpcaoB</h4>
+                <h4>B)@Model.OpcaoB</h4>
             </div>
             <div class="col-4 float-left">
                 <label asp-for="OpcaoB">
@@ -36,7 +36,7 @@
         <br />
         <div class="row">
             <div class="col-8">
-                <h4>b)@Model.OpcaoC</h4>
+                <h4>C)@Model.OpcaoC</h4>
             </div>
             <div class="col-4 float-left">
                 <label asp-for="OpcaoC">
@@ -47,7 +47,7 @@
         <br />
         <div class="row">
             <div class="col-8">
-                <h4>b)@Model.OpcaoD</h4>
+                <h4>D)@Model.OpcaoD</h4>
             </div>
             <div class="col-4 float-left">
                 <label asp-for="OpcaoD">

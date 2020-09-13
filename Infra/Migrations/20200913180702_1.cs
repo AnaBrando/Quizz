@@ -11,9 +11,9 @@ namespace Infra.Migrations
                 name: "Estudante",
                 columns: table => new
                 {
-                    EstudanteId = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    EstudanteSessao = table.Column<string>(nullable: true)
+                    EstudanteId = table.Column<string>(nullable: false),
+                    EstudanteSessao = table.Column<string>(nullable: true),
+                    Pontuacao = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -68,7 +68,8 @@ namespace Infra.Migrations
                 {
                     RespostaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EstudanteId = table.Column<int>(nullable: false)
+                    EstudanteId = table.Column<string>(nullable: true),
+                    Descricao = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -78,7 +79,7 @@ namespace Infra.Migrations
                         column: x => x.EstudanteId,
                         principalTable: "Estudante",
                         principalColumn: "EstudanteId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(

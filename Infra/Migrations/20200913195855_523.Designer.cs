@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(BancoContext))]
-    [Migration("20200903171652_12")]
-    partial class _12
+    [Migration("20200913195855_523")]
+    partial class _523
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,13 +23,14 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.Models.Estudante", b =>
                 {
-                    b.Property<int>("EstudanteId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                    b.Property<string>("EstudanteId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("EstudanteSessao")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("Pontuacao")
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("EstudanteId");
 
@@ -157,7 +158,7 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.Models.Resposta", b =>
                 {
-                    b.Property<int>("RespostaId")
+                    b.Property<int?>("RespostaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -165,8 +166,8 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("EstudanteId")
-                        .HasColumnType("int");
+                    b.Property<string>("EstudanteId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("RespostaId");
 
@@ -211,10 +212,7 @@ namespace Infra.Migrations
                 {
                     b.HasOne("Domain.Models.Estudante", "Estudante")
                         .WithMany("Resposta")
-                        .HasForeignKey("EstudanteId")
-                        .HasConstraintName("FK_Resposta_Estudante")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("EstudanteId");
                 });
 #pragma warning restore 612, 618
         }

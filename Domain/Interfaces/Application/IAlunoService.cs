@@ -9,7 +9,7 @@ namespace Domain.Interfaces.Application
 
         bool Acertou(int perguntaId,string resposta);
 
-        bool Pontuou(int perguntaId);
+        double Pontuou(int perguntaId);
 
         List<Pergunta> GetPerguntas();
     }

@@ -5,6 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using Newtonsoft.Json;
 using Service.AlunoService;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -44,12 +45,23 @@ namespace TestesUnitarios
             Assert.IsTrue(resposta);
 
         }
-        //[TestMethod]
-        //public void Pontuou()
-        //{
-            
-        //}
-        
-        
+        [TestMethod]
+        public void Pontuou()
+        {
+            //arrange
+            var pergunta = MockListaPergunta().First();
+
+            //condicional
+            var resposta = _service.Acertou(pergunta.PerguntaId, pergunta.OpcaoCerta);
+
+            //seAcertou
+            if (resposta)
+            {
+                //action Pontuar
+                var x = _service.Pontuou(pergunta.PerguntaId);
+            }
+        }
+
+
     }
 }

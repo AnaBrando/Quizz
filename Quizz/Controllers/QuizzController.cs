@@ -23,8 +23,12 @@ namespace Quizz.Controllers
         
             if (User.Identity.IsAuthenticated)
             {
-                var userId = _userManager.FindByNameAsync(User.Identity.Name).Result.Id;
-                return RedirectToAction("Index", "Professor", new { id = userId });
+                var userId = _userManager.FindByNameAsync(User.Identity.Name).Result;
+                if (userId != null)
+                {
+                    return RedirectToAction("Index", "Professor", new { id = userId.Id });
+                }
+                
             }
             return RedirectToAction("Index","Login");
         }

@@ -77,7 +77,7 @@ namespace Quizz.Controllers
                             var dto = new ProfessorDTO();
                             dto.ProfessorSessao = usuario.Id;
                             _professorService.Add(dto);
-                            return RedirectToAction("Index", "Home");
+                            return RedirectToAction("Index", "Home", new { id = dto.ProfessorSessao });
                         }
                       
                     }
@@ -126,7 +126,7 @@ namespace Quizz.Controllers
 
                 }
                 ModelState.AddModelError("", "Usuário não é professor , tente no usuário jogador.");
-                return View();
+                return RedirectToAction("Index", "Login");
 
             }
             ModelState.AddModelError("Invalid!", "Usuário Inválido");

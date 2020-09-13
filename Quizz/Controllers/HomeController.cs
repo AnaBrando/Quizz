@@ -18,11 +18,11 @@ namespace Quizz.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string Id)
         {
-            if (User.Identity.IsAuthenticated)
+            if (User.Identity.IsAuthenticated && !string.IsNullOrEmpty(Id))
             {
-                return RedirectToAction("Index", "Quizz");
+                return RedirectToAction("Index", "Quizz", new { id= Id });
             }
             return RedirectToAction("Index", "Login");
         }

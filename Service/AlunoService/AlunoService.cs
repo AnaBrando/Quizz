@@ -1,6 +1,7 @@
 ﻿using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
+using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
@@ -32,29 +33,30 @@ namespace Service.AlunoService
         public List<Pergunta> GetPerguntas()
         {
             /*banco de dados*/
-       
-            //var perguntas = _repo.GetAll().Result;
+
+            var perguntas = _repo.GetAll().Result;
+            return perguntas.ToList();
+
+            ///*Teste Unitários*/
+            //var perguntas = MockListaPergunta();
+
             //return perguntas;
-
-            /*Teste Unitários*/
-            var perguntas = MockListaPergunta();
-
-            return perguntas;
-
-
         }
         //Teste unitário não acessa banco de dados
-        public List<Pergunta> MockListaPergunta()
-        {
-            var json = File.ReadAllText(@"C:\Users\anabr\Documents\Quizz\Infra\MockUnitTests\Perguntas.json", Encoding.GetEncoding("iso-8859-1"));
+        //public List<Pergunta> MockListaPergunta()
+        //{
+        //    var json = File.ReadAllText(@"C:\Users\anabr\Documents\Quizz\Infra\MockUnitTests\Perguntas.json", Encoding.GetEncoding("iso-8859-1"));
 
-            var perguntas = JsonConvert.DeserializeObject<List<Pergunta>>(json);
+        //    var perguntas = JsonConvert.DeserializeObject<List<Pergunta>>(json);
 
-            return perguntas;
-        }
-        public bool Pontuou(int respostaId)
+        //    return perguntas;
+        //}
+        public double Pontuou(int perguntaId)
         {
-            return true;
+            var retorno = _repo.GetById(perguntaId).Result;
+            return 0;
         }
+
+
     }
 }

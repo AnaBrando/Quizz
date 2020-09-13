@@ -23,7 +23,7 @@
         {
             var qtdPergunta = @item.Pergunta.Count;
 
-            if (qtdPergunta.Equals(0) || qtdPergunta.Equals(1))
+            if (qtdPergunta.Equals(0))
             {
                 qtdPergunta = 1;
             }
@@ -31,10 +31,7 @@
             {
                 qtdPergunta = 10;
             }
-            else
-            {
-                qtdPergunta = qtdPergunta - 1;
-            }
+            
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.Descricao)

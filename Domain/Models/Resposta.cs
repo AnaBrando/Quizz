@@ -11,15 +11,11 @@ namespace Domain.Models
         {
             Pergunta = new HashSet<Pergunta>();
         }
-
-        public int RespostaId { get; set; }
-        public int EstudanteId { get; set; }
+        
+        public int? RespostaId { get; set; }
+        public string EstudanteId { get; set; }
         public string Descricao { get; set; }
         public virtual Estudante Estudante { get; set; }
-
-      
-
-        public int GabaritoId { get; set; }
         public virtual ICollection<Pergunta> Pergunta { get; set; }
     }
 }

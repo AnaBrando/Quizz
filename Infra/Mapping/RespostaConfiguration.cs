@@ -11,10 +11,6 @@ namespace Infra.Mapping
         {
             entity.HasKey(x => x.RespostaId);
 
-            entity.HasOne(d => d.Estudante)
-                .WithMany(p => p.Resposta)
-                .HasForeignKey(d => d.EstudanteId)
-                .HasConstraintName("FK_Resposta_Estudante");
 
 
         }

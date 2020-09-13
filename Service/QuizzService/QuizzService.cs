@@ -15,10 +15,13 @@ namespace Service.QuizzService
     {
         public readonly IQuizzRepository repo;
         public readonly IPerguntaRepository repoPergunta;
-        public QuizzService(IQuizzRepository quizzRepository, IPerguntaRepository _repo)
+        public readonly IRespostaRepository respostaRepository;
+        public QuizzService(IQuizzRepository quizzRepository, IPerguntaRepository _repo,
+            IRespostaRepository respostaRepo)
         {
             this.repo = quizzRepository;
             repoPergunta = _repo;
+            respostaRepository = respostaRepo;
         }
 
         public Task<int> AddQuizz(QuizzDTO user)
@@ -34,15 +37,29 @@ namespace Service.QuizzService
 
         public ICollection<Pergunta> buscarPerguntas(int id)
         {
-            var perguntas = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id).ToList();
+            var perguntas = repoPergunta.GetAll().Result;
+            perguntas = perguntas.Where(x => x.QuizzId == id).ToList();
 
             return perguntas;
         }
 
         public Pergunta buscarPerguntaParaIniciarQuizz(int id)
         {
-            var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id && x.RespostaId == null).FirstOrDefault();
-            return pergunta;
+
+            var respostasId = (from A in (respostaRepository.GetAll().Result)
+                            select A.RespostaId).ToList();
+            var teste = new List<Pergunta>();
+            var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id );
+            foreach (var item in pergunta)
+            {
+                var pgt = respostasId.Contains(item.RespostaId);
+                if (pgt)
+                {
+                    teste.Add(item);
+                }
+            }
+            return teste.Count() <=  0 ? pergunta.FirstOrDefault() : teste.FirstOrDefault(); 
+          
         }
 
         public bool Delete(int id)
