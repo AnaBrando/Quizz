@@ -12,6 +12,6 @@ namespace Domain.Interfaces.Application
         void Save();
         ICollection<RespostaDTO> GetAll(int quiizId);
         void Delete(int id);
-        void GerarReposta(string estudanteId);
+        void GerarReposta(string estudanteId, int perguntaId);
     }
 }

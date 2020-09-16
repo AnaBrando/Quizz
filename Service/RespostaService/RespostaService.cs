@@ -30,11 +30,12 @@ namespace Service.RespostaService
             throw new NotImplementedException();
         }
 
-        public void GerarReposta(string EstudanteId)
+        public void GerarReposta(string EstudanteId,int perguntaId)
         {
             Resposta resposta = new Resposta();
             resposta.Descricao = DateTime.Now.ToString();
             resposta.EstudanteId = EstudanteId;
+            resposta.PerguntaId = perguntaId;
             _repositoyResposta.Add(resposta);
         }
 

@@ -37,10 +37,10 @@ namespace Quizz.Controllers
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
             if (acertou)
             {
-                _respostaService.GerarReposta(estudante.Id);
+                _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
                 var pontuacao = _alunoService.Pontuou(pergunta.PerguntaId);
                 estudante.Pontuacao = estudante.Pontuacao + (decimal)pontuacao;
-
+                RedirectToAction("IniciarQuizz", "Aluno");
             }
         }
         
