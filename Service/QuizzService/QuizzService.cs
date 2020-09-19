@@ -46,14 +46,14 @@ namespace Service.QuizzService
         public Pergunta buscarPerguntaParaIniciarQuizz(int id)
         {
 
-            var respostasId = (from A in (respostaRepository.GetAll().Result)
-                            select A.RespostaId).ToList();
+            var PerguntaRespostas = (from A in (respostaRepository.GetAll().Result)
+                            select A.PerguntaId).ToList();
             var teste = new List<Pergunta>();
             var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id );
             foreach (var item in pergunta)
             {
-                var pgt = respostasId.Contains(item.RespostaId);
-                if (pgt)
+                var pgt = PerguntaRespostas.Contains(item.PerguntaId);
+                if (!pgt)
                 {
                     teste.Add(item);
                 }

@@ -1,8 +1,11 @@
-﻿using Domain.Interfaces.Application;
+﻿using AutoMapper;
+using Domain.DTO;
+using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,10 +16,15 @@ namespace Service.AlunoService
     public class AlunoService : IAlunoService
     {
         private readonly IPerguntaRepository _repo;
-
-        public AlunoService(IPerguntaRepository repo)
+        private readonly IPontuacaoRepository _repoPontuacao;
+        private readonly IEstudanteRepository _repoEstudante;
+        public AlunoService(IPerguntaRepository repo, 
+            IPontuacaoRepository repoPontuacao,
+            IEstudanteRepository repoEstudante)
         {
             _repo = repo;
+            _repoPontuacao = repoPontuacao;
+            _repoEstudante = repoEstudante;
         }
 
 
@@ -42,6 +50,25 @@ namespace Service.AlunoService
 
             //return perguntas;
         }
+
+        public bool PontuarAluno(string id, double pontuacao)
+        {
+            var estudante = new Estudante();
+            estudante.EstudanteId = id;
+            estudante.EstudanteSessao = id;
+            estudante.Pontuacao = (decimal)pontuacao;
+            try
+            {
+                _repoEstudante.Add(estudante);
+                return true;
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
+
         //Teste unitário não acessa banco de dados
         //public List<Pergunta> MockListaPergunta()
         //{
@@ -53,8 +80,11 @@ namespace Service.AlunoService
         //}
         public double Pontuou(int perguntaId)
         {
-            var retorno = _repo.GetById(perguntaId).Result;
-            return 0;
+            var nivelId = _repo.GetById(perguntaId).Result.NivelId;
+            var pontuacao = (from A in _repoPontuacao.GetAll().Result
+                             where A.NivelId == nivelId
+                             select A.Valor).First();
+            return pontuacao;
         }
 
 

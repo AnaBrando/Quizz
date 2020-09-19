@@ -1,4 +1,5 @@
 ﻿using Domain.DTO;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,11 +8,11 @@ namespace Domain.Interfaces.Application
 {
     public interface IRespostaService
     {
-        void Add(RespostaDTO pergunta);
-        void Update(RespostaDTO pergunta);
+        int AddResposta(Resposta pergunta);
+        void Update(Resposta pergunta);
         void Save();
-        ICollection<RespostaDTO> GetAll(int quiizId);
+        ICollection<Resposta> GetAll(int quiizId);
         void Delete(int id);
-        void GerarReposta(string estudanteId, int perguntaId);
+        int GerarReposta(string estudanteId, int perguntaId);
     }
 }

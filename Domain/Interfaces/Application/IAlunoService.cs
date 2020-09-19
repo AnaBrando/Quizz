@@ -12,5 +12,6 @@ namespace Domain.Interfaces.Application
         double Pontuou(int perguntaId);
 
         List<Pergunta> GetPerguntas();
+        bool PontuarAluno(string id, double pontuacao);
     }
 }

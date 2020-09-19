@@ -25,18 +25,25 @@ namespace Service.RespostaService
             throw new NotImplementedException();
         }
 
+        public int AddResposta(Resposta pergunta)
+        {
+            var i = _repositoyResposta.AddResposta(pergunta);
+            var indice = i.Result;
+            return indice;
+        }
+
         public void Delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public void GerarReposta(string EstudanteId,int perguntaId)
+        public int GerarReposta(string EstudanteId,int perguntaId)
         {
             Resposta resposta = new Resposta();
             resposta.Descricao = DateTime.Now.ToString();
             resposta.EstudanteId = EstudanteId;
             resposta.PerguntaId = perguntaId;
-            _repositoyResposta.Add(resposta);
+            return AddResposta(resposta);
         }
 
         public ICollection<RespostaDTO> GetAll(int quiizId)
@@ -50,6 +57,16 @@ namespace Service.RespostaService
         }
 
         public void Update(RespostaDTO pergunta)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Resposta pergunta)
+        {
+            throw new NotImplementedException();
+        }
+
+        ICollection<Resposta> IRespostaService.GetAll(int quiizId)
         {
             throw new NotImplementedException();
         }

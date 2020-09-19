@@ -11,7 +11,10 @@ namespace Domain.Interfaces.NovaPasta
         Task<int> AddQuizz(TEntity e);
         Task Update(TEntity e);
         Task Delete(TEntity e);
-        int Save(); 
+        int Save();
+        Task<TEntity> GetByIdEstudante(string id);
+
+        Task<int> AddResposta(TEntity e);
     }
 }
 

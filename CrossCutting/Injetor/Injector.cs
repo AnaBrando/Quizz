@@ -24,6 +24,7 @@ namespace CrossCutting
             services.AddScoped<IPontuacaoRepository, PontuacaoRepository>();
             services.AddScoped<IPerguntaRepository, PerguntaRepository>();
             services.AddScoped<IProfessorRepository, ProfessorRepository>();
+            services.AddScoped<IEstudanteRepository, EstudanteRepository>();
 
             services.AddScoped<IQuizzService,QuizzService>();
             services.AddScoped<IRespostaService, RespostaService>();

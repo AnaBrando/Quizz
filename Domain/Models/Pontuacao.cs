@@ -14,6 +14,7 @@ namespace Domain.Models
         public int PontuacaoId { get; set; }
         public double Valor { get; set; }
 
+        public int NivelId { get; set; }
         public virtual ICollection<Nivel> Nivel { get; set; }
     }
 }

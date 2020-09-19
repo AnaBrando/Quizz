@@ -30,18 +30,20 @@ namespace Quizz.Controllers
            return View(perguntas); 
         }
 
-        public void Responder(int id,string resposta)
+        public IActionResult Responder(int id,string resposta)
         {
             var estudante = _userManager.FindByNameAsync(User.Identity.Name).Result;
             var pergunta = _perguntaService.getById(id);
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
             if (acertou)
             {
-                _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
+                var i = _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
                 var pontuacao = _alunoService.Pontuou(pergunta.PerguntaId);
-                estudante.Pontuacao = estudante.Pontuacao + (decimal)pontuacao;
-                RedirectToAction("IniciarQuizz", "Aluno");
+                var pontuarAluno = _alunoService.PontuarAluno(estudante.Id, pontuacao);
+              
+               return RedirectToAction("IniciarQuizz", "Aluno",new { id = pergunta.QuizzId });
             }
+            return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId }); ;
         }
         
         public IActionResult Index(string id)

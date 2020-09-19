@@ -19,10 +19,11 @@ namespace TestesUnitarios
 
         private readonly IAlunoService _service;
         private readonly Mock<IPerguntaRepository> _mock = new Mock<IPerguntaRepository>();
-
+        private readonly Mock<IPontuacaoRepository> _mock2 = new Mock<IPontuacaoRepository>();
+        private readonly Mock<IEstudanteRepository> _mock3 = new Mock<IEstudanteRepository>();
         public RespostasTestes()
         {
-            _service = new AlunoService(_mock.Object);
+            _service = new AlunoService(_mock.Object, _mock2.Object, _mock3.Object);
         }
 
         public List<Pergunta> MockListaPergunta()
