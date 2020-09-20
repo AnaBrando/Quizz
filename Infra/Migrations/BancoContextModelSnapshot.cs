@@ -21,8 +21,10 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.Models.Estudante", b =>
                 {
-                    b.Property<string>("EstudanteId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("EstudanteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("EstudanteSessao")
                         .HasColumnType("nvarchar(max)");
@@ -167,8 +169,11 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("EstudanteId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("EstudanteChave")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("EstudanteId")
+                        .HasColumnType("int");
 
                     b.Property<int>("PerguntaId")
                         .HasColumnType("int");

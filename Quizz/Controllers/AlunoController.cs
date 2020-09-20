@@ -37,11 +37,12 @@ namespace Quizz.Controllers
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
             if (acertou)
             {
-                var i = _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
+                
                 var pontuacao = _alunoService.Pontuou(pergunta.PerguntaId);
                 var pontuarAluno = _alunoService.PontuarAluno(estudante.Id, pontuacao);
-              
-               return RedirectToAction("IniciarQuizz", "Aluno",new { id = pergunta.QuizzId });
+                var i = _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
+
+                return RedirectToAction("IniciarQuizz", "Aluno",new { id = pergunta.QuizzId });
             }
             return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId }); ;
         }

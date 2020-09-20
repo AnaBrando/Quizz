@@ -41,7 +41,7 @@ namespace Service.RespostaService
         {
             Resposta resposta = new Resposta();
             resposta.Descricao = DateTime.Now.ToString();
-            resposta.EstudanteId = EstudanteId;
+            resposta.EstudanteChave = EstudanteId;
             resposta.PerguntaId = perguntaId;
             return AddResposta(resposta);
         }

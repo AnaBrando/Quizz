@@ -89,8 +89,19 @@ namespace Infra
             }
             return 0;
         }
-        public async Task<ICollection<TEntity>> GetAll() =>
-             await _db.Set<TEntity>().ToListAsync();
+        public async Task<ICollection<TEntity>> GetAll() {
+            try
+            {
+                return await _db.Set<TEntity>().ToListAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+         
+        }
+             
 
         
         public int Save()

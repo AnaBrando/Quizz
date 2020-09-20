@@ -18,13 +18,16 @@ namespace Service.AlunoService
         private readonly IPerguntaRepository _repo;
         private readonly IPontuacaoRepository _repoPontuacao;
         private readonly IEstudanteRepository _repoEstudante;
+        private readonly IRespostaRepository _repoResposta;
         public AlunoService(IPerguntaRepository repo, 
             IPontuacaoRepository repoPontuacao,
-            IEstudanteRepository repoEstudante)
+            IEstudanteRepository repoEstudante,
+            IRespostaRepository repoResposta)
         {
             _repo = repo;
             _repoPontuacao = repoPontuacao;
             _repoEstudante = repoEstudante;
+            _repoResposta = repoResposta;
         }
 
 
@@ -53,8 +56,13 @@ namespace Service.AlunoService
 
         public bool PontuarAluno(string id, double pontuacao)
         {
+            var respsotas = _repoResposta.GetAll().Result;
+            var index = respsotas.Count();
+            var ponteiro = index + 1;
+           
+          
+            
             var estudante = new Estudante();
-            estudante.EstudanteId = id;
             estudante.EstudanteSessao = id;
             estudante.Pontuacao = (decimal)pontuacao;
             try

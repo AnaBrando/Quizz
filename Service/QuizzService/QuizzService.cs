@@ -45,21 +45,25 @@ namespace Service.QuizzService
 
         public Pergunta buscarPerguntaParaIniciarQuizz(int id)
         {
-
-            var PerguntaRespostas = (from A in (respostaRepository.GetAll().Result)
-                            select A.PerguntaId).ToList();
-            var teste = new List<Pergunta>();
-            var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id );
-            foreach (var item in pergunta)
-            {
-                var pgt = PerguntaRespostas.Contains(item.PerguntaId);
-                if (!pgt)
+            var lista = respostaRepository.GetAll().Result;
+            var PerguntaRespostas = (from A in lista
+                                     select A.PerguntaId).ToList();
+            if (lista != null && lista.Count > 0){
+                var teste = new List<Pergunta>();
+                var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id);
+                foreach (var item in pergunta)
                 {
-                    teste.Add(item);
+                    var repostaContemPergunta = PerguntaRespostas.Contains(item.PerguntaId);
+                    if (!repostaContemPergunta)
+                    {
+                        teste.Add(item);
+                    }
                 }
+                return teste.Count() <= 0 ? pergunta.FirstOrDefault() : teste.FirstOrDefault();
+
             }
-            return teste.Count() <=  0 ? pergunta.FirstOrDefault() : teste.FirstOrDefault(); 
-          
+            var pgt = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id);
+            return pgt.FirstOrDefault();
         }
 
         public bool Delete(int id)

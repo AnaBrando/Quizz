@@ -11,7 +11,7 @@ namespace Domain.Models
             Resposta = new HashSet<Resposta>();
         }
 
-        public string EstudanteId { get; set; }
+        public int EstudanteId { get; set; }
         public string EstudanteSessao { get; set; }
 
         public virtual ICollection<Resposta> Resposta { get; set; }
