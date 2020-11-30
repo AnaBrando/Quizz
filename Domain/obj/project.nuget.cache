@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "aaX5eJ4GE8X0T8211lvlpMVFHLgCML2pgtnQ5liOpG9lv3MBXIZ5lTRel0xPXV8W6HCz+jK9zdBfYIdb94jBGA==",
+  "dgSpecHash": "kOwJKthGA90bzjytNG/fHZVYksLns0Nsmqa072mN1mn/s4Crozm060uXlpzjGicQhBdD7JY3epsQVD/okcKCHA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\anabr\\Documents\\Quizz\\Domain\\Domain.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj",
+  "expectedPackageFiles": [
+    "/home/anabrando/.nuget/packages/microsoft.aspnetcore.app.ref/3.1.8/microsoft.aspnetcore.app.ref.3.1.8.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,5 +1,5 @@
 {
-  "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Quizz.csproj",
+  "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Quizz.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "3.0",
@@ -14392,353 +14392,363 @@
   "RootNamespace": "Quizz",
   "Documents": [
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/_ViewStart.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pergunta/IndexEdit.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pergunta/IndexEdit.cshtml",
       "TargetPath": "Views\\Pergunta\\IndexEdit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmailChange.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/AccessDenied.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ResetPassword.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\TwoFactorAuthentication.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Shared/_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Nivel/Create.cshtml",
-      "TargetPath": "Views\\Nivel\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Shared/_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pontuacao/Create.cshtml",
-      "TargetPath": "Views\\Pontuacao\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/LoginWith2fa.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Login.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Professor/Edit.cshtml",
-      "TargetPath": "Views\\Professor\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\GenerateRecoveryCodes.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Login/Registro.cshtml",
-      "TargetPath": "Views\\Login\\Registro.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Quizz/Create.cshtml",
-      "TargetPath": "Views\\Quizz\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\PersonalData.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Shared/_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Lockout.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Lockout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Nivel/Edit.cshtml",
-      "TargetPath": "Views\\Nivel\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Aluno/IniciarQuizz.cshtml",
-      "TargetPath": "Views\\Aluno\\IniciarQuizz.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/_StatusMessage.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Nivel/Index.cshtml",
-      "TargetPath": "Views\\Nivel\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Professor/Index.cshtml",
-      "TargetPath": "Views\\Professor\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pontuacao/Edit.cshtml",
-      "TargetPath": "Views\\Pontuacao\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Nivel/Delete.cshtml",
-      "TargetPath": "Views\\Nivel\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Error.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Quizz/Index.cshtml",
-      "TargetPath": "Views\\Quizz\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Login/Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Register.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Logout.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Professor/Details.cshtml",
-      "TargetPath": "Views\\Professor\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pergunta/Edit.cshtml",
-      "TargetPath": "Views\\Pergunta\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pontuacao/Index.cshtml",
-      "TargetPath": "Views\\Pontuacao\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ShowRecoveryCodes.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Email.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Email.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Email.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/_ViewImports.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ForgotPasswordConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPasswordConfirmation.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pontuacao/Details.cshtml",
-      "TargetPath": "Views\\Pontuacao\\Details.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\LoginWithRecoveryCode.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Shared/_LayoutLogin.cshtml",
-      "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pontuacao/Delete.cshtml",
-      "TargetPath": "Views\\Pontuacao\\Delete.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Disable2fa.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Disable2fa.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ForgotPassword.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pergunta/Edit.cshtml",
+      "TargetPath": "Views\\Pergunta\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Home/Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/AccessDenied.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\AccessDenied.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\DownloadPersonalData.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_StatusMessage.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Nivel/Details.cshtml",
-      "TargetPath": "Views\\Nivel\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ResetAuthenticator.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Pergunta/Create.cshtml",
-      "TargetPath": "Views\\Pergunta\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Index.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ExternalLogin.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml",
-      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Shared/Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Views/Aluno/Index.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Aluno/Index.cshtml",
       "TargetPath": "Views\\Aluno\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/docker/Music/Quizz/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_Layout.cshtml",
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/Index.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Login/Index.cshtml",
+      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Nivel/Index.cshtml",
+      "TargetPath": "Views\\Nivel\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Shared/_LayoutLogin.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Nivel/Edit.cshtml",
+      "TargetPath": "Views\\Nivel\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Shared/_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Nivel/Create.cshtml",
+      "TargetPath": "Views\\Nivel\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Quizz/Create.cshtml",
+      "TargetPath": "Views\\Quizz\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_Layout.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/LoginWith2fa.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\LoginWith2fa.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/DownloadPersonalData.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\DownloadPersonalData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pontuacao/Index.cshtml",
+      "TargetPath": "Views\\Pontuacao\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Aluno/RelatorioFinal.cshtml",
+      "TargetPath": "Views\\Aluno\\RelatorioFinal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pergunta/Create.cshtml",
+      "TargetPath": "Views\\Pergunta\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Professor/Details.cshtml",
+      "TargetPath": "Views\\Professor\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/TwoFactorAuthentication.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\TwoFactorAuthentication.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ResetPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pontuacao/Delete.cshtml",
+      "TargetPath": "Views\\Pontuacao\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Quizz/Index.cshtml",
+      "TargetPath": "Views\\Quizz\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/LoginWithRecoveryCode.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\LoginWithRecoveryCode.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/wwwroot/Relatório/RelatorioFinal.cshtml",
+      "TargetPath": "wwwroot\\Relatório\\RelatorioFinal.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pontuacao/Create.cshtml",
+      "TargetPath": "Views\\Pontuacao\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pontuacao/Details.cshtml",
+      "TargetPath": "Views\\Pontuacao\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/_StatusMessage.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Aluno/IniciarQuizz.cshtml",
+      "TargetPath": "Views\\Aluno\\IniciarQuizz.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/GenerateRecoveryCodes.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\GenerateRecoveryCodes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Login/Registro.cshtml",
+      "TargetPath": "Views\\Login\\Registro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ExternalLogin.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ExternalLogin.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Professor/Edit.cshtml",
+      "TargetPath": "Views\\Professor\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ConfirmEmailChange.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmailChange.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Nivel/Delete.cshtml",
+      "TargetPath": "Views\\Nivel\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/DeletePersonalData.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\DeletePersonalData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ResetAuthenticator.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ResetAuthenticator.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ForgotPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Lockout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Lockout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/_StatusMessage.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_StatusMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Pontuacao/Edit.cshtml",
+      "TargetPath": "Views\\Pontuacao\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/SetPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\SetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/ConfirmEmail.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ConfirmEmail.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Shared/Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Home/Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Professor/Index.cshtml",
+      "TargetPath": "Views\\Professor\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/EnableAuthenticator.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\EnableAuthenticator.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ExternalLogins.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ExternalLogins.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/PersonalData.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\PersonalData.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Account/Manage/ShowRecoveryCodes.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ShowRecoveryCodes.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Nivel/Details.cshtml",
+      "TargetPath": "Views\\Nivel\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/anabrando/Imagens/Quizz/Quizz/Areas/Identity/Pages/Error.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],

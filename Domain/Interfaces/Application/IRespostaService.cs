@@ -14,5 +14,9 @@ namespace Domain.Interfaces.Application
         ICollection<Resposta> GetAll(int quiizId);
         void Delete(int id);
         int GerarReposta(string estudanteId, int perguntaId);
+
+        RelatorioFinalDTO GerarDadosRelatorio(string descricao,string sessao,string sessaoNome);
+
+        void PDF();
     }
 }

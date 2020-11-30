@@ -17,7 +17,7 @@ namespace Domain.Models
         public string Descricao { get; set; }
         public virtual Estudante Estudante { get; set; }
         public virtual ICollection<Pergunta> Pergunta { get; set; }
-
+        public int EstudanteId{get;set;}
         public int PerguntaId { get; set; }
     }
 }

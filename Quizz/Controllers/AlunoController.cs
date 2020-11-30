@@ -1,8 +1,8 @@
 ﻿using CrossCutting.User;
 using Domain.Interfaces.Application;
+using HtmlToPdfConverter;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace Quizz.Controllers
 {
@@ -24,14 +24,31 @@ namespace Quizz.Controllers
             _perguntaService = perguntaService;
             _userManager = userManager;
         }
-        
-        public IActionResult IniciarQuizz(int id){
-           var perguntas = _serviceQuizz.buscarPerguntaParaIniciarQuizz(id);
-           return View(perguntas); 
-        }
+        public IActionResult RelatorioFinal(string nomeQuizz,string sessao,string sessaoNome){
+           
+            var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
+            return View(result);
 
+        }
+        public IActionResult IniciarQuizz(int id){
+            var sessaoNome =  User.Identity.Name;
+            var sessao =  _userManager.FindByNameAsync(sessaoNome).Result.Id;
+
+            var nomeQuizz = _serviceQuizz.GeyById(id).Descricao;
+            id=9;
+            if(id == 9){
+                return RedirectToAction("RelatorioFinal","Aluno",new { nomeQuizz = nomeQuizz,sessao = sessao,sessaoNome = sessaoNome});
+                //return RedirectToAction("RelatorioFinal",nomeQuizz,sessao,sessaoNome);
+            }
+            else{
+                var perguntas = _serviceQuizz.buscarPerguntaParaIniciarQuizz(id);
+                return View(perguntas);
+            }
+        }
+    
         public IActionResult Responder(int id,string resposta)
         {
+            
             var estudante = _userManager.FindByNameAsync(User.Identity.Name).Result;
             var pergunta = _perguntaService.getById(id);
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
