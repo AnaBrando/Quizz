@@ -1,33 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/home/anabrando/Imagens/Quizz/TestesUnitarios/TestesUnitarios.csproj": {}
+    "C:\\Users\\DEV 01\\Documents\\Quizz\\TestesUnitarios\\TestesUnitarios.csproj": {}
   },
   "projects": {
-    "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj": {
+    "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj",
-        "packagesPath": "/home/anabrando/.nuget/packages/",
-        "outputPath": "/home/anabrando/Imagens/Quizz/Domain/obj/",
+        "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\DEV 01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/anabrando/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\DEV 01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -39,7 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "Select.Pdf.NetCore": {
+              "target": "Package",
+              "version": "[20.2.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -50,48 +53,40 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.8, 3.1.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/anabrando/Imagens/Quizz/Service/Service.csproj": {
+    "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anabrando/Imagens/Quizz/Service/Service.csproj",
+        "projectUniqueName": "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\Service.csproj",
         "projectName": "Service",
-        "projectPath": "/home/anabrando/Imagens/Quizz/Service/Service.csproj",
-        "packagesPath": "/home/anabrando/.nuget/packages/",
-        "outputPath": "/home/anabrando/Imagens/Quizz/Service/obj/",
+        "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\Service.csproj",
+        "packagesPath": "C:\\Users\\DEV 01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/anabrando/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\DEV 01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj": {
-                "projectPath": "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj"
+              "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj"
               }
             }
           }
@@ -104,11 +99,14 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
               "version": "[10.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Razor": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.Extensions.Identity.Core": {
               "target": "Package",
@@ -129,51 +127,43 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.8, 3.1.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/anabrando/Imagens/Quizz/TestesUnitarios/TestesUnitarios.csproj": {
+    "C:\\Users\\DEV 01\\Documents\\Quizz\\TestesUnitarios\\TestesUnitarios.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anabrando/Imagens/Quizz/TestesUnitarios/TestesUnitarios.csproj",
+        "projectUniqueName": "C:\\Users\\DEV 01\\Documents\\Quizz\\TestesUnitarios\\TestesUnitarios.csproj",
         "projectName": "TestesUnitarios",
-        "projectPath": "/home/anabrando/Imagens/Quizz/TestesUnitarios/TestesUnitarios.csproj",
-        "packagesPath": "/home/anabrando/.nuget/packages/",
-        "outputPath": "/home/anabrando/Imagens/Quizz/TestesUnitarios/obj/",
+        "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\TestesUnitarios\\TestesUnitarios.csproj",
+        "packagesPath": "C:\\Users\\DEV 01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\TestesUnitarios\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/anabrando/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\DEV 01\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj": {
-                "projectPath": "/home/anabrando/Imagens/Quizz/Domain/Domain.csproj"
+              "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Domain\\Domain.csproj"
               },
-              "/home/anabrando/Imagens/Quizz/Service/Service.csproj": {
-                "projectPath": "/home/anabrando/Imagens/Quizz/Service/Service.csproj"
+              "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\DEV 01\\Documents\\Quizz\\Service\\Service.csproj"
               }
             }
           }
@@ -186,7 +176,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MSTest.TestAdapter": {
               "target": "Package",
@@ -219,18 +208,12 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[3.1.8, 3.1.8]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

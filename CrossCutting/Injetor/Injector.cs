@@ -10,6 +10,7 @@ using Service.PerguntaService;
 using Service.PontuacaoService;
 using Service.ProfessorService;
 using Service.QuizzService;
+using Service.ReportService;
 using Service.RespostaService;
 
 namespace CrossCutting
@@ -32,8 +33,10 @@ namespace CrossCutting
             services.AddScoped<IProfessorService, ProfessorService>();
             services.AddScoped<IAlunoService, AlunoService>();
             services.AddScoped<INivelService, NivelService>();
+            services.AddScoped<IViewRenderService, ViewRenderService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
+            services.AddSingleton<IPdfGeneratorService, PdfGeneratorService>();
+            
             services.AddScoped<BancoContext>();
 
             

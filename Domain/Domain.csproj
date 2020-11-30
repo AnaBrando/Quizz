@@ -10,4 +10,8 @@
     <None Remove="NovaPasta\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Select.Pdf.NetCore" Version="20.2.0" />
+  </ItemGroup>
+
 </Project>
