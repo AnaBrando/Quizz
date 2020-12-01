@@ -12,10 +12,14 @@ namespace Quizz.Controllers
         public readonly IAlunoService _alunoService;
         public readonly IRespostaService _respostaService;
         public readonly IPerguntaService _perguntaService;
+        private readonly IViewRenderService _viewRenderService;
+        private readonly IPdfGeneratorService _pdfService;
         private readonly UserManager<Usuario> _userManager;
 
         public AlunoController(IQuizzService service, IAlunoService alunoService, 
             IRespostaService respostaService, IPerguntaService perguntaService,
+            IViewRenderService viewRender,
+            IPdfGeneratorService pdfGenerator,
             UserManager<Usuario> userManager)
         {
             _serviceQuizz = service;
@@ -23,10 +27,15 @@ namespace Quizz.Controllers
             _respostaService = respostaService;
             _perguntaService = perguntaService;
             _userManager = userManager;
+            _pdfService = pdfGenerator;
+            _viewRenderService = viewRender;
         }
         public IActionResult RelatorioFinal(string nomeQuizz,string sessao,string sessaoNome){
            
             var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
+            var dados = _viewRenderService.RenderToStringAsync("RelatorioFinal", result).Result;
+            var pdf = _pdfService.GerarPdf(dados,"RelatorioFinal");
+            var pdfresult = _pdfService.GerarBytePdf(pdf);
             return View(result);
 
         }
