@@ -33,7 +33,7 @@ namespace Quizz.Controllers
         public IActionResult RelatorioFinal(string nomeQuizz,string sessao,string sessaoNome){
            
             var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
-            var dados = _viewRenderService.RenderToStringAsync("RelatorioFinal", result).Result;
+            var dados = _viewRenderService.RenderToStringAsync($"Aluno/RelatorioFinal", result).Result;
             var pdf = _pdfService.GerarPdf(dados,"RelatorioFinal");
             var pdfresult = _pdfService.GerarBytePdf(pdf);
             return View(result);
