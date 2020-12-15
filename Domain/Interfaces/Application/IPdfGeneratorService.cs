@@ -1,11 +1,9 @@
-﻿using SelectPdf;
-
-namespace Domain.Interfaces.Application
+﻿namespace Domain.Interfaces.Application
 {
     public interface IPdfGeneratorService
     {
-        PdfDocument GerarPdf(string html, string contratoNome);
+       object GerarPdf(string html, string contratoNome);
 
-        byte[] GerarBytePdf(PdfDocument pdf);
+        
     }
 }

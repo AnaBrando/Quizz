@@ -1,11 +1,16 @@
-﻿using CrossCutting.User;
+﻿using System;
+using System.Net.Http;
+using System.Text;
+using CrossCutting.User;
 using Domain.Interfaces.Application;
-using HtmlToPdfConverter;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Quizz.Controllers
 {
+
     public class AlunoController : Controller
     {
         public readonly IQuizzService _serviceQuizz;
@@ -30,14 +35,28 @@ namespace Quizz.Controllers
             _pdfService = pdfGenerator;
             _viewRenderService = viewRender;
         }
-        public IActionResult RelatorioFinal(string nomeQuizz,string sessao,string sessaoNome){
-           
+        public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(string nomeQuizz,string sessao,string sessaoNome){
+      
             var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
-            var dados = _viewRenderService.RenderToStringAsync($"Aluno/RelatorioFinal", result).Result;
-            var pdf = _pdfService.GerarPdf(dados,"RelatorioFinal");
-            var pdfresult = _pdfService.GerarBytePdf(pdf);
-            return View(result);
-
+            var dados = _viewRenderService.RenderToStringAsync("Aluno/RelatorioFinal", result).Result;
+            var expected = JsonConvert.SerializeObject(new { html = dados });
+            var jason = expected.Replace(@"\\n","");
+            var jason2 = jason.Replace(@"\","");
+            var jason3 = jason2.Replace(@"n","");
+            var teste2 = jason3.Replace("\"", "");
+            Console.WriteLine(teste2);
+            string json = JsonConvert.SerializeObject(teste2);
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:62626");
+                var teste = new StringContent(json, Encoding.UTF8, "application/json");
+            
+                var pdf = await client.PostAsync("http://localhost:62626", teste);
+                var r = new FileContentResult(await pdf.Content.ReadAsByteArrayAsync(),pdf.Content.Headers.ContentType.MediaType);
+                
+                return r;
+            
+            }
         }
         public IActionResult IniciarQuizz(int id){
             var sessaoNome =  User.Identity.Name;
