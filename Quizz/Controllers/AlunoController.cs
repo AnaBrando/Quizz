@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Quizz.Models;
 
 namespace Quizz.Controllers
 {
@@ -38,20 +40,19 @@ namespace Quizz.Controllers
         public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(string nomeQuizz,string sessao,string sessaoNome){
       
             var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
-            var dados = _viewRenderService.RenderToStringAsync("Aluno/RelatorioFinal", result).Result;
-            var expected = JsonConvert.SerializeObject(new { html = dados });
-            var jason = expected.Replace(@"\\n","");
-            var jason2 = jason.Replace(@"\","");
-            var jason3 = jason2.Replace(@"n","");
-            var teste2 = jason3.Replace("\"", "");
-            Console.WriteLine(teste2);
-            string json = JsonConvert.SerializeObject(teste2);
+  
+            var x = new ReportViewModel{
+                    NomeAluno = result.NomeAluno,
+                    NomeQuizz = result.NomeQuizz,
+                    Pontuacao = result.Pontuacao.ToString(),
+                    Porcentagem = result.Porcentagem.ToString()
+            } ;
+            string json2 = JsonConvert.SerializeObject(x);
+
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:62626");
-                var teste = new StringContent(json, Encoding.UTF8, "application/json");
-            
-                var pdf = await client.PostAsync("http://localhost:62626", teste);
+                var pdf = await client.PostAsync("http://localhost:62626", new StringContent(json2, Encoding.UTF8, "application/json"));
                 var r = new FileContentResult(await pdf.Content.ReadAsByteArrayAsync(),pdf.Content.Headers.ContentType.MediaType);
                 
                 return r;
