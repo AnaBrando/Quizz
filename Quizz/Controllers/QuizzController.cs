@@ -39,10 +39,14 @@ namespace Quizz.Controllers
         [HttpPost]
         public async Task<IActionResult> CriarQuizz(QuizzDTO quizzDTO)
         {
-            var professorId =  await _userManager.FindByNameAsync(User.Identity.Name);
-            quizzDTO.ProfessorSessao = professorId.Id;
-            var e = _service.AddQuizz(quizzDTO).Result;
-            return RedirectToAction("Create", "Pergunta",new {id=e});
-        }
+            if(!string.IsNullOrEmpty(quizzDTO.Descricao)){
+                var professorId =  await _userManager.FindByNameAsync(User.Identity.Name);
+                quizzDTO.ProfessorSessao = professorId.Id;
+                var e = _service.AddQuizz(quizzDTO).Result;
+                return RedirectToAction("Create", "Pergunta",new {id=e});
+       
+            }
+            return null;
+      }
     }
 }

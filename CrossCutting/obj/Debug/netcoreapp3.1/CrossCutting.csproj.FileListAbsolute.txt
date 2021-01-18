@@ -93,6 +93,10 @@ C:/Users/anabr/Documents/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting
 /home/anabrando/Imagens/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.dll
 /home/anabrando/Imagens/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.pdb
 /home/anabrando/Imagens/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.genruntimeconfig.cache
+/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csprojAssemblyReference.cache
+/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfoInputs.cache
+/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfo.cs
+/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csproj.CoreCompileInputs.cache
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/Select.Html.dep
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/Select.Tools.dep
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/CrossCutting.deps.json
@@ -106,10 +110,6 @@ C:/Users/anabr/Documents/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/Domain.pdb
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/Infra.pdb
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/bin/Debug/netcoreapp3.1/Service.pdb
-/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csprojAssemblyReference.cache
-/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfoInputs.cache
-/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.AssemblyInfo.cs
-/home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csproj.CoreCompileInputs.cache
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.csproj.CopyComplete
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.dll
 /home/anabrando/Documentos/Projetos/Quizz/CrossCutting/obj/Debug/netcoreapp3.1/CrossCutting.pdb

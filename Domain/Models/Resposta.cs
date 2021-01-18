@@ -11,7 +11,7 @@ namespace Domain.Models
         {
             Pergunta = new HashSet<Pergunta>();
         }
-        
+            public bool Acertou { get;set;}
         public int? RespostaId { get; set; }
         public string EstudanteChave { get; set; }
         public string Descricao { get; set; }

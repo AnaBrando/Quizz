@@ -4,23 +4,6 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="Migrations\**" />
-    <EmbeddedResource Remove="Migrations\**" />
-    <None Remove="Migrations\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Include="Migrations\20200913180813_1.cs" />
-    <Compile Include="Migrations\20200913180813_1.Designer.cs" />
-    <Compile Include="Migrations\20200913200407_36.cs" />
-    <Compile Include="Migrations\20200913200407_36.Designer.cs" />
-    <Compile Include="Migrations\20200919204107_4785.cs" />
-    <Compile Include="Migrations\20200919204107_4785.Designer.cs" />
-    <Compile Include="Migrations\20200919210801_3.cs" />
-    <Compile Include="Migrations\20200919210801_3.Designer.cs" />
-    <Compile Include="Migrations\UserDbContextModelSnapshot.cs" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />

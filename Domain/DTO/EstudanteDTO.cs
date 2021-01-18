@@ -13,6 +13,10 @@ namespace Domain.DTO
 
         public int EstudanteId { get; set; }
         public string EstudanteSessao { get; set; }
+
+            public string Nome { get; set; }
         public virtual ICollection<RespostaDTO> Resposta { get; set; }
+
+                public decimal Pontuacao { get; set; }
     }
 }

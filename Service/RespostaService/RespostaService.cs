@@ -43,27 +43,44 @@ namespace Service.RespostaService
             throw new NotImplementedException();
         }
 
-        public RelatorioFinalDTO GerarDadosRelatorio(string descricao,string sessao,string sessaoNome)
-        {
-            var estudante = _repositoryEstudante.GetAll().Result;
-            var query = (from A in estudante
-                        where A.EstudanteSessao == sessao
-                        select new RelatorioFinalDTO{
-                                Pontuacao = A.Pontuacao,
-                                NomeQuizz = descricao,
-                                NomeAluno = sessaoNome
-                            
-                        }).Distinct().FirstOrDefault();
-            var nivelQuizz = (from A in _repositoryPergunta.GetAll().Result
-                                    join B in _repositoryQuizz.GetAll().Result
-                                    on A.QuizzId equals B.QuizzId
-                                    select A.NivelId).ToList();
-            var pontuacaoTotal = (from A in nivelQuizz
-                                    select A.Value).Sum();
+        
 
-            var porcentagem = ((query.Pontuacao * pontuacaoTotal)/100);
-            query.Porcentagem = (double)porcentagem;
-            return query;
+        public RelatorioFinalObjectDTO GerarDadosRelatorio(int quizzId, int alunoId, string sessaoNome)
+        {
+           var query = (from A in _repositoyResposta.GetAll().Result
+                        join B in _repositoryEstudante.GetAll().Result
+                        on A.EstudanteId equals B.EstudanteId 
+                        join C in _repositoryPergunta.GetAll().Result
+                        on A.PerguntaId equals C.PerguntaId
+                        join D in _repositoryQuizz.GetAll().Result
+                        on C.QuizzId equals D.QuizzId
+                        where A.EstudanteId == alunoId && C.QuizzId == quizzId
+                        && D.QuizzId == quizzId
+                        select new RelatorioFinalDTO{
+                                NomeAluno = B.Nome,
+                                NomeQuizz = D.Descricao
+                        }).Distinct().FirstOrDefault();
+           var resposta = new List<RespostaDTO>();
+           var perguntas = (from A in _repositoryPergunta.GetAll().Result
+                            where A.QuizzId == quizzId
+                            select A).Distinct().ToList();
+            foreach(var x in perguntas){
+                var respostas =(from A in _repositoyResposta.GetAll().Result
+                                join B in _repositoryPergunta.GetAll().Result
+                                on A.PerguntaId equals B.PerguntaId
+                                where A.EstudanteId == alunoId && A.PerguntaId == x.PerguntaId
+                                select new RespostaDTO{
+                                    EstudanteId = alunoId,
+                                    Acertou = A.Acertou,
+                            }).Distinct().FirstOrDefault();
+                resposta.Add(respostas);
+                     
+            }
+            query.Resposta = resposta;
+            var retorno = new RelatorioFinalObjectDTO{ Perguntas = perguntas,Relatorio = query,quiizId = quizzId};
+            
+            return retorno;
+            
         }
 
         public int GerarReposta(string EstudanteId,int perguntaId)
@@ -74,6 +91,15 @@ namespace Service.RespostaService
             resposta.PerguntaId = perguntaId;
             resposta.EstudanteId = 0;
             return AddResposta(resposta);
+        }
+
+        public void GerarRepostaIncorreta(int estudanteId, int perguntaId)
+        {
+           Resposta resposta = new Resposta();
+            resposta.Descricao = DateTime.Now.ToString();
+            resposta.PerguntaId = perguntaId;
+            resposta.EstudanteId = estudanteId;
+            _repositoyResposta.Add(resposta);
         }
 
         public ICollection<RespostaDTO> GetAll(int quiizId)

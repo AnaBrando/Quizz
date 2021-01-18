@@ -10,6 +10,8 @@ namespace Infra.Mapping
         public void Configure(EntityTypeBuilder<Estudante> entity)
         {
             entity.HasKey(x => x.EstudanteId);
+
+          
         }
     }
 }

@@ -37,36 +37,31 @@ namespace Quizz.Controllers
             _pdfService = pdfGenerator;
             _viewRenderService = viewRender;
         }
-        public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(string nomeQuizz,string sessao,string sessaoNome){
+        public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(int quizzId,int alunoId,string sessaoNome){
       
-            var result = _respostaService.GerarDadosRelatorio(nomeQuizz,sessao,sessaoNome);
+            var result = _respostaService.GerarDadosRelatorio(quizzId,alunoId,sessaoNome);
   
-            var x = new ReportViewModel{
-                    NomeAluno = result.NomeAluno,
-                    NomeQuizz = result.NomeQuizz,
-                    Pontuacao = result.Pontuacao.ToString(),
-                    Porcentagem = result.Porcentagem.ToString()
-            } ;
-            string json2 = JsonConvert.SerializeObject(x);
+            
+            //string json2 = JsonConvert.SerializeObject(x);
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:62626");
+               /* client.BaseAddress = new Uri("http://localhost:62626");
                 var pdf = await client.PostAsync("http://localhost:62626", new StringContent(json2, Encoding.UTF8, "application/json"));
                 var r = new FileContentResult(await pdf.Content.ReadAsByteArrayAsync(),pdf.Content.Headers.ContentType.MediaType);
                 
                 return r;
-            
+            */return null;
             }
         }
         public IActionResult IniciarQuizz(int id){
             var sessaoNome =  User.Identity.Name;
             var sessao =  _userManager.FindByNameAsync(sessaoNome).Result.Id;
-
-            var nomeQuizz = _serviceQuizz.GeyById(id).Descricao;
+            var aluno = _alunoService.GetbySession(sessao);
+            var nomeQuizz = _serviceQuizz.GeyById(id);
             id=9;
             if(id == 9){
-                return RedirectToAction("RelatorioFinal","Aluno",new { nomeQuizz = nomeQuizz,sessao = sessao,sessaoNome = sessaoNome});
+                return RedirectToAction("RelatorioFinal","Aluno",new { QuizzId = nomeQuizz.QuizzId,alunoId = aluno.EstudanteId,sessaoNome = sessaoNome});
                 //return RedirectToAction("RelatorioFinal",nomeQuizz,sessao,sessaoNome);
             }
             else{
@@ -79,6 +74,7 @@ namespace Quizz.Controllers
         {
             
             var estudante = _userManager.FindByNameAsync(User.Identity.Name).Result;
+            var aluno = _alunoService.GetbySession(estudante.Id);
             var pergunta = _perguntaService.getById(id);
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
             if (acertou)
@@ -89,6 +85,10 @@ namespace Quizz.Controllers
                 var i = _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
 
                 return RedirectToAction("IniciarQuizz", "Aluno",new { id = pergunta.QuizzId });
+            }else{
+
+                _respostaService.GerarRepostaIncorreta(aluno.EstudanteId, pergunta.PerguntaId);
+
             }
             return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId }); ;
         }

@@ -224,13 +224,11 @@ C:/Users/anabr/Documents/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUni
 /home/anabrando/Imagens/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.dll
 /home/anabrando/Imagens/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.pdb
 /home/anabrando/Imagens/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.genruntimeconfig.cache
-/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.dll
-/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.pdb
+/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Select.Html.dep
+/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Select.Tools.dep
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
-/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Select.Html.dep
-/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/Select.Tools.dep
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/TestesUnitarios.deps.json
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/TestesUnitarios.runtimeconfig.json
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/bin/Debug/netcoreapp3.1/TestesUnitarios.runtimeconfig.dev.json
@@ -397,4 +395,6 @@ C:/Users/anabr/Documents/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUni
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.AssemblyInfo.cs
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.csproj.CoreCompileInputs.cache
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.csproj.CopyComplete
+/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.dll
+/home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.pdb
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.genruntimeconfig.cache

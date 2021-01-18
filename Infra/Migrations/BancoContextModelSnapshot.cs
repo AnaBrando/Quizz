@@ -29,6 +29,9 @@ namespace Infra.Migrations
                     b.Property<string>("EstudanteSessao")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Nome")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<decimal>("Pontuacao")
                         .HasColumnType("decimal(18,2)");
 
@@ -166,13 +169,16 @@ namespace Infra.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<bool>("Acertou")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("EstudanteChave")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("EstudanteId")
+                    b.Property<int>("EstudanteId")
                         .HasColumnType("int");
 
                     b.Property<int>("PerguntaId")
@@ -199,29 +205,26 @@ namespace Infra.Migrations
                 {
                     b.HasOne("Domain.Models.Nivel", "Nivel")
                         .WithMany("Pergunta")
-                        .HasForeignKey("NivelId")
-                        .HasConstraintName("FK_Pergunta_Nivel")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("NivelId");
 
                     b.HasOne("Domain.Models.Quizz", "Quizz")
                         .WithMany("Pergunta")
                         .HasForeignKey("QuizzId")
-                        .HasConstraintName("FK_Pergunta_Quizz")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Domain.Models.Resposta", "Resposta")
                         .WithMany("Pergunta")
-                        .HasForeignKey("RespostaId")
-                        .HasConstraintName("FK_Pergunta_Resposta")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("RespostaId");
                 });
 
             modelBuilder.Entity("Domain.Models.Resposta", b =>
                 {
                     b.HasOne("Domain.Models.Estudante", "Estudante")
                         .WithMany("Resposta")
-                        .HasForeignKey("EstudanteId");
+                        .HasForeignKey("EstudanteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

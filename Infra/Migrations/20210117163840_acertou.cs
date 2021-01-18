@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class _1 : Migration
+    public partial class acertou : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,7 @@ namespace Infra.Migrations
                     EstudanteId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     EstudanteSessao = table.Column<string>(nullable: true),
+                    Nome = table.Column<string>(nullable: true),
                     Pontuacao = table.Column<decimal>(nullable: false)
                 },
                 constraints: table =>
@@ -70,20 +71,21 @@ namespace Infra.Migrations
                 {
                     RespostaId = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    EstudanteId = table.Column<string>(nullable: true),
+                    Acertou = table.Column<bool>(nullable: false),
+                    EstudanteChave = table.Column<string>(nullable: true),
                     Descricao = table.Column<string>(nullable: true),
-                    EstudanteId1 = table.Column<int>(nullable: true),
+                    EstudanteId = table.Column<int>(nullable: false),
                     PerguntaId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Resposta", x => x.RespostaId);
                     table.ForeignKey(
-                        name: "FK_Resposta_Estudante_EstudanteId1",
-                        column: x => x.EstudanteId1,
+                        name: "FK_Resposta_Estudante_EstudanteId",
+                        column: x => x.EstudanteId,
                         principalTable: "Estudante",
                         principalColumn: "EstudanteId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,23 +128,23 @@ namespace Infra.Migrations
                 {
                     table.PrimaryKey("PK_Pergunta", x => x.PerguntaId);
                     table.ForeignKey(
-                        name: "FK_Pergunta_Nivel",
+                        name: "FK_Pergunta_Nivel_NivelId",
                         column: x => x.NivelId,
                         principalTable: "Nivel",
                         principalColumn: "NivelId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Pergunta_Quizz",
+                        name: "FK_Pergunta_Quizz_QuizzId",
                         column: x => x.QuizzId,
                         principalTable: "Quizz",
                         principalColumn: "QuizzId",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Pergunta_Resposta",
+                        name: "FK_Pergunta_Resposta_RespostaId",
                         column: x => x.RespostaId,
                         principalTable: "Resposta",
                         principalColumn: "RespostaId",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
@@ -166,9 +168,9 @@ namespace Infra.Migrations
                 column: "RespostaId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Resposta_EstudanteId1",
+                name: "IX_Resposta_EstudanteId",
                 table: "Resposta",
-                column: "EstudanteId1");
+                column: "EstudanteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

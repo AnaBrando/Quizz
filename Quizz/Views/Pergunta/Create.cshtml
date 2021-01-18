@@ -73,6 +73,7 @@
                         <option value="@item.NivelId">@item.Descricao</option>
                     }
                 </select>
+                  <span asp-validation-for="niveis" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -85,3 +86,6 @@
     <a asp-action="Voltar" asp-controller="Professor"><img src="~/img/back.png" width="50" /></a>
 </div>
 
+@section scripts{
+   <partial name="_ValidationScriptsPartial" />
+}

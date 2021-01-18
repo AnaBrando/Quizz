@@ -11,25 +11,8 @@ namespace Infra.Mapping
     {
         public void Configure(EntityTypeBuilder<Pergunta> entity)
         {
-            entity.HasKey(x => x.PerguntaId);
-
-            entity.HasOne(d => d.Nivel)
-                .WithMany(p => p.Pergunta)
-                .HasForeignKey(d => d.NivelId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_Pergunta_Nivel");
-
-            entity.HasOne(d => d.Quizz)
-                .WithMany(p => p.Pergunta)
-                .HasForeignKey(d => d.QuizzId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_Pergunta_Quizz");
-
-            entity.HasOne(d => d.Resposta)
-                .WithMany(p => p.Pergunta)
-                .HasForeignKey(d => d.RespostaId)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK_Pergunta_Resposta");
+            entity.HasKey(x => x.PerguntaId);          
+         
         }
     }
 }

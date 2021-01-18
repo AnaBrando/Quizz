@@ -52,6 +52,27 @@ namespace Service.AlunoService
             return false;
         }
 
+        public void Add(EstudanteDTO dto)
+        {
+            try{
+                if(dto != null){
+                var modelo = new Estudante{EstudanteSessao = dto.EstudanteSessao,Pontuacao = 0};
+               _repoEstudante.Add(modelo);
+           }
+            }catch(Exception e){
+
+            }
+          
+        }
+
+        public EstudanteDTO GetbySession(string sessao)
+        {
+            var estudante = _repoEstudante.GetAll().Result.Where(x=>x.EstudanteSessao == sessao).FirstOrDefault();
+            var dto = new EstudanteDTO {EstudanteSessao = estudante.EstudanteSessao,Pontuacao = estudante.Pontuacao,
+            EstudanteId = estudante.EstudanteId };
+            return dto;
+        }
+
         public List<Pergunta> GetPerguntas()
         {
             /*banco de dados*/

@@ -15,8 +15,10 @@ namespace Domain.Interfaces.Application
         void Delete(int id);
         int GerarReposta(string estudanteId, int perguntaId);
 
-        RelatorioFinalDTO GerarDadosRelatorio(string descricao,string sessao,string sessaoNome);
+        RelatorioFinalObjectDTO GerarDadosRelatorio(int quizzId,int alunoId,string sessaoNome);
 
         void PDF();
+
+        void GerarRepostaIncorreta (int estudanteId, int perguntaId);
     }
 }

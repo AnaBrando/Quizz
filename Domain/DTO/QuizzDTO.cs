@@ -1,6 +1,7 @@
 ﻿using Domain.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace Domain.DTO
 {
@@ -14,6 +15,7 @@ namespace Domain.DTO
         public int QuizzId { get; set; }
         public int ProfessorId { get; set; }
         public DateTime DataInclusao { get; set; }
+        [Required(ErrorMessage="Descrição é obrigatória")]
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
         public virtual ICollection<PerguntaDTO> Pergunta { get; set; }

@@ -16,17 +16,20 @@ namespace Quizz.Controllers
         private readonly UserManager<Usuario> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IProfessorService _professorService;
+
+             private readonly IAlunoService _alunoService;
         public LoginController(SignInManager<Usuario> signInManager,
             UserManager<Usuario> userManager, 
             RoleManager<IdentityRole> roleManager,
-            IProfessorService service
+            IProfessorService service,
+            IAlunoService alunoService
            )
         {
             _signInManager = signInManager;
             _userManager = userManager;
             _roleManager = roleManager;
             _professorService = service;
-
+            _alunoService = alunoService;
 
         }
         public IActionResult Index()
@@ -70,7 +73,10 @@ namespace Quizz.Controllers
                         var usuario = await _userManager.FindByNameAsync(registerModel.UserName);
                         if (usuario.RoleName.Equals("Aluno"))
                         {
-
+                            var dto = new EstudanteDTO();
+                            dto.EstudanteSessao = usuario.Id;
+                            _alunoService.Add(dto);
+                           
                         }
                         if (usuario.RoleName.Equals("Professor"))
                         {
