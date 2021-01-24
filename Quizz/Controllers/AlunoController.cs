@@ -38,11 +38,11 @@ namespace Quizz.Controllers
             _viewRenderService = viewRender;
         }
         public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(int quizzId,int alunoId,string sessaoNome){
-      
+        
             var result = _respostaService.GerarDadosRelatorio(quizzId,alunoId,sessaoNome);
-  
-            
-            //string json2 = JsonConvert.SerializeObject(x);
+
+
+            string json2 = JsonConvert.SerializeObject(result);
 
             using (var client = new HttpClient())
             {
@@ -69,28 +69,29 @@ namespace Quizz.Controllers
                 return View(perguntas);
             }
         }
-    
-        public IActionResult Responder(int id,string resposta)
+
+        public IActionResult Responder(int id, string resposta)
         {
-            
+
             var estudante = _userManager.FindByNameAsync(User.Identity.Name).Result;
             var aluno = _alunoService.GetbySession(estudante.Id);
             var pergunta = _perguntaService.getById(id);
             var acertou = _alunoService.Acertou(pergunta.PerguntaId, resposta);
             if (acertou)
             {
-                
+
                 var pontuacao = _alunoService.Pontuou(pergunta.PerguntaId);
                 var pontuarAluno = _alunoService.PontuarAluno(estudante.Id, pontuacao);
-                var i = _respostaService.GerarReposta(estudante.Id, pergunta.PerguntaId);
-
-                return RedirectToAction("IniciarQuizz", "Aluno",new { id = pergunta.QuizzId });
-            }else{
-
-                _respostaService.GerarRepostaIncorreta(aluno.EstudanteId, pergunta.PerguntaId);
-
+                var i = _respostaService.GerarReposta(aluno.EstudanteId, pergunta.PerguntaId,true);
+                return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId });
             }
-            return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId }); ;
+            else
+            {
+
+                var i = _respostaService.GerarReposta(aluno.EstudanteId, pergunta.PerguntaId, acertou);
+
+                return RedirectToAction("IniciarQuizz", "Aluno", new { id = pergunta.QuizzId }); ;
+            }
         }
         
         public IActionResult Index(string id)

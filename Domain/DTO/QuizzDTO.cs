@@ -16,6 +16,7 @@ namespace Domain.DTO
         public int ProfessorId { get; set; }
         public DateTime DataInclusao { get; set; }
         [Required(ErrorMessage="Descrição é obrigatória")]
+        
         public string Descricao { get; set; }
         public bool Ativo { get; set; }
         public virtual ICollection<PerguntaDTO> Pergunta { get; set; }

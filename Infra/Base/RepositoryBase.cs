@@ -57,21 +57,18 @@ namespace Infra
             
             
         }
-        public async Task<int> AddResposta(TEntity e)
+        public async void AddRespostaAsync(TEntity e)
         {
             try
             {
                 await _db.AddAsync(e);
                 _db.SaveChanges();
-                var r = _db.Resposta.Where(p => p.Equals(e));
-                var i = r.Select(x => x.RespostaId).FirstOrDefault();
-                return i.Value;
+              
             }
             catch (Exception ex)
             {
                 var mens = ex.InnerException.Message.ToString();
             }
-            return 0;
         }
         public async Task<int> AddQuizz(TEntity e)
         {
@@ -111,5 +108,7 @@ namespace Infra
 
         public async Task<TEntity> GetByIdEstudante(string id) =>
             await _db.Set<TEntity>().FindAsync(id);
+
+        
     }
 }

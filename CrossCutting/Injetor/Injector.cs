@@ -1,4 +1,6 @@
-﻿using Domain.Interfaces.Application;
+﻿using AutoMapper;
+using CrossCutting.AutoMapper;
+using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Infra.Context;
 using Infra.Repository;
@@ -26,6 +28,12 @@ namespace CrossCutting
             services.AddScoped<IPerguntaRepository, PerguntaRepository>();
             services.AddScoped<IProfessorRepository, ProfessorRepository>();
             services.AddScoped<IEstudanteRepository, EstudanteRepository>();
+            services.AddScoped<IEstudanteRespostaRepository, EstudanteRespostaRepository>();
+
+            //mapper
+            IMapper mapper = AutoMapperConfiguration.RegisterMappings().CreateMapper();
+            services.AddSingleton(mapper);
+
 
             services.AddScoped<IQuizzService,QuizzService>();
             services.AddScoped<IRespostaService, RespostaService>();

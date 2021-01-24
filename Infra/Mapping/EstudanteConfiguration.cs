@@ -11,7 +11,7 @@ namespace Infra.Mapping
         {
             entity.HasKey(x => x.EstudanteId);
 
-          
+       
         }
     }
 }

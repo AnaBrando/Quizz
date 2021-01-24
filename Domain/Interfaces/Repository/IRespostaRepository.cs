@@ -8,6 +8,6 @@ namespace Domain.Interfaces.Repository
 {
     public interface IRespostaRepository : IRepositoryBase<Resposta>
     {
-     
+       
     }
 }

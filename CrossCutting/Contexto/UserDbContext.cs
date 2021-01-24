@@ -15,7 +15,9 @@ namespace CrossCutting.Contexto
         public DbSet<Usuario> Usuarios { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-         => options.UseSqlServer(@"Server=tcp:127.0.0.1,1433;Database=Quizz;UID=SA;PWD=Diobrando0510*");
+             => options.UseSqlServer(@"Data Source=DESKTOP-OJVFABH\SQLEXPRESS;Initial Catalog=Quizz;Integrated Security=True;");
+
+        // => options.UseSqlServer(@"Server=tcp:127.0.0.1,1433;Database=Quizz;UID=SA;PWD=Diobrando0510*");
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

@@ -6,15 +6,11 @@ namespace Domain.Models
 {
     public class Pontuacao
     {
-        public Pontuacao()
-        {
-            Nivel = new HashSet<Nivel>();
-        }
 
         public int PontuacaoId { get; set; }
         public double Valor { get; set; }
 
         public int NivelId { get; set; }
-        public virtual ICollection<Nivel> Nivel { get; set; }
+        public virtual Nivel Nivel { get; set; }
     }
 }

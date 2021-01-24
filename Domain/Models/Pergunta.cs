@@ -13,17 +13,15 @@ namespace Domain.Models
         public int QuizzId { get; set; }
         [Required(ErrorMessage="Opção A é obrigatória")]
         public string OpcaoA { get; set; }
-               [Required(ErrorMessage="Opção B é obrigatória")]
+        [Required(ErrorMessage="Opção B é obrigatória")]
         public string OpcaoB { get; set; }
-               [Required(ErrorMessage="Opção C é obrigatória")]
+        [Required(ErrorMessage="Opção C é obrigatória")]
         public string OpcaoC { get; set; }
-               [Required(ErrorMessage="Opção D é obrigatória")]
+        [Required(ErrorMessage="Opção D é obrigatória")]
         public string OpcaoD { get; set; }
-
         public string Descricao { get; set; }
-               [Required(ErrorMessage="Opção Certa é obrigatória")]
+        [Required(ErrorMessage="Opção Certa é obrigatória")]
         public string OpcaoCerta { get; set; }
-
         public virtual Nivel Nivel { get; set; }
         public virtual Quizz Quizz { get; set; }
         public virtual Resposta Resposta { get; set; }

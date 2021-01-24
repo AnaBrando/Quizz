@@ -5,6 +5,6 @@ namespace Infra.Repository
 {
     public class RespostaRepository : RepositoryBase<Resposta>, IRespostaRepository
     {
-   
+       
     }
 }

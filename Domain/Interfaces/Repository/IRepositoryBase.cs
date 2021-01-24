@@ -14,7 +14,7 @@ namespace Domain.Interfaces.NovaPasta
         int Save();
         Task<TEntity> GetByIdEstudante(string id);
 
-        Task<int> AddResposta(TEntity e);
+        void AddRespostaAsync(TEntity e);
     }
 }
 

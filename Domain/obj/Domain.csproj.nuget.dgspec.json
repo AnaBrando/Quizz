@@ -1,28 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "/home/anabrando/Documentos/Projetos/Quizz/Domain/Domain.csproj": {}
+    "C:\\Users\\anabr\\Documents\\tcc\\Quizz\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "/home/anabrando/Documentos/Projetos/Quizz/Domain/Domain.csproj": {
+    "C:\\Users\\anabr\\Documents\\tcc\\Quizz\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/anabrando/Documentos/Projetos/Quizz/Domain/Domain.csproj",
+        "projectUniqueName": "C:\\Users\\anabr\\Documents\\tcc\\Quizz\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "/home/anabrando/Documentos/Projetos/Quizz/Domain/Domain.csproj",
-        "packagesPath": "/home/anabrando/.nuget/packages/",
-        "outputPath": "/home/anabrando/Documentos/Projetos/Quizz/Domain/obj/",
+        "projectPath": "C:\\Users\\anabr\\Documents\\tcc\\Quizz\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\anabr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\anabr\\Documents\\tcc\\Quizz\\Domain\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "/usr/share/dotnet/sdk/NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "/home/anabrando/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\anabr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/5.0.101/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

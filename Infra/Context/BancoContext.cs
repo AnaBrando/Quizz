@@ -1,4 +1,5 @@
-﻿using Domain.Models;
+﻿using Domain.DTO;
+using Domain.Models;
 using Infra.Mapping;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,6 +14,7 @@ namespace Infra.Context
         public BancoContext(DbContextOptions options) : base(options)
         {
         }
+       public DbSet<EstudanteResposta> EstudanteResposta { get; set; }
         public DbSet<Pergunta> Pergunta { get; set; }
         public DbSet<Quizz> Quizz { get; set; }
         public DbSet<Resposta> Resposta { get; set; }
@@ -23,7 +25,9 @@ namespace Infra.Context
         public DbSet<Estudante> Estudante { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-         => options.UseSqlServer(@"Server=tcp:127.0.0.1,1433;Database=Quizz;UID=SA;PWD=Diobrando0510*");
+         => options.UseSqlServer(@"Data Source=DESKTOP-OJVFABH\SQLEXPRESS;Initial Catalog=Quizz;Integrated Security=True;");
+            
+            //=> options.UseSqlServer(@"Server=tcp:127.0.0.1,1433;Database=Quizz;UID=SA;PWD=Diobrando0510*");
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -33,8 +37,19 @@ namespace Infra.Context
             modelBuilder.ApplyConfiguration(new ProfessorConfiguration());
             modelBuilder.ApplyConfiguration(new QuizzConfiguration());
             modelBuilder.ApplyConfiguration(new RespostaConfiguration());
+            modelBuilder.ApplyConfiguration(new RespostaConfiguration());
+            modelBuilder.Entity<EstudanteResposta>()
+     .HasKey(bc => new { bc.EstudanteId, bc.RespostaId });
+           
+            modelBuilder.Entity<EstudanteResposta>()
+                .HasOne(bc => bc.Aluno)
+                .WithMany(b => b.Respostas)
+                .HasForeignKey(bc => bc.EstudanteId).IsRequired();
+            modelBuilder.Entity<EstudanteResposta>()
+                .HasOne(bc => bc.RespostaEstudante)
+                .WithMany(c => c.Estudante)
+                .HasForeignKey(bc => bc.RespostaId).IsRequired();
 
-            ;
         }
     }
 

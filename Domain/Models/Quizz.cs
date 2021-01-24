@@ -17,6 +17,8 @@ namespace Domain.Models
         public virtual ICollection<Pergunta> Pergunta { get; set; }
         public string ProfessorSessao { get; set; }
 
- 
+        public int ProfessorId { get; set; }
+
+        public virtual Professor Professor { get; set; }
     }
 }

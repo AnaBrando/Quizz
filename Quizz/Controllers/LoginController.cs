@@ -75,6 +75,7 @@ namespace Quizz.Controllers
                         {
                             var dto = new EstudanteDTO();
                             dto.EstudanteSessao = usuario.Id;
+                            dto.Nome = usuario.UserName;
                             _alunoService.Add(dto);
                            
                         }

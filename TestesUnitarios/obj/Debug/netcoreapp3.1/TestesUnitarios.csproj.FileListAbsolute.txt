@@ -398,3 +398,7 @@ C:/Users/anabr/Documents/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUni
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.dll
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.pdb
 /home/anabrando/Documentos/Projetos/Quizz/TestesUnitarios/obj/Debug/netcoreapp3.1/TestesUnitarios.genruntimeconfig.cache
+C:\Users\anabr\Documents\tcc\Quizz\TestesUnitarios\obj\Debug\netcoreapp3.1\TestesUnitarios.csprojAssemblyReference.cache
+C:\Users\anabr\Documents\tcc\Quizz\TestesUnitarios\obj\Debug\netcoreapp3.1\TestesUnitarios.AssemblyInfoInputs.cache
+C:\Users\anabr\Documents\tcc\Quizz\TestesUnitarios\obj\Debug\netcoreapp3.1\TestesUnitarios.AssemblyInfo.cs
+C:\Users\anabr\Documents\tcc\Quizz\TestesUnitarios\obj\Debug\netcoreapp3.1\TestesUnitarios.csproj.CoreCompileInputs.cache

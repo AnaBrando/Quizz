@@ -5,8 +5,11 @@ namespace Domain.DTO
 {
     public class RelatorioFinalObjectDTO
     {
-        public virtual List<Pergunta> Perguntas{get;set;}
-        public virtual RelatorioFinalDTO Relatorio{get;set;}
-        public int quiizId {get;set;}
+        public virtual List<PerguntaDTO> Perguntas{get;set;}
+        public List<RespostaDTO> Resposta { get; set; }
+
+        public string NomeAluno { get; set; }
+
+        public string NomeQuizz { get; set; }
     }
 }

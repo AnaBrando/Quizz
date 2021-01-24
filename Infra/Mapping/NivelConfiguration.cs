@@ -10,11 +10,10 @@ namespace Infra.Mapping
         public void Configure(EntityTypeBuilder<Nivel> entity)
         {
             entity.HasKey(x => x.NivelId);
+            entity.HasOne<Pontuacao>()
+                        .WithOne(x => x.Nivel)
+                        .HasForeignKey<Pontuacao>(x => x.NivelId);
 
-            entity.HasOne(d => d.Pontuacao)
-                .WithMany(p => p.Nivel)
-                .HasForeignKey(d => d.PontuacaoId)
-                .HasConstraintName("FK_Nivel_Pontuacao");
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Domain.DTO;
+﻿using AutoMapper;
+using Domain.DTO;
 using Domain.Interfaces.Application;
 using Domain.Interfaces.Repository;
 using Domain.Models;
@@ -12,31 +13,30 @@ namespace Service.RespostaService
     {
         public readonly IRespostaRepository _repositoyResposta;
         public readonly IQuizzRepository _repositoryQuizz;
-
-        public readonly IPerguntaRepository _repositoryPergunta;
+       public readonly IPerguntaRepository _repositoryPergunta;
+        public readonly IEstudanteRespostaRepository _repositoryEstudanteResposta;
         public readonly IEstudanteRepository _repositoryEstudante;
-
+        public readonly IMapper _mapper;
         public RespostaService(IRespostaRepository repo,
         IPerguntaRepository _repo,
         IEstudanteRepository _erepo,
-        IQuizzRepository _quizz)
+        IQuizzRepository _quizz,
+        IMapper mapper,
+        IEstudanteRespostaRepository estudanteRespostaRepository)
         {
             _repositoyResposta = repo;
             _repositoryPergunta = _repo;
             _repositoryEstudante = _erepo;
             _repositoryQuizz = _quizz;
+            _mapper = mapper;
+            _repositoryEstudanteResposta = estudanteRespostaRepository;
         }
         public void Add(RespostaDTO reposta)
         {
             throw new NotImplementedException();
         }
 
-        public int AddResposta(Resposta pergunta)
-        {
-            var i = _repositoyResposta.AddResposta(pergunta);
-            var indice = i.Result;
-            return indice;
-        }
+        
 
         public void Delete(int id)
         {
@@ -47,59 +47,70 @@ namespace Service.RespostaService
 
         public RelatorioFinalObjectDTO GerarDadosRelatorio(int quizzId, int alunoId, string sessaoNome)
         {
-           var query = (from A in _repositoyResposta.GetAll().Result
-                        join B in _repositoryEstudante.GetAll().Result
-                        on A.EstudanteId equals B.EstudanteId 
-                        join C in _repositoryPergunta.GetAll().Result
-                        on A.PerguntaId equals C.PerguntaId
-                        join D in _repositoryQuizz.GetAll().Result
-                        on C.QuizzId equals D.QuizzId
-                        where A.EstudanteId == alunoId && C.QuizzId == quizzId
-                        && D.QuizzId == quizzId
-                        select new RelatorioFinalDTO{
-                                NomeAluno = B.Nome,
-                                NomeQuizz = D.Descricao
-                        }).Distinct().FirstOrDefault();
-           var resposta = new List<RespostaDTO>();
-           var perguntas = (from A in _repositoryPergunta.GetAll().Result
-                            where A.QuizzId == quizzId
-                            select A).Distinct().ToList();
-            foreach(var x in perguntas){
-                var respostas =(from A in _repositoyResposta.GetAll().Result
-                                join B in _repositoryPergunta.GetAll().Result
-                                on A.PerguntaId equals B.PerguntaId
-                                where A.EstudanteId == alunoId && A.PerguntaId == x.PerguntaId
-                                select new RespostaDTO{
-                                    EstudanteId = alunoId,
-                                    Acertou = A.Acertou,
-                            }).Distinct().FirstOrDefault();
-                resposta.Add(respostas);
-                     
-            }
-            query.Resposta = resposta;
-            var retorno = new RelatorioFinalObjectDTO{ Perguntas = perguntas,Relatorio = query,quiizId = quizzId};
-            
+            var perguntas = (from A in _repositoryQuizz.GetAll().Result
+                             join B in _repositoryPergunta.GetAll().Result
+                             on A.QuizzId equals B.QuizzId
+                             where A.QuizzId == quizzId
+                             select B
+                             ).Distinct().ToList() ;
+            var respostas = (from B in perguntas
+                         join C in _repositoyResposta.GetAll().Result
+                         on B.PerguntaId equals C.PerguntaId
+                         join D in _repositoryEstudanteResposta.GetAll().Result
+                         on C.RespostaId equals D.RespostaId
+                         join E in _repositoryEstudante.GetAll().Result
+                         on D.EstudanteId equals E.EstudanteId
+                         select C).Distinct().ToList();
+            var nomeAluno = (from B in perguntas
+                             join C in _repositoyResposta.GetAll().Result
+                             on B.PerguntaId equals C.PerguntaId
+                             join D in _repositoryEstudanteResposta.GetAll().Result
+                             on C.RespostaId equals D.RespostaId
+                             join E in _repositoryEstudante.GetAll().Result
+                             on D.EstudanteId equals E.EstudanteId
+                             select E.Nome).Distinct().FirstOrDefault();
+            var nomeQuizz = (from A in _repositoryQuizz.GetAll().Result
+                             join B in _repositoryPergunta.GetAll().Result
+                             on A.QuizzId equals B.QuizzId
+                             where A.QuizzId == quizzId
+                             select A.Descricao
+                             ).Distinct().FirstOrDefault();
+            var retorno = new RelatorioFinalObjectDTO
+            {
+                Perguntas = _mapper.Map<List<PerguntaDTO>>(perguntas),
+                Resposta = _mapper.Map<List<RespostaDTO>>(respostas),
+                NomeAluno = nomeAluno,
+                NomeQuizz = nomeQuizz
+            };
+
             return retorno;
-            
         }
 
-        public int GerarReposta(string EstudanteId,int perguntaId)
-        {
-            Resposta resposta = new Resposta();
-            resposta.Descricao = DateTime.Now.ToString();
-            resposta.EstudanteChave = EstudanteId;
-            resposta.PerguntaId = perguntaId;
-            resposta.EstudanteId = 0;
-            return AddResposta(resposta);
-        }
+       
 
-        public void GerarRepostaIncorreta(int estudanteId, int perguntaId)
+        public int GerarReposta(int estudanteId, int perguntaId,bool acertou)
         {
-           Resposta resposta = new Resposta();
-            resposta.Descricao = DateTime.Now.ToString();
-            resposta.PerguntaId = perguntaId;
-            resposta.EstudanteId = estudanteId;
-            _repositoyResposta.Add(resposta);
+            var aluno = _repositoryEstudante.GetById(estudanteId).Result;
+            var resposta = new Resposta
+            {
+                Descricao = DateTime.Now.ToString(),
+                //EstudanteChave = estudanteId,
+                PerguntaId = perguntaId,
+                EstudanteId = estudanteId,
+                Acertou = acertou
+            };
+            _repositoryEstudanteResposta.AddRespostaAsync(new EstudanteResposta
+            {
+                EstudanteId = aluno.EstudanteId,
+                RespostaEstudante = resposta
+            });
+
+            var result = _repositoyResposta.GetAll()
+                .Result.Where(x => x.RespostaId == resposta.RespostaId)
+                .FirstOrDefault();
+
+            return result.RespostaId;
+            //return AddResposta(resposta);
         }
 
         public ICollection<RespostaDTO> GetAll(int quiizId)

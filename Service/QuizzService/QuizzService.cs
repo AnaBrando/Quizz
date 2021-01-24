@@ -49,17 +49,10 @@ namespace Service.QuizzService
             var PerguntaRespostas = (from A in lista
                                      select A.PerguntaId).ToList();
             if (lista != null && lista.Count > 0){
-                var teste = new List<Pergunta>();
-                var pergunta = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id);
-                foreach (var item in pergunta)
-                {
-                    var repostaContemPergunta = PerguntaRespostas.Contains(item.PerguntaId);
-                    if (!repostaContemPergunta)
-                    {
-                        teste.Add(item);
-                    }
-                }
-                return teste.Count() <= 0 ? pergunta.FirstOrDefault() : teste.FirstOrDefault();
+                var perguntas = repoPergunta.GetAll()
+                    .Result.Where(x => x.QuizzId == id && !PerguntaRespostas.Contains(x.PerguntaId));
+            
+                return perguntas.FirstOrDefault();
 
             }
             var pgt = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id);

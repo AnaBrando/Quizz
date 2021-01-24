@@ -10,6 +10,10 @@ namespace Infra.Mapping
         public void Configure(EntityTypeBuilder<Quizz> entity)
         {
             entity.HasKey(x => x.QuizzId);
+            entity.HasOne(x => x.Professor)
+                    .WithOne(x => x.Quizz)
+                    .HasForeignKey<Professor>(x => x.ProfessorId);
+
         }
     }
 }

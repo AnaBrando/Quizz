@@ -12,7 +12,6 @@ namespace Infra.Mapping
             entity.HasKey(x => x.RespostaId);
 
 
-
         }
     }
 }
