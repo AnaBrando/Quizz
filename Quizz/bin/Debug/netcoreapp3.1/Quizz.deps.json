@@ -26,12 +26,14 @@
         "dependencies": {
           "AutoMapper": "10.0.0",
           "CrossCutting": "1.0.0",
+          "Microsoft.AspNet.WebApi.Client": "5.2.4-preview1",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.4",
           "Microsoft.AspNetCore.Identity.UI": "3.1.4",
           "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": "3.1.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.6",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.4",
+          "Microsoft.Net.Http": "2.2.29",
           "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": "1.10.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "Microsoft.AspNetCore.Antiforgery.Reference": "3.1.0.0",
@@ -152,7 +154,6 @@
           "System.Collections.Reference": "4.1.2.0",
           "System.Collections.NonGeneric.Reference": "4.1.2.0",
           "System.Collections.Specialized.Reference": "4.1.2.0",
-          "System.ComponentModel.Annotations.Reference": "4.3.1.0",
           "System.ComponentModel.DataAnnotations": "4.0.0.0",
           "System.ComponentModel.Reference": "4.0.4.0",
           "System.ComponentModel.EventBasedAsync": "4.1.2.0",
@@ -317,6 +318,21 @@
         },
         "compile": {
           "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "Microsoft.AspNet.WebApi.Client/5.2.4-preview1": {
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.3",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "5.2.4.0",
+            "fileVersion": "5.2.51207.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/2.2.0": {
@@ -659,6 +675,11 @@
           "System.Text.Encodings.Web": "4.5.0"
         }
       },
+      "Microsoft.Bcl/1.1.10": {
+        "dependencies": {
+          "Microsoft.Bcl.Build": "1.0.14"
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -670,6 +691,7 @@
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
+      "Microsoft.Bcl.Build/1.0.14": {},
       "Microsoft.Bcl.HashCode/1.1.0": {
         "runtime": {
           "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {
@@ -1365,6 +1387,26 @@
           }
         }
       },
+      "Microsoft.Net.Http/2.2.29": {
+        "dependencies": {
+          "Microsoft.Bcl": "1.1.10",
+          "Microsoft.Bcl.Build": "1.0.14"
+        },
+        "runtime": {
+          "lib/net45/System.Net.Http.Extensions.dll": {
+            "assemblyVersion": "2.2.29.0",
+            "fileVersion": "2.2.29.0"
+          },
+          "lib/net45/System.Net.Http.Primitives.dll": {
+            "assemblyVersion": "4.2.29.0",
+            "fileVersion": "4.2.29.0"
+          }
+        },
+        "compile": {
+          "lib/net45/System.Net.Http.Extensions.dll": {},
+          "lib/net45/System.Net.Http.Primitives.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "3.1.8",
@@ -1589,7 +1631,7 @@
           "runtimes/win-arm64/native/sni.dll": {
             "rid": "win-arm64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1598,7 +1640,7 @@
           "runtimes/win-x64/native/sni.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1607,7 +1649,7 @@
           "runtimes/win-x86/native/sni.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "4.6.25512.1"
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -1828,6 +1870,12 @@
         }
       },
       "System.ComponentModel.Annotations/4.7.0": {
+        "runtime": {
+          "lib/netstandard2.1/System.ComponentModel.Annotations.dll": {
+            "assemblyVersion": "4.3.1.0",
+            "fileVersion": "4.700.19.56404"
+          }
+        },
         "compile": {
           "ref/netstandard2.1/System.ComponentModel.Annotations.dll": {}
         }
@@ -3268,12 +3316,6 @@
         },
         "compileOnly": true
       },
-      "System.ComponentModel.Annotations.Reference/4.3.1.0": {
-        "compile": {
-          "System.ComponentModel.Annotations.dll": {}
-        },
-        "compileOnly": true
-      },
       "System.ComponentModel.DataAnnotations/4.0.0.0": {
         "compile": {
           "System.ComponentModel.DataAnnotations.dll": {}
@@ -4147,6 +4189,13 @@
       "path": "automapper/10.0.0",
       "hashPath": "automapper.10.0.0.nupkg.sha512"
     },
+    "Microsoft.AspNet.WebApi.Client/5.2.4-preview1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LytCfaYQaB9MzYJDdn8XFqqSGvNvwx1SjUWlFay0OdxV8VZkL0Dt+L32fehjYRxctvIGVWNWtBbfnfMFPT6/9w==",
+      "path": "microsoft.aspnet.webapi.client/5.2.4-preview1",
+      "hashPath": "microsoft.aspnet.webapi.client.5.2.4-preview1.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Antiforgery/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -4413,12 +4462,26 @@
       "path": "microsoft.aspnetcore.webutilities/2.2.0",
       "hashPath": "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512"
     },
+    "Microsoft.Bcl/1.1.10": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-+tTqoh/M1pyL8El3qLy30EcwnAtyvFoDZJtdG9Cbg/WdFbh4N8kyrq198XHuEL7lnJbeD0DRO8jcX5IIOh05cQ==",
+      "path": "microsoft.bcl/1.1.10",
+      "hashPath": "microsoft.bcl.1.1.10.nupkg.sha512"
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "path": "microsoft.bcl.asyncinterfaces/1.1.1",
       "hashPath": "microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512"
+    },
+    "Microsoft.Bcl.Build/1.0.14": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cDLKSvNvRa519hplsbSoYqO69TjdDIhfjtKUM0g20/nVROoWsGav9KCI9HtnGjLmdV1+TcUUDhbotcllibjPEA==",
+      "path": "microsoft.bcl.build/1.0.14",
+      "hashPath": "microsoft.bcl.build.1.0.14.nupkg.sha512"
     },
     "Microsoft.Bcl.HashCode/1.1.0": {
       "type": "package",
@@ -4720,6 +4783,13 @@
       "sha512": "sha512-9E1gXBRJta8+UXooYpJkp/8g6Cy4kFQl3iURduGhR7/vU8rGKTWEMJ3tUKOO2m1qzJOfaog/n89lyjdi7S56Rg==",
       "path": "microsoft.identity.client/3.0.8",
       "hashPath": "microsoft.identity.client.3.0.8.nupkg.sha512"
+    },
+    "Microsoft.Net.Http/2.2.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fc4CPEewJ30Xgal+fSq1lYIBt582A7eKlAL7O4HXiYAiTp2VTnA4osSvk7T2n8aS4xTCPVJusQk3yKLT0XSpkg==",
+      "path": "microsoft.net.http/2.2.29",
+      "hashPath": "microsoft.net.http.2.2.29.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.2.0": {
       "type": "package",
@@ -6083,11 +6153,6 @@
       "sha512": ""
     },
     "System.Collections.Specialized.Reference/4.1.2.0": {
-      "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.ComponentModel.Annotations.Reference/4.3.1.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

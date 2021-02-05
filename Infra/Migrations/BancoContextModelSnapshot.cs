@@ -194,7 +194,7 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.Models.Resposta", b =>
                 {
-                    b.Property<int?>("RespostaId")
+                    b.Property<int>("RespostaId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);

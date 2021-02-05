@@ -27,7 +27,7 @@ namespace Quizz
         public void ConfigureServices(IServiceCollection services)
         {
             Injector.RegistrarServicos(services);
-
+     
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
 
             services.AddDbContext<UserDbContext>(options =>

@@ -3,16 +3,11 @@ using System.Net.Http;
 using System.Text;
 using CrossCutting.User;
 using Domain.Interfaces.Application;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Quizz.Models;
-
 namespace Quizz.Controllers
 {
-
     public class AlunoController : Controller
     {
         public readonly IQuizzService _serviceQuizz;
@@ -22,7 +17,6 @@ namespace Quizz.Controllers
         private readonly IViewRenderService _viewRenderService;
         private readonly IPdfGeneratorService _pdfService;
         private readonly UserManager<Usuario> _userManager;
-
         public AlunoController(IQuizzService service, IAlunoService alunoService, 
             IRespostaService respostaService, IPerguntaService perguntaService,
             IViewRenderService viewRender,
@@ -38,21 +32,13 @@ namespace Quizz.Controllers
             _viewRenderService = viewRender;
         }
         public async System.Threading.Tasks.Task<IActionResult> RelatorioFinalAsync(int quizzId,int alunoId,string sessaoNome){
-        
             var result = _respostaService.GerarDadosRelatorio(quizzId,alunoId,sessaoNome);
-
-
-            string json2 = JsonConvert.SerializeObject(result);
-
-            using (var client = new HttpClient())
-            {
-               /* client.BaseAddress = new Uri("http://localhost:62626");
-                var pdf = await client.PostAsync("http://localhost:62626", new StringContent(json2, Encoding.UTF8, "application/json"));
-                var r = new FileContentResult(await pdf.Content.ReadAsByteArrayAsync(),pdf.Content.Headers.ContentType.MediaType);
-                
-                return r;
-            */return null;
-            }
+        using (var client = new HttpClient())
+        {
+          
+             var vaisefuder = await client.PostAsJsonAsync("http://localhost:62626/PostRelatorio", result);
+        }
+        return null;
         }
         public IActionResult IniciarQuizz(int id){
             var sessaoNome =  User.Identity.Name;
