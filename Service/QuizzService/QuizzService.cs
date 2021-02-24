@@ -16,11 +16,17 @@ namespace Service.QuizzService
         public readonly IQuizzRepository repo;
         public readonly IPerguntaRepository repoPergunta;
         public readonly IRespostaRepository respostaRepository;
-        public QuizzService(IQuizzRepository quizzRepository, IPerguntaRepository _repo,
-            IRespostaRepository respostaRepo)
+
+        public readonly IEstudanteRepository _estudanteRepository;
+        public QuizzService(
+            IQuizzRepository quizzRepository, 
+            IPerguntaRepository _repo,
+            IRespostaRepository respostaRepo,
+            IEstudanteRepository estudanteRepository)
         {
             this.repo = quizzRepository;
             repoPergunta = _repo;
+            _estudanteRepository = estudanteRepository;
             respostaRepository = respostaRepo;
         }
 
@@ -43,18 +49,22 @@ namespace Service.QuizzService
             return perguntas;
         }
 
-        public Pergunta buscarPerguntaParaIniciarQuizz(int id)
+        public Pergunta buscarPerguntaParaIniciarQuizz(int id,int estudanteId)
         {
-            var lista = respostaRepository.GetAll().Result;
-            var PerguntaRespostas = (from A in lista
-                                     select A.PerguntaId).ToList();
-            if (lista != null && lista.Count > 0){
+             var resposta = respostaRepository.GetAll()
+                    .Result
+                    .Where(x=>x.EstudanteId == estudanteId).Select(x=>x.PerguntaId);
+            
+            if (resposta != null && resposta.Count() > 0){
+                //perguntas
                 var perguntas = repoPergunta.GetAll()
-                    .Result.Where(x => x.QuizzId == id && !PerguntaRespostas.Contains(x.PerguntaId));
+                    .Result.Where(x => x.QuizzId == id
+                    && !resposta.Contains(x.PerguntaId));
             
                 return perguntas.FirstOrDefault();
 
             }
+           
             var pgt = repoPergunta.GetAll().Result.Where(x => x.QuizzId == id);
             return pgt.FirstOrDefault();
         }
@@ -99,10 +109,7 @@ namespace Service.QuizzService
 
         public Quizz GeyById(int id)
         {
-            var result = repo.GetById(id).Result;
-            
-         
-
+            var result = repo.GetById(id).Result;  
             return result;
         }
 
@@ -124,6 +131,10 @@ namespace Service.QuizzService
             throw new NotImplementedException();
         }
 
-       
+        public IQueryable<object> RelatorioProfessor(int quizzId)
+        {
+            //var consulta = (from A in repo);
+            return null;
+        }
     }
 }

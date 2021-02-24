@@ -18,9 +18,9 @@ namespace Domain.DTO
         public int QuizzId { get; set; }
         [Required(ErrorMessage="Opcao A é obrigatório")]
         public string OpcaoA { get; set; }
-                [Required(ErrorMessage="Opcao B é obrigatório")]
+        [Required(ErrorMessage="Opcao B é obrigatório")]
         public string OpcaoB { get; set; }
-                [Required(ErrorMessage="Opcao C é obrigatório")]
+        [Required(ErrorMessage="Opcao C é obrigatório")]
         public string OpcaoC { get; set; }
         [Required(ErrorMessage="Opcao D é obrigatório")]
         public string OpcaoD { get; set; }
@@ -30,11 +30,11 @@ namespace Domain.DTO
         public string OpcaoCerta { get; set; }
         public virtual NivelDTO Nivel { get; set; }
         public virtual Quizz Quizz { get; set; }
-              [Required(ErrorMessage="Resposta é obrigatório")]
-
+        
+        [Required(ErrorMessage="Resposta é obrigatório")]
         public virtual RespostaDTO Resposta { get; set; }
 
-          [Required(ErrorMessage="Nivel é obrigatório")]
+        [Required(ErrorMessage="Nivel é obrigatório")]
 
         public List<Nivel> niveis { get; set; }
        

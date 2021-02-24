@@ -17,5 +17,7 @@ namespace Domain.Models
         public virtual IEnumerable<Pergunta> Pergunta { get; set; }
         public int EstudanteId{get;set;}
         public int PerguntaId { get; set; }
+        public int Valor { get; set; }
+
     }
 }

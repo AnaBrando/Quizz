@@ -53,6 +53,7 @@ namespace Service.RespostaService
                              where A.QuizzId == quizzId
                              select B
                              ).Distinct().ToList() ;
+
             var respostas = (from B in perguntas
                          join C in _repositoyResposta.GetAll().Result
                          on B.PerguntaId equals C.PerguntaId
@@ -60,7 +61,9 @@ namespace Service.RespostaService
                          on C.RespostaId equals D.RespostaId
                          join E in _repositoryEstudante.GetAll().Result
                          on D.EstudanteId equals E.EstudanteId
+                         where C.EstudanteId == alunoId && B.QuizzId == quizzId
                          select C).Distinct().ToList();
+
             var nomeAluno = (from B in perguntas
                              join C in _repositoyResposta.GetAll().Result
                              on B.PerguntaId equals C.PerguntaId
@@ -69,12 +72,14 @@ namespace Service.RespostaService
                              join E in _repositoryEstudante.GetAll().Result
                              on D.EstudanteId equals E.EstudanteId
                              select E.Nome).Distinct().FirstOrDefault();
+
             var nomeQuizz = (from A in _repositoryQuizz.GetAll().Result
                              join B in _repositoryPergunta.GetAll().Result
                              on A.QuizzId equals B.QuizzId
                              where A.QuizzId == quizzId
                              select A.Descricao
                              ).Distinct().FirstOrDefault();
+
             var retorno = new RelatorioFinalObjectDTO
             {
                 Perguntas = _mapper.Map<List<PerguntaDTO>>(perguntas),
@@ -88,16 +93,16 @@ namespace Service.RespostaService
 
        
 
-        public int GerarReposta(int estudanteId, int perguntaId,bool acertou)
+        public int GerarReposta(int estudanteId, int perguntaId,bool acertou,string descricao,int pontuacao)
         {
             var aluno = _repositoryEstudante.GetById(estudanteId).Result;
             var resposta = new Resposta
             {
-                Descricao = DateTime.Now.ToString(),
-                //EstudanteChave = estudanteId,
+                Descricao = descricao,
                 PerguntaId = perguntaId,
                 EstudanteId = estudanteId,
-                Acertou = acertou
+                Acertou = acertou,
+                Valor = pontuacao
             };
             _repositoryEstudanteResposta.AddRespostaAsync(new EstudanteResposta
             {
@@ -110,12 +115,24 @@ namespace Service.RespostaService
                 .FirstOrDefault();
 
             return result.RespostaId;
-            //return AddResposta(resposta);
         }
 
-        public ICollection<RespostaDTO> GetAll(int quiizId)
+        public ICollection<Resposta> GetAll()
         {
-            throw new NotImplementedException();
+            return _repositoyResposta.GetAll().Result;
+        }
+
+        public ICollection<Resposta> ObterPorAlunoId(int quiizId, int alunoId)
+        {
+            var perguntas = _repositoryPergunta.GetAll()
+                            .Result.Where(x=>x.QuizzId == quiizId)
+                            .Distinct().Select(x=>x.PerguntaId).ToList();
+
+            var respostas = (from A in _repositoyResposta.GetAll().Result
+                            where perguntas.Contains(A.PerguntaId) && A.EstudanteId == alunoId
+                            select A).Distinct().ToList();
+
+            return respostas;                
         }
 
         public void PDF()
@@ -138,10 +155,6 @@ namespace Service.RespostaService
             throw new NotImplementedException();
         }
 
-        ICollection<Resposta> IRespostaService.GetAll(int quiizId)
-        {
-            throw new NotImplementedException();
-        }
 
         
     }

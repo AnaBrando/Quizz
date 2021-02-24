@@ -65,6 +65,11 @@ namespace Service.AlunoService
           
         }
 
+        public List<Estudante> GetAll()
+        {
+           return _repoEstudante.GetAll().Result.ToList();
+        }
+
         public EstudanteDTO GetbySession(string sessao)
         {
             var estudante = _repoEstudante.GetAll().Result.Where(x=>x.EstudanteSessao == sessao).FirstOrDefault();

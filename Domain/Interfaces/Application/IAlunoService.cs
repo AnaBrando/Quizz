@@ -7,6 +7,7 @@ namespace Domain.Interfaces.Application
     public interface IAlunoService
     {
       
+        List<Estudante> GetAll();
         void Add(EstudanteDTO dto);
 
         EstudanteDTO GetbySession(string sessao);

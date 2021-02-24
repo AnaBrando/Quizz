@@ -10,10 +10,11 @@ namespace Domain.Interfaces.Application
     {
         void Update(Resposta pergunta);
         void Save();
-        ICollection<Resposta> GetAll(int quiizId);
+        ICollection<Resposta> GetAll();
+        ICollection<Resposta> ObterPorAlunoId(int quiizId, int alunoId);
         void Delete(int id);
         RelatorioFinalObjectDTO GerarDadosRelatorio(int quizzId,int alunoId,string sessaoNome);
-       void PDF();
-        int GerarReposta(int estudanteId, int perguntaId,bool acertou);
+        void PDF();
+        int GerarReposta(int estudanteId, int perguntaId,bool acertou,string descricao,int valor);
     }
 }

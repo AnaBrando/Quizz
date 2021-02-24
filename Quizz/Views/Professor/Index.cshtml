@@ -41,7 +41,7 @@
                     <a asp-controller="Pergunta" asp-action="Create" asp-route-id="@item.QuizzId" onclick="Validation()">Criar Pergunta</a> |
                     Perguntas :<span id="PgtQtd">@qtdPergunta</span>
                     <span id="limite" style="color:red;font-size:1.3em;"></span>
-
+                    | <a asp-action="RelatorioProfessor" asp-route-id="@item.QuizzId"><img src="\img\report.png" width="30"></a> 
                 </td>
             </tr>
         }

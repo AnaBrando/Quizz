@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Threading.Tasks;
 using CrossCutting.User;
 using Domain.DTO;
@@ -14,12 +15,22 @@ namespace Quizz.Controllers
     {
         private readonly UserManager<Usuario> _userManager;
         private readonly IQuizzService _service;
+
+        private readonly IPerguntaService _PerguntaService;
+
+        private readonly IAlunoService _estudanteService;
+          public readonly IRespostaService _respostaService;
    
 
-        public ProfessorController(IQuizzService service, UserManager<Usuario> user)
+        public ProfessorController(IQuizzService service, 
+            UserManager<Usuario> user,IPerguntaService perguntaService,
+            IAlunoService alunoService, IRespostaService respostaService)
         {
             _userManager = user;
             _service = service;
+            _respostaService = respostaService;
+            _estudanteService = alunoService;
+            _PerguntaService = perguntaService;
         }
         public IActionResult Index(string id)
         {
@@ -89,5 +100,32 @@ namespace Quizz.Controllers
             }
             return Redirect("Index");
         }
+        public async System.Threading.Tasks.Task<IActionResult> RelatorioProfessor(int QuizzId){
+            var report = new List<RelatorioFinalObjectDTO>();
+            QuizzId = 1;
+            var perguntas = _PerguntaService.PerguntasByQuizzId(QuizzId).Select(x=>x.PerguntaId);
+            var alunos = (from A in _respostaService.GetAll()
+                            join B in _estudanteService.GetAll()
+                            on A.EstudanteId equals B.EstudanteId
+                            select new EstudanteDTO{
+                                    EstudanteId = A.EstudanteId,
+                                    Nome = B.Nome
+                            }).Distinct(); 
+             
+            foreach (var item in alunos)
+            {
+                 var result = _respostaService.GerarDadosRelatorio(QuizzId,item.EstudanteId,item.Nome);
+                 report.Add(result);
+            }
+         
+            using (var client = new HttpClient())
+            {
+                
+            var vaisefuder = await client.PostAsJsonAsync("http://localhost:62626/PostRelatorio", report);
+                var r = new FileContentResult(await vaisefuder.Content.ReadAsByteArrayAsync(),vaisefuder.Content.Headers.ContentType.MediaType);
+                return r;
+            }
+        
+         }
     }
 }
