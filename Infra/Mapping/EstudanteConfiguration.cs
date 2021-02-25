@@ -11,7 +11,9 @@ namespace Infra.Mapping
         {
             entity.HasKey(x => x.EstudanteId);
 
-       
+            entity.HasMany(x=>x.Respostas)
+            .WithOne(x=>x.Aluno)
+            .HasConstraintName("FK_Estudante_Resposta");
         }
     }
 }

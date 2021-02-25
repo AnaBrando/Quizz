@@ -8,5 +8,6 @@ namespace Infra.Repository
 {
     public class EstudanteRepository : RepositoryBase<Estudante>, IEstudanteRepository
     {
+        
     }
 }

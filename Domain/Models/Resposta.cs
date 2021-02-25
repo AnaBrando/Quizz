@@ -13,7 +13,7 @@ namespace Domain.Models
         public int RespostaId { get; set; }
         public string EstudanteChave { get; set; }
         public string Descricao { get; set; }
-        public virtual IEnumerable<EstudanteResposta> Estudante { get; set; }
+        public virtual IEnumerable<EstudanteResposta> EstudanteResposta { get; set; }
         public virtual IEnumerable<Pergunta> Pergunta { get; set; }
         public int EstudanteId{get;set;}
         public int PerguntaId { get; set; }

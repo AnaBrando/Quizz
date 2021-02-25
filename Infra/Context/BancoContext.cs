@@ -46,7 +46,7 @@ namespace Infra.Context
                 .HasForeignKey(bc => bc.EstudanteId).IsRequired();
             modelBuilder.Entity<EstudanteResposta>()
                 .HasOne(bc => bc.RespostaEstudante)
-                .WithMany(c => c.Estudante)
+                .WithMany(c => c.EstudanteResposta)
                 .HasForeignKey(bc => bc.RespostaId).IsRequired();
 
         }

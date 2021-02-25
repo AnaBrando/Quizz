@@ -100,28 +100,25 @@ namespace Quizz.Controllers
             }
             return Redirect("Index");
         }
-        public async System.Threading.Tasks.Task<IActionResult> RelatorioProfessor(int QuizzId){
+        public async System.Threading.Tasks.Task<IActionResult> RelatorioProfessor(int id){
             var report = new List<RelatorioFinalObjectDTO>();
-            QuizzId = 1;
-            var perguntas = _PerguntaService.PerguntasByQuizzId(QuizzId).Select(x=>x.PerguntaId);
+            var perguntas = _PerguntaService.PerguntasByQuizzId(id).Select(x=>x.PerguntaId);
             var alunos = (from A in _respostaService.GetAll()
                             join B in _estudanteService.GetAll()
                             on A.EstudanteId equals B.EstudanteId
-                            select new EstudanteDTO{
-                                    EstudanteId = A.EstudanteId,
-                                    Nome = B.Nome
-                            }).Distinct(); 
+                            where perguntas.Contains(A.PerguntaId)
+                            select B).Distinct(); 
              
             foreach (var item in alunos)
             {
-                 var result = _respostaService.GerarDadosRelatorio(QuizzId,item.EstudanteId,item.Nome);
+                 var result = _respostaService.GerarDadosRelatorio(id,item.EstudanteId,item.Nome);
                  report.Add(result);
             }
          
             using (var client = new HttpClient())
             {
                 
-            var vaisefuder = await client.PostAsJsonAsync("http://localhost:62626/PostRelatorio", report);
+            var vaisefuder = await client.PostAsJsonAsync("http://localhost:62626/RelatorioProfessor", report);
                 var r = new FileContentResult(await vaisefuder.Content.ReadAsByteArrayAsync(),vaisefuder.Content.Headers.ContentType.MediaType);
                 return r;
             }

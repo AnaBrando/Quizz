@@ -24,6 +24,8 @@ namespace Domain.Models
         public string OpcaoCerta { get; set; }
         public virtual Nivel Nivel { get; set; }
         public virtual Quizz Quizz { get; set; }
-        public virtual Resposta Resposta { get; set; }
+        //public virtual Resposta Resposta { get; set; }
+
+         public virtual EstudanteResposta EstudanteResposta { get; set; }
     }
 }
