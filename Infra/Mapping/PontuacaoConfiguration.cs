@@ -9,8 +9,8 @@ namespace Infra.Mapping
             public void Configure(EntityTypeBuilder<Pontuacao> entity)
             {
                     entity.HasKey(x=>x.PontuacaoId);
-                    entity.HasOne<Nivel>()
-                          .WithOne(x => x.Pontuacao).HasForeignKey<Nivel>(x => x.PontuacaoId);
+                   /* entity.HasOne<Nivel>()
+                          .WithOne(x => x.Pontuacao).HasForeignKey<Nivel>(x => x.PontuacaoId);*/
                         
 
             }

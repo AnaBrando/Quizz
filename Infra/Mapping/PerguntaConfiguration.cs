@@ -13,8 +13,8 @@ namespace Infra.Mapping
         {
             entity.HasKey(x => x.PerguntaId);          
 
-            entity.HasOne(x=>x.Quizz).WithMany(x=>x.Pergunta)
-                    .HasConstraintName("Pergunta_Quizz_Id");
+           /* entity.HasOne(x=>x.Quizz).WithMany(x=>x.Pergunta)
+                    .HasConstraintName("Pergunta_Quizz_Id");*/
 
                   //  entity.HasOne(x=>x.EstudanteResposta).WithOne(x=>x.)
         }
