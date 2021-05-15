@@ -56,7 +56,7 @@ namespace Service.AlunoService
         {
             try{
                 if(dto != null){
-                var modelo = new Estudante{EstudanteSessao = dto.EstudanteSessao,Pontuacao = 0};
+                var modelo = new Estudante{EstudanteSessao = dto.EstudanteSessao,Pontuacao = 0,Nome = dto.Nome};
                _repoEstudante.Add(modelo);
            }
             }catch(Exception e){

@@ -88,6 +88,12 @@ namespace Infra.Migrations
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("EstudanteRespostaEstudanteId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("EstudanteRespostaRespostaId")
+                        .HasColumnType("int");
+
                     b.Property<int?>("NivelId")
                         .HasColumnType("int");
 
@@ -125,6 +131,8 @@ namespace Infra.Migrations
 
                     b.HasIndex("RespostaId");
 
+                    b.HasIndex("EstudanteRespostaEstudanteId", "EstudanteRespostaRespostaId");
+
                     b.ToTable("Pergunta");
                 });
 
@@ -152,7 +160,9 @@ namespace Infra.Migrations
             modelBuilder.Entity("Domain.Models.Professor", b =>
                 {
                     b.Property<int>("ProfessorId")
-                        .HasColumnType("int");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("ProfessorSessao")
                         .HasColumnType("nvarchar(max)");
@@ -231,7 +241,7 @@ namespace Infra.Migrations
                         .IsRequired();
 
                     b.HasOne("Domain.Models.Resposta", "RespostaEstudante")
-                        .WithMany("Estudante")
+                        .WithMany("EstudanteResposta")
                         .HasForeignKey("RespostaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -256,9 +266,13 @@ namespace Infra.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.Models.Resposta", "Resposta")
+                    b.HasOne("Domain.Models.Resposta", null)
                         .WithMany("Pergunta")
                         .HasForeignKey("RespostaId");
+
+                    b.HasOne("Domain.Models.EstudanteResposta", "EstudanteResposta")
+                        .WithMany()
+                        .HasForeignKey("EstudanteRespostaEstudanteId", "EstudanteRespostaRespostaId");
                 });
 
             modelBuilder.Entity("Domain.Models.Pontuacao", b =>
@@ -266,15 +280,6 @@ namespace Infra.Migrations
                     b.HasOne("Domain.Models.Nivel", "Nivel")
                         .WithOne()
                         .HasForeignKey("Domain.Models.Pontuacao", "NivelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Models.Professor", b =>
-                {
-                    b.HasOne("Domain.Models.Quizz", "Quizz")
-                        .WithOne("Professor")
-                        .HasForeignKey("Domain.Models.Professor", "ProfessorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

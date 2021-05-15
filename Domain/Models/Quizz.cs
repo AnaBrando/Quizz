@@ -19,6 +19,6 @@ namespace Domain.Models
 
         public int ProfessorId { get; set; }
 
-        public virtual Professor Professor { get; set; }
+        //public virtual Professor Professor { get; set; }
     }
 }

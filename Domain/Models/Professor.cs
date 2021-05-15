@@ -10,7 +10,7 @@ namespace Domain.Models
         public int ProfessorId { get; set; }
         public string ProfessorSessao { get; set; }
 
-        public virtual Quizz Quizz { get; set; }
+        //public virtual Quizz Quizz { get; set; }
 
         public int QuizzId { get; set; }
 

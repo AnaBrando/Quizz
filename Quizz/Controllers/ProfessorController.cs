@@ -8,6 +8,7 @@ using Domain.DTO;
 using Domain.Interfaces.Application;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Quizz.Controllers
 {
@@ -112,14 +113,15 @@ namespace Quizz.Controllers
             foreach (var item in alunos)
             {
                  var result = _respostaService.GerarDadosRelatorio(id,item.EstudanteId,item.Nome);
-                 report.Add(result);
+                 report.Add(result); 
             }
-         
+          
             using (var client = new HttpClient())
             {
                 
-            var vaisefuder = await client.PostAsJsonAsync("http://localhost:62626/RelatorioProfessor", report);
-                var r = new FileContentResult(await vaisefuder.Content.ReadAsByteArrayAsync(),vaisefuder.Content.Headers.ContentType.MediaType);
+            var teste = await client.PostAsJsonAsync("http://localhost:62626/Professor/RelatorioProfessor", report);
+
+                var r = new FileContentResult(await teste.Content.ReadAsByteArrayAsync(),teste.Content.Headers.ContentType.MediaType);
                 return r;
             }
         

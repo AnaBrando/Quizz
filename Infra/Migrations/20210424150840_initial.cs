@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Infra.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -20,6 +20,20 @@ namespace Infra.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Estudante", x => x.EstudanteId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Professor",
+                columns: table => new
+                {
+                    ProfessorId = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProfessorSessao = table.Column<string>(nullable: true),
+                    QuizzId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Professor", x => x.ProfessorId);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,30 +63,12 @@ namespace Infra.Migrations
                     EstudanteChave = table.Column<string>(nullable: true),
                     Descricao = table.Column<string>(nullable: true),
                     EstudanteId = table.Column<int>(nullable: false),
-                    PerguntaId = table.Column<int>(nullable: false)
+                    PerguntaId = table.Column<int>(nullable: false),
+                    Valor = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Resposta", x => x.RespostaId);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Professor",
-                columns: table => new
-                {
-                    ProfessorId = table.Column<int>(nullable: false),
-                    ProfessorSessao = table.Column<string>(nullable: true),
-                    QuizzId = table.Column<int>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Professor", x => x.ProfessorId);
-                    table.ForeignKey(
-                        name: "FK_Professor_Quizz_ProfessorId",
-                        column: x => x.ProfessorId,
-                        principalTable: "Quizz",
-                        principalColumn: "QuizzId",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -113,7 +109,9 @@ namespace Infra.Migrations
                     OpcaoC = table.Column<string>(nullable: false),
                     OpcaoD = table.Column<string>(nullable: false),
                     Descricao = table.Column<string>(nullable: true),
-                    OpcaoCerta = table.Column<string>(nullable: false)
+                    OpcaoCerta = table.Column<string>(nullable: false),
+                    EstudanteRespostaEstudanteId = table.Column<int>(nullable: true),
+                    EstudanteRespostaRespostaId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -130,6 +128,12 @@ namespace Infra.Migrations
                         principalTable: "Resposta",
                         principalColumn: "RespostaId",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Pergunta_EstudanteResposta_EstudanteRespostaEstudanteId_EstudanteRespostaRespostaId",
+                        columns: x => new { x.EstudanteRespostaEstudanteId, x.EstudanteRespostaRespostaId },
+                        principalTable: "EstudanteResposta",
+                        principalColumns: new[] { "EstudanteId", "RespostaId" },
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -145,7 +149,7 @@ namespace Infra.Migrations
                 {
                     table.PrimaryKey("PK_Pontuacao", x => x.PontuacaoId);
                 });
-
+  
             migrationBuilder.CreateTable(
                 name: "Nivel",
                 columns: table => new
@@ -166,7 +170,37 @@ namespace Infra.Migrations
                         principalColumn: "PontuacaoId",
                         onDelete: ReferentialAction.Restrict);
                 });
-
+                migrationBuilder.InsertData(
+                                        table: "Nivel",
+                                        columns: new[] { "NivelId", "Descricao", "PontuacaoId"},
+                                        values: new object[] { "1", "Difícil", "1"
+                                        ,"ABDC",true,DateTime.Now,1});
+                migrationBuilder.InsertData(
+                                        table: "Nivel",
+                                        columns: new[] { "NivelId", "Descricao", "PontuacaoId"},
+                                        values: new object[] { "2", "Moderado", "2"
+                                        ,"ABDC",true,DateTime.Now,1});
+                migrationBuilder.InsertData(
+                                        table: "Nivel",
+                                        columns: new[] { "NivelId", "Descricao", "PontuacaoId"},
+                                        values: new object[] { "3", "Facil", "3"
+                                        ,"ABDC",true,DateTime.Now,1});
+                                        
+                migrationBuilder.InsertData(
+                                        table: "Pontuacao",
+                                        columns: new[] { "PontuacaoId", "Valor", "NivelId"},
+                                        values: new object[] { "1", 100, "1"
+                                        ,"ABDC",true,DateTime.Now,1});
+                                        migrationBuilder.InsertData(
+                                        table: "Pontuacao",
+                                        columns: new[] { "PontuacaoId", "Valor", "NivelId"},
+                                        values: new object[] { "2", 50, "2"
+                                        ,"ABDC",true,DateTime.Now,1});
+                                        migrationBuilder.InsertData(
+                                        table: "Pontuacao",
+                                        columns: new[] { "PontuacaoId", "Valor", "NivelId"},
+                                        values: new object[] { "3", 25, "3"
+                                        ,"ABDC",true,DateTime.Now,1});
             migrationBuilder.CreateIndex(
                 name: "IX_EstudanteResposta_RespostaId",
                 table: "EstudanteResposta",
@@ -191,6 +225,11 @@ namespace Infra.Migrations
                 name: "IX_Pergunta_RespostaId",
                 table: "Pergunta",
                 column: "RespostaId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Pergunta_EstudanteRespostaEstudanteId_EstudanteRespostaRespostaId",
+                table: "Pergunta",
+                columns: new[] { "EstudanteRespostaEstudanteId", "EstudanteRespostaRespostaId" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Pontuacao_NivelId",
@@ -222,22 +261,22 @@ namespace Infra.Migrations
                 table: "Nivel");
 
             migrationBuilder.DropTable(
-                name: "EstudanteResposta");
-
-            migrationBuilder.DropTable(
                 name: "Pergunta");
 
             migrationBuilder.DropTable(
                 name: "Professor");
 
             migrationBuilder.DropTable(
+                name: "Quizz");
+
+            migrationBuilder.DropTable(
+                name: "EstudanteResposta");
+
+            migrationBuilder.DropTable(
                 name: "Estudante");
 
             migrationBuilder.DropTable(
                 name: "Resposta");
-
-            migrationBuilder.DropTable(
-                name: "Quizz");
 
             migrationBuilder.DropTable(
                 name: "Pontuacao");
